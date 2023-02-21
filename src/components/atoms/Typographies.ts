@@ -1,10 +1,10 @@
 import styled from "styled-components"
 
 export const H1 = styled.h1.attrs(
-	(props: { color: string }) => props
+	(props: { color: string; size: number }) => props
 )`
-	font-size: 1.56rem; //25px
-	font-weight: 400;
+	font-size: ${({ size }) => size || 1.86}rem;
+	font-weight: 700;
 	color: ${({ color }) => color};
 `
 export const H2 = styled.h2.attrs(
