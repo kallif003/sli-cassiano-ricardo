@@ -12,7 +12,7 @@ import {
 import Icon from "@mdi/react"
 import { mdiEyeOutline } from "@mdi/js"
 import { mdiEyeOffOutline } from "@mdi/js"
-import firebase from "../../connection/firebaseConnection"
+import useFirebase from "@/hooks/useFirebase"
 import FadeLoader from "react-spinners/FadeLoader"
 import { useRouter } from "next/router"
 import Image from "next/image"
@@ -25,6 +25,7 @@ const Login = () => {
 	const [loading, setLoading] = useState(false)
 	const [errorMsg, setErrorMsg] = useState("")
 	const router = useRouter()
+	const { firebase } = useFirebase()
 
 	const showPassword = () => {
 		setEyeIcon(!eyeIcon)
@@ -65,8 +66,8 @@ const Login = () => {
 				router.push("./Home")
 				setLoading(false)
 			})
-			.catch((error) => {
-				console.log(error)
+			.catch((error: any) => {
+				console.log("e", error)
 				setErrorMsg("Email ou senha inválidos")
 				setLoading(false)
 			})
