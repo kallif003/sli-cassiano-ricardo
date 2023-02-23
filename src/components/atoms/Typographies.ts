@@ -6,6 +6,9 @@ export const H1 = styled.h1.attrs(
 	font-size: ${({ size }) => size || 1.86}rem;
 	font-weight: 700;
 	color: ${({ color }) => color};
+	@media (min-width: 0px) and (max-width: 700px) {
+		font-size: 1.5rem;
+	}
 `
 export const H2 = styled.h2.attrs(
 	(props: { color: string; weight: number }) => props

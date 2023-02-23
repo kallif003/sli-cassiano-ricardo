@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const Input = styled.input.attrs(
-	(props: { borderColor: string; borderWidth: string }) => props
+	(props: { borderColor: string }) => props
 )`
 	background: #ffff;
 	border-radius: 3rem;
@@ -11,6 +11,7 @@ export const Input = styled.input.attrs(
 	width: 26rem;
 	height: 4.5rem;
 	outline-color: #b4b4b4;
+	border: 2px solid ${({ borderColor }) => borderColor};
 	::placeholder,
 	::-webkit-input-placeholder {
 		color: #b4b4b4;
@@ -29,6 +30,6 @@ export const Input = styled.input.attrs(
 	}
 
 	@media (min-width: 0) and (max-width: 767px) {
-		width: 19rem;
+		width: 23rem;
 	}
 `

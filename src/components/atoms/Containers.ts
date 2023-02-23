@@ -7,21 +7,27 @@ export const Container = styled.div`
 	width: auto;
 	background: #ccc;
 	height: 100vh;
+	@media (min-width: 0px) and (max-width: 1023px) {
+		grid-template-columns: 100%;
+	}
+	@media (min-width: 1024px) and (max-width: 1279px) {
+		grid-template-columns: 50% 70%;
+	}
 `
 export const LoginContainer = styled.div`
-	padding: 0 15rem;
+	padding: 0 0 0 8rem;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	background: #f8f8f8;
-	@media (min-width: 1024px) and (max-width: 1279px) {
-		padding: 6rem 0 4rem 8rem;
+	@media (min-width: 0px) and (max-width: 1023px) {
+		height: 100vh;
+		padding: 0;
 	}
-	@media (min-height: 0px) and (max-height: 700px) {
-		height: 100%;
-		padding: 0 0 2rem 8rem;
+	@media (min-width: 1024px) and (max-width: 1279px) {
+		padding: 0 0 0 7rem;
 	}
 `
 export const WelcomeContainer = styled.div`
@@ -34,8 +40,8 @@ export const WelcomeContainer = styled.div`
 	justify-content: center;
 	background: #b0d1b2;
 	color: #fff;
-	@media (min-height: 0px) and (max-height: 700px) {
-		height: 100%;
+	@media (min-width: 0px) and (max-width: 1023px) {
+		display: none;
 	}
 `
 export const InputContainer = styled.form`
@@ -44,9 +50,6 @@ export const InputContainer = styled.form`
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
-	@media (min-width: 0) and (max-width: 767px) {
-		width: 22rem;
-	}
 `
 export const IconContainer = styled.div`
 	position: relative;
@@ -54,6 +57,6 @@ export const IconContainer = styled.div`
 	top: -5.8rem;
 	left: 10rem;
 	@media (min-width: 0px) and (max-width: 767px) {
-		left: -8.5rem;
+		left: 8.9rem;
 	}
 `

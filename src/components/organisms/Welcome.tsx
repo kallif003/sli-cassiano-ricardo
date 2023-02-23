@@ -1,15 +1,15 @@
 import React from "react"
 import { WelcomeContainer, H1, H2 } from "../atoms"
 import Image from "next/image"
-import logo from "../../../assets/logo.png"
 
 const Welcome = () => {
 	return (
 		<WelcomeContainer>
 			<Image
-				src={logo}
+				src={"/logo.png"}
 				alt="logo tipo da escola"
 				width="200"
+				height="200"
 				className="mt-[-4rem]"
 			/>
 

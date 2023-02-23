@@ -13,6 +13,9 @@ export const MainButton = styled.button.attrs(
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	@media (min-width: 0) and (max-width: 767px) {
+		width: 23rem;
+	}
 `
 export const ModalButton = styled.button`
 	box-shadow: 0 0.3rem 0.62rem #e0e4ee;
