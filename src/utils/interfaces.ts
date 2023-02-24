@@ -13,10 +13,7 @@ export interface Props {
 	children: ReactNode
 }
 
-export interface PropsContextType {
-	firebaseConfig: IConfig | undefined
-	setFirebaseConfig: Function
-}
+export interface PropsContextType {}
 
 export interface FirebaseContextType {
 	firebase: any

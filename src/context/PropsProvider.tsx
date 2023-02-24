@@ -1,15 +1,11 @@
-import React, { createContext, useState } from "react"
-import { IConfig, Props, PropsContextType } from "../utils/interfaces"
+import React, { createContext } from "react"
+import { Props, PropsContextType } from "../utils/interfaces"
 
 const PropsContext = createContext({} as PropsContextType)
 
 export const PropsProvider = ({ children }: Props) => {
-	const [firebaseConfig, setFirebaseConfig] = useState<IConfig>()
-	console.log(firebaseConfig?.apiKey)
-
 	return (
-		<PropsContext.Provider
-			value={{ firebaseConfig, setFirebaseConfig }}>
+		<PropsContext.Provider value={{}}>
 			{children}
 		</PropsContext.Provider>
 	)

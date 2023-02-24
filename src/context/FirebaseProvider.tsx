@@ -1,6 +1,5 @@
 import React, { createContext } from "react"
 import { Props, FirebaseContextType } from "../utils/interfaces"
-import useProps from "@/hooks/useProps"
 import firebase from "firebase/app"
 import "firebase/database"
 import "firebase/auth"
@@ -8,19 +7,13 @@ import "firebase/auth"
 const FirebaseContext = createContext({} as FirebaseContextType)
 
 export const FirebaseProvider = ({ children }: Props) => {
-	const { firebaseConfig } = useProps()
-
-	console.log(firebaseConfig)
-
-	const api = "AIzaSyBI6KIDn_AvgUJg0kQzjkA76BtDUk8_H8A"
-
 	const FirebaseConfig = {
-		apiKey: api,
-		authDomain: firebaseConfig?.authDomain,
-		projectId: firebaseConfig?.projectId,
-		storageBucket: firebaseConfig?.messagingSenderId,
-		messagingSenderId: firebaseConfig?.messagingSenderId,
-		appId: firebaseConfig?.appId,
+		apiKey: process.env.NEXT_PUBLIC_API,
+		authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+		projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+		storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
+		messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
+		appId: process.env.NEXT_PUBLIC_APP_ID,
 	}
 
 	// Initialize Firebase
