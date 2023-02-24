@@ -16,6 +16,8 @@ export const FirebaseProvider = ({ children }: Props) => {
 		appId: process.env.NEXT_PUBLIC_APP_ID,
 	}
 
+	console.log(FirebaseConfig)
+
 	// Initialize Firebase
 	if (!firebase.apps.length) {
 		firebase.initializeApp(FirebaseConfig)
