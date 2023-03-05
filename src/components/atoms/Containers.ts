@@ -116,7 +116,7 @@ export const AboutProjectContainer = styled.div`
 	background: #f8f8f8;
 	@media (min-width: 0) and (max-width: 1023px) {
 		flex-direction: column;
-		width: 25rem;
+		width: 22rem;
 		height: 33rem;
 	}
 `

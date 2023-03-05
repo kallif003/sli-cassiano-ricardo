@@ -60,10 +60,10 @@ for (let i = 0; i < 12; i++) {
 const Home = () => {
 	return (
 		<>
-			<div className="flex justify-center items-center xl:h-[40rem] mt-6 h-[36rem]">
+			<div className="flex justify-center items-center xl:h-[40rem] mt-6 h-[36rem] sm:mx-auto">
 				<AboutProjectContainer>
 					<SheetHolesContainer>{sheetHoles}</SheetHolesContainer>
-					<div className="py-3 px-8 w-full sm:w-[25rem]">
+					<div className="py-3 px-8 w-full sm:w-[22rem]">
 						<H1 size={1.5} className="text-center">
 							SOBRE O PROJETO
 						</H1>
@@ -72,7 +72,7 @@ const Home = () => {
 						{rows.map((p) => (
 							<div
 								key={p.id}
-								className="px-2 py-1 sm:w-auto truncate">
+								className="px-2 py-1 sm:w-auto truncate ">
 								<p>{p.paragraph}</p>
 								<hr className="border-dashed border-[#d1cece] " />
 							</div>
