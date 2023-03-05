@@ -79,8 +79,8 @@ const Home = () => {
 						))}
 						<div className=" flex justify-end  h-10 text-black mt-3">
 							<MusicButton className="mr-3 ">
-								<Icon path={mdiMusic} size={1} className="" />
-								<h1 className="ml-1 mt-1 text-[0.75rem]">
+								<Icon path={mdiMusic} size={1} className="sm:ml-3" />
+								<h1 className="ml-1 mt-1  text-[0.75rem]">
 									MUSICALIZAÇÃO
 								</h1>
 							</MusicButton>
@@ -88,7 +88,7 @@ const Home = () => {
 								<Icon
 									path={mdiBookOpenPageVariant}
 									size={1}
-									className="ml-0 mt-0"
+									className="sm:ml-2 mt-0"
 								/>
 								<h1 className="ml-1 mt-1 text-[0.75rem]">
 									LITERATURA

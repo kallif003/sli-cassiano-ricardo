@@ -32,6 +32,9 @@ export const MusicButton = styled.button`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	@media (min-width: 0) and (max-width: 767px) {
+		width: 14rem;
+	}
 `
 export const ReadButton = styled.button`
 	background-image: url("/marcaTexto2.png");
