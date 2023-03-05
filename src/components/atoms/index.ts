@@ -14,7 +14,7 @@ import { Input } from "./Inputs"
 
 import { H1, H2, Paragraph } from "./Typographies"
 
-import { MainButton, Button } from "./Buttons"
+import { MainButton, MusicButton, ReadButton } from "./Buttons"
 
 export {
 	Container,
@@ -31,5 +31,6 @@ export {
 	HeaderContainer,
 	HeaderTitleContainer,
 	AboutProjectContainer,
-	Button,
+	MusicButton,
+	ReadButton,
 }

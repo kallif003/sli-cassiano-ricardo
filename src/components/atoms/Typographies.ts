@@ -6,47 +6,9 @@ export const H1 = styled.h1.attrs(
 	font-size: ${({ size }) => size || 1.86}rem;
 	font-weight: 700;
 	color: ${({ color }) => color};
-	white-space: nowrap;
-	overflow: hidden;
-	padding-left: 15rem;
-	width: 43rem;
 
 	@media (min-width: 0px) and (max-width: 700px) {
 		font-size: 1.5rem;
-	}
-
-	animation-duration: 4s;
-	animation-name: type2;
-
-	:nth-child(3) {
-		animation-name: type;
-		animation-delay: 2s;
-		animation-duration: 4s;
-	}
-	:nth-child(5) {
-		animation-name: type;
-		animation-delay: 3s;
-		animation-duration: 4s;
-	}
-	@keyframes type {
-		from {
-			width: 0;
-		}
-		to {
-			width: 100;
-		}
-	}
-
-	@keyframes type2 {
-		0% {
-			width: 0;
-		}
-		50% {
-			width: 0;
-		}
-		100% {
-			width: 100;
-		}
 	}
 `
 export const H2 = styled.h2.attrs(

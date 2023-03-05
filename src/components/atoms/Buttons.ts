@@ -17,10 +17,24 @@ export const MainButton = styled.button.attrs(
 		width: 20rem;
 	}
 `
-export const Button = styled.button.attrs(
-	(props: { background: string }) => props
-)`
-	background-image: url(${({ background }) => background});
+export const MusicButton = styled.button`
+	background-image: url("/marcaTexto.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: 0;
+	border-radius: 0.3rem;
+	width: 12rem;
+	height: 3.5rem;
+	color: #1f1f20;
+	font-weight: 600;
+	border-style: dashed;
+	border-color: #616060;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`
+export const ReadButton = styled.button`
+	background-image: url("/marcaTexto2.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	z-index: 0;
