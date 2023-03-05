@@ -5,10 +5,6 @@ const nextConfig = {
 	compiler: {
 		styledComponents: true,
 	},
-	images: {
-		loader: "akamai",
-		path: "/",
-	},
 }
 
 module.exports = nextConfig
