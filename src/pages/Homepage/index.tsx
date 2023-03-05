@@ -17,7 +17,6 @@ const Homepage: NextPage = () => {
 		<>
 			<Head>
 				<title>HOMEPAGE</title>
-
 				<link rel="icon" href="/logo.ico" />
 			</Head>
 			<Header />
