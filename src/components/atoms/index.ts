@@ -8,6 +8,8 @@ import {
 	HeaderButtonsContainer,
 	HeaderTitleContainer,
 	AboutProjectContainer,
+	SheetHolesContainer,
+	MobileContainer,
 } from "./Containers"
 
 import { Input } from "./Inputs"
@@ -33,4 +35,6 @@ export {
 	AboutProjectContainer,
 	MusicButton,
 	ReadButton,
+	SheetHolesContainer,
+	MobileContainer,
 }

@@ -1,15 +1,12 @@
 import "../styles/index.css"
 import type { AppProps } from "next/app"
-import { PropsProvider } from "../context/PropsProvider"
-import { FirebaseProvider } from "@/context/FirebaseProvider"
+import { AuthProvider } from "../context/AuthProvider"
 import React from "react"
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
-		<PropsProvider>
-			<FirebaseProvider>
-				<Component {...pageProps} />
-			</FirebaseProvider>
-		</PropsProvider>
+		<AuthProvider>
+			<Component {...pageProps} />
+		</AuthProvider>
 	)
 }

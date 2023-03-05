@@ -25,7 +25,7 @@ export const MusicButton = styled.button`
 	border-radius: 0.3rem;
 	width: 12rem;
 	height: 3.5rem;
-	color: #1f1f20;
+	color: #fff;
 	font-weight: 600;
 	border-style: dashed;
 	border-color: #616060;
@@ -41,7 +41,7 @@ export const ReadButton = styled.button`
 	border-radius: 0.3rem;
 	width: 12rem;
 	height: 3.5rem;
-	color: #1f1f20;
+	color: #fff;
 	font-weight: 600;
 	border-style: dashed;
 	border-color: #616060;

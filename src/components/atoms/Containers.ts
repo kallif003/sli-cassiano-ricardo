@@ -38,7 +38,7 @@ export const WelcomeContainer = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background: #2b4c7e;
+	background: #4fb9f3;
 	color: #fff;
 	@media (min-width: 0px) and (max-width: 1023px) {
 		display: none;
@@ -63,7 +63,6 @@ export const IconContainer = styled.div`
 		left: 7.9rem;
 	}
 `
-
 export const HeaderContainer = styled.div`
 	display: grid;
 	height: 200px;
@@ -71,37 +70,83 @@ export const HeaderContainer = styled.div`
 	grid-template-rows: 3rem;
 	height: 3rem;
 	color: #fff;
-	box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.5);
+	@media (min-width: 0px) and (max-width: 767px) {
+		grid-template-columns: 60% 40%;
+	}
+	@media (min-width: 768px) and (max-width: 1023px) {
+		grid-template-columns: 33% 67%;
+	}
+	@media (min-width: 1024px) and (max-width: 1279px) {
+		grid-template-columns: 40% 60%;
+	}
 `
 export const HeaderButtonsContainer = styled.div`
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	background: #2b4c7e;
+	background: #feca04;
 	padding: 1rem 0;
 `
 export const HeaderTitleContainer = styled.div`
 	display: flex;
-	background: #2b4c7e;
+	background: #feca04;
 	justify-content: center;
 	align-items: center;
 	padding: 1rem 0;
+	color: #fff;
+	@media (min-width: 1024px) and (max-width: 1279px) {
+		justify-content: flex-start;
+		padding-left: 1rem;
+	}
+	@media (min-width: 1280px) {
+		justify-content: flex-start;
+		padding-left: 1rem;
+	}
+	@media (max-width: 767px) {
+		justify-content: flex-start;
+		padding-left: 1rem;
+	}
 `
 export const AboutProjectContainer = styled.div`
 	box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.8);
 	width: 50rem;
-	height: 30rem;
-	color: #1f1f20;
+	height: 31rem;
+	color: #111111;
 	display: flex;
 	background: #f8f8f8;
+	@media (min-width: 0) and (max-width: 1023px) {
+		flex-direction: column;
+		width: 25rem;
+		height: 33rem;
+	}
 `
-// .color1 { #fb7968 };
-// .color2 { #f9c593 };
-// .color3 { #fafad4 };
-// .color4 { #b0d1b2 };
-// .color5 { #89b2a2 };
-// .color1 { #1f1f20 };
-// .color2 { #2b4c7e };
-// .color3 { #567ebb };
-// .color4 { #606d80 };
-// .color5 { #dce0e6 };
+export const SheetHolesContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	padding: 0.5rem;
+	background: #ff8343;
+	@media (min-width: 0) and (max-width: 1023px) {
+		flex-direction: row;
+		padding-left: 1rem;
+	}
+`
+
+export const MobileContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+	@media (min-width: 1023px) {
+		display: none;
+	}
+`
+
+// #FF8343
+// #F03D5A
+// #FECA04
+// #48D2B0
+// #6561AB
+// #9B58B5
+// #4FB9F3

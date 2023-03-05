@@ -13,12 +13,18 @@ export interface Props {
 	children: ReactNode
 }
 
-export interface PropsContextType {}
+export interface AuthContextType {
+	AuthStateChanged: Function
+	signin: Function
+	logout: Function
+	setLoading: Function
+	setDisabled: Function
+	setErrorMsg: Function
+	loading: boolean
+	disabled: boolean
+	errorMsg: string
+}
 
 export interface FirebaseContextType {
 	firebase: any
-}
-
-export interface IHeader {
-	title: string
 }
