@@ -12,7 +12,7 @@ import {
 
 import { Input } from "./Inputs"
 
-import { H1, H2, Paragraph, P } from "./Typographies"
+import { H1, H2, Paragraph } from "./Typographies"
 
 import { MainButton, Button } from "./Buttons"
 
@@ -32,5 +32,4 @@ export {
 	HeaderTitleContainer,
 	AboutProjectContainer,
 	Button,
-	P,
 }
