@@ -16,7 +16,7 @@ const Homepage: NextPage = () => {
 	return (
 		<>
 			<Head>
-				<title>SLI-CASSINO-RICARDO</title>
+				<title>HOMEPAGE</title>
 
 				<link rel="icon" href="/logo.ico" />
 			</Head>
