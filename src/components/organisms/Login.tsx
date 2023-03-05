@@ -63,7 +63,7 @@ const Login = () => {
 			.auth()
 			.signInWithEmailAndPassword(email, password)
 			.then((value: any) => {
-				router.push("./Home")
+				router.push("/Homepage")
 				setLoading(false)
 			})
 			.catch((error: any) => {
@@ -75,7 +75,7 @@ const Login = () => {
 	return (
 		<LoginContainer>
 			<H1>VAMOS COMEÇAR?</H1>
-			<p className="text-[0.8rem] text-[#b4b4b4] mt-1 sm:text-[0.7rem]">
+			<p className="text-[0.93rem] text-[#b4b4b4] mt-1 sm:text-[0.7rem]">
 				Após inserir email e senha, você terá acesso ao conteúdo
 			</p>
 
@@ -119,7 +119,7 @@ const Login = () => {
 			<MainButton
 				disabled={disabled}
 				onClick={() => login()}
-				background={!disabled ? "#89b2a2" : "#b4b4b4"}
+				background={!disabled ? "#567ebb" : "#b4b4b4"}
 				className={
 					disabled === false
 						? "active:scale-90 mt-[-4rem]"

@@ -1,20 +1,21 @@
 import Head from "next/head"
 import React from "react"
-import { Container, Login, Welcome } from "@/components"
+import Home from "../../components/organisms/Home"
+import Footer from "../../components/molecules/Footer"
 import { NextPage } from "next"
 
-const LoginPage: NextPage = () => {
+const Homepage: NextPage = () => {
 	return (
-		<Container>
+		<>
 			<Head>
 				<title>SLI-CASSINO-RICARDO</title>
 
 				<link rel="icon" href="/logo.ico" />
 			</Head>
-			<Login />
-			<Welcome />
-		</Container>
+			<Home />
+			<Footer />
+		</>
 	)
 }
 
-export default LoginPage
+export default Homepage

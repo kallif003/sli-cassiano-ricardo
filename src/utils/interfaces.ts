@@ -18,3 +18,7 @@ export interface PropsContextType {}
 export interface FirebaseContextType {
 	firebase: any
 }
+
+export interface IHeader {
+	title: string
+}

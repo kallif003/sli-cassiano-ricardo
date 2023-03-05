@@ -14,14 +14,24 @@ export const MainButton = styled.button.attrs(
 	justify-content: center;
 	align-items: center;
 	@media (min-width: 0) and (max-width: 767px) {
-		width: 23rem;
+		width: 20rem;
 	}
 `
-export const ModalButton = styled.button`
-	box-shadow: 0 0.3rem 0.62rem #e0e4ee;
-	background: #fff;
+export const Button = styled.button.attrs(
+	(props: { background: string }) => props
+)`
+	background-image: url(${({ background }) => background});
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: 0;
 	border-radius: 0.3rem;
-	width: 16.87rem;
-	height: 2.5rem;
-	color: #fff;
+	width: 12rem;
+	height: 3.5rem;
+	color: #1f1f20;
+	font-weight: 600;
+	border-style: dashed;
+	border-color: #616060;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 `

@@ -30,6 +30,6 @@ export const Input = styled.input.attrs(
 	}
 
 	@media (min-width: 0) and (max-width: 767px) {
-		width: 23rem;
+		width: 20rem;
 	}
 `
