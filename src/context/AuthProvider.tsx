@@ -16,16 +16,16 @@ export const AuthProvider = ({ children }: Props) => {
 			.auth()
 			.signOut()
 			.then(() => {
-				router.push("./Loginpage")
+				router.push("./Login")
 			})
 	}
 
 	const AuthStateChanged = async () => {
 		await firebase.auth().onAuthStateChanged((user: any) => {
 			if (user) {
-				console.log(user)
+				return
 			} else {
-				router.push("./Loginpage")
+				router.push("./Login")
 			}
 		})
 	}
@@ -57,7 +57,7 @@ export const AuthProvider = ({ children }: Props) => {
 			.auth()
 			.signInWithEmailAndPassword(email, password)
 			.then((value: any) => {
-				router.push("/Homepage")
+				router.push("/Home")
 				setDisabled(true)
 				setLoading(false)
 			})

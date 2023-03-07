@@ -9,7 +9,15 @@ import {
 	HeaderTitleContainer,
 	AboutProjectContainer,
 	SheetHolesContainer,
+	PagesContainer,
 	MobileContainer,
+	MusicalizationContainer,
+	GeneralContainer,
+	GeneralContainer2,
+	TeacherContainer,
+	ImageContainer,
+	TeacherInfoContainer,
+	MusicalizationGrid,
 } from "./Containers"
 
 import { Input } from "./Inputs"
@@ -37,4 +45,12 @@ export {
 	ReadButton,
 	SheetHolesContainer,
 	MobileContainer,
+	PagesContainer,
+	MusicalizationContainer,
+	GeneralContainer,
+	GeneralContainer2,
+	TeacherContainer,
+	ImageContainer,
+	TeacherInfoContainer,
+	MusicalizationGrid,
 }

@@ -2,6 +2,7 @@ import { mdiClose, mdiMenu } from "@mdi/js"
 import Icon from "@mdi/react"
 import React, { useState } from "react"
 import useAuth from "@/hooks/useAuth"
+import { useRouter } from "next/router"
 import {
 	HeaderContainer,
 	HeaderButtonsContainer,
@@ -14,6 +15,7 @@ const Header = () => {
 	const [id, setId] = useState("")
 	const [active, setActive] = useState(true)
 	const { logout } = useAuth()
+	const router = useRouter()
 
 	const change = () => {
 		setActive(!active)
@@ -31,6 +33,14 @@ const Header = () => {
 
 		if (idBtn === "sair") {
 			await logout()
+		}
+
+		if (idBtn === "inicio") {
+			router.push("/Home")
+		}
+
+		if (idBtn === "musicalizacao") {
+			router.push("/Musicalizacao")
 		}
 	}
 	return (

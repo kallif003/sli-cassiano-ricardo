@@ -7,7 +7,7 @@ export const H1 = styled.h1.attrs(
 	font-weight: 700;
 	color: ${({ color }) => color};
 
-	@media (min-width: 0px) and (max-width: 700px) {
+	@media (min-width: 0px) and (max-width: 767px) {
 		font-size: 1.5rem;
 	}
 `
@@ -24,6 +24,10 @@ export const Paragraph = styled.p.attrs(
 	font-size: ${({ size }) => size || 1.12}rem; //18px
 	font-weight: ${({ weight }) => weight || 400};
 	color: ${({ color }) => color};
+
+	@media (min-width: 0px) and (max-width: 767px) {
+		font-size: 0.8rem;
+	}
 `
 export const TextError = styled.p.attrs(
 	(props: { size: number; color: string }) => props
