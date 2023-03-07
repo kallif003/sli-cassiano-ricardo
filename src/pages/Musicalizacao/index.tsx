@@ -22,7 +22,9 @@ const Musicalizacao: NextPage = () => {
 			</Head>
 			<Header />
 			<Musicalization />
-			<Footer />
+			<div className="text-center mb-14 sm:mt-[-2rem] h-8">
+				<Footer />
+			</div>
 		</PagesContainer>
 	)
 }

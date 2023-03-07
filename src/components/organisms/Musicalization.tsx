@@ -43,7 +43,7 @@ const Musicalization = () => {
 							path={mdiMusic}
 							size={3}
 							color="#FF8343"
-							className="sm:ml-3 absolute  top-4 left-3 "
+							className="sm:ml-3 absolute top-4 left-3 "
 						/>
 						<H1 size={1.5} className="text-center sm:ml-10">
 							MUSICALIZAÇÃO
