@@ -56,8 +56,8 @@ const Musicalization = () => {
 					{rows.map((p) => (
 						<div
 							key={p.id}
-							className="px-2 py-1 sm:w-[17.9rem] truncate ">
-							<p className="mx-2 text-[0.98rem] sm:text-[0.6rem]">
+							className="px-2 sm:px-0 py-1 sm:w-[17.9rem] truncate ">
+							<p className="mx-2 text-[0.98rem] sm:text-[0.59rem]">
 								{p.paragraph}
 							</p>
 							<hr className="border-dashed border-[#d1cece] " />
