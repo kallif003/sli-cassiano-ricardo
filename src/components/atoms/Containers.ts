@@ -156,6 +156,7 @@ export const GeneralContainer = styled.div`
 	justify-content: center;
 	padding-top: 2rem;
 	animation: moveToRight 1s ease-in;
+
 	@keyframes moveToRight {
 		0% {
 			transform: translateX(-500px);
@@ -163,6 +164,10 @@ export const GeneralContainer = styled.div`
 		100% {
 			transform: translateX(20px);
 		}
+	}
+
+	@media (min-width: 0) and (max-width: 1269px) {
+		animation: none;
 	}
 `
 
@@ -172,14 +177,19 @@ export const GeneralContainer2 = styled.div`
 	align-items: flex-end;
 	padding-top: 2rem;
 	margin-bottom: 3rem;
-	animation: moveToRight2 1s ease-in;
-	@keyframes moveToRight2 {
+	animation: moveToRight3 1s ease-in;
+
+	@keyframes moveToRight3 {
 		0% {
 			transform: translateX(500px);
 		}
 		100% {
-			transform: translateX(20px);
+			transform: translateX(10px);
 		}
+	}
+
+	@media (min-width: 0) and (max-width: 1269px) {
+		animation: none;
 	}
 `
 
@@ -249,7 +259,7 @@ export const MusicalizationGrid = styled.div`
 	margin-top: 1.5rem;
 	height: 36rem;
 	@media (min-width: 0) and (max-width: 767px) {
-		grid-template-columns: 1fr;
+		grid-template-columns: auto;
 		grid-template-rows: repeat(2, 60%);
 		height: 50rem;
 		margin: 0 auto 10rem auto;
