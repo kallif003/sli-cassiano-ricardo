@@ -25,12 +25,15 @@ const Musicalization = () => {
 		{
 			id: "1",
 			paragraph:
-				"A IMPORTÂNCIA DA MUSICALIZAÇÃO NA EDUCAÇÃO INFANTIL...",
+				"A IMPORTÂNCIA DA MUSICALIZAÇÃO NA EDUCAÇÃO INFANTIL.",
 		},
 		{
 			id: "2",
-			paragraph:
-				"NESSA TELA VOCÊ PODE ACOMPANHAR AS ATIVIDADES SEMANAIS",
+			paragraph: "AQUI VOCÊ PODE ACOMPANHAR O CONTEÚDO SEMANAL, O",
+		},
+		{
+			id: "2",
+			paragraph: "REPERTÓRIO E O PROJETO",
 		},
 	]
 
@@ -52,7 +55,7 @@ const Musicalization = () => {
 					</div>
 					{rows.map((p) => (
 						<div key={p.id} className="px-2 py-1 sm:w-auto truncate ">
-							<p className="mx-2 text-[0.9rem] sm:text-[0.52rem]">
+							<p className="mx-2 text-[0.98rem] sm:text-[0.55rem]">
 								{p.paragraph}
 							</p>
 							<hr className="border-dashed border-[#d1cece] " />
@@ -102,7 +105,7 @@ const Musicalization = () => {
 						</TeacherInfoContainer>
 					</div>
 
-					<hr className="border-dashed border-[#d1cece] mt-1 sm:mt-2" />
+					<hr className="border-dashed border-[#d1cece] mt-1 sm:mt-3" />
 
 					<div className="flex justify-between pr-2 mr-14 sm:mr-0 sm:flex-col-reverse sm:items-center">
 						<TeacherInfoContainer>

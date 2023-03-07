@@ -137,7 +137,7 @@ export const AboutProjectContainer = styled.div`
 export const MusicalizationContainer = styled.div`
 	box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.8);
 	width: 35rem;
-	height: 15rem;
+	height: 18rem;
 	color: #3d3d3d;
 	background: #f8f8f8;
 	position: relative;
