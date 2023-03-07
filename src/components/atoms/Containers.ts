@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import Image from "next/image"
 
 export const Container = styled.div`
 	display: grid;
@@ -13,6 +14,16 @@ export const Container = styled.div`
 	@media (min-width: 1024px) and (max-width: 1279px) {
 		grid-template-columns: 50% 70%;
 	}
+`
+
+export const PagesContainer = styled.div.attrs(
+	(props: { background: string }) => props
+)`
+	width: 100vw;
+	height: 100vh;
+	background-image: url(${({ background }) => background});
+	background-repeat: no-repeat;
+	background-size: cover;
 `
 export const LoginContainer = styled.div`
 	padding: 0 0 0 8rem;
@@ -113,6 +124,8 @@ export const AboutProjectContainer = styled.div`
 	height: 31rem;
 	color: #111111;
 	display: flex;
+	border-radius: 1.5rem;
+	border-top-left-radius: 1.2rem;
 	background: #f8f8f8;
 	@media (min-width: 0) and (max-width: 1023px) {
 		flex-direction: column;
@@ -120,18 +133,90 @@ export const AboutProjectContainer = styled.div`
 		height: 33rem;
 	}
 `
+
+export const MusicalizationContainer = styled.div`
+	box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.8);
+	width: 35rem;
+	height: 15rem;
+	color: #3d3d3d;
+	background: #f8f8f8;
+	position: relative;
+	border-radius: 1.2rem;
+
+	padding: 2.5rem 2rem;
+
+	@media (min-width: 0) and (max-width: 767px) {
+		width: 22rem;
+		height: 15rem;
+	}
+`
+
+export const GeneralContainer = styled.div`
+	display: flex;
+	justify-content: center;
+	padding-top: 2rem;
+	animation: moveToRight 1s ease-in;
+	@keyframes moveToRight {
+		0% {
+			transform: translateX(-500px);
+		}
+		100% {
+			transform: translateX(20px);
+		}
+	}
+`
+
+export const GeneralContainer2 = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	padding-top: 2rem;
+	margin-bottom: 3rem;
+	animation: moveToRight2 1s ease-in;
+	@keyframes moveToRight2 {
+		0% {
+			transform: translateX(500px);
+		}
+		100% {
+			transform: translateX(20px);
+		}
+	}
+`
+
 export const SheetHolesContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
 	padding: 0.5rem;
 	background: #ff8343;
+	border-top-left-radius: 1.2rem;
+	border-bottom-left-radius: 1.2rem;
 	@media (min-width: 0) and (max-width: 1023px) {
 		flex-direction: row;
 		padding-left: 1rem;
+		border-bottom-left-radius: 0;
+		border-top-right-radius: 1.2rem;
 	}
 `
 
+export const TeacherContainer = styled.div`
+	box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.8);
+	width: 35rem;
+	height: 25rem;
+	color: #3d3d3d;
+	background: #f8f8f8;
+	border-radius: 1.2rem;
+	margin-bottom: 1rem;
+	padding: 1rem 0;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 49% 2% 49%;
+
+	@media (min-width: 0) and (max-width: 767px) {
+		width: 22rem;
+		height: 37rem;
+	}
+`
 export const MobileContainer = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -140,6 +225,44 @@ export const MobileContainer = styled.div`
 	padding-right: 1.25rem;
 	@media (min-width: 1023px) {
 		display: none;
+	}
+`
+export const ImageContainer = styled(Image)`
+	width: 10.3rem;
+	border-radius: 20rem;
+	height: 10rem;
+	@media (min-width: 0) and (max-width: 767px) {
+		width: 8rem;
+		height: 8rem;
+	}
+`
+export const TeacherInfoContainer = styled.div`
+	width: 20rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+`
+export const MusicalizationGrid = styled.div`
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	margin-top: 1.5rem;
+	height: 36rem;
+	@media (min-width: 0) and (max-width: 767px) {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(2, 60%);
+		height: 50rem;
+		margin: 0 auto 10rem auto;
+	}
+
+	@media (min-width: 768px) and (max-width: 1279px) {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(2, 50%);
+		height: 50rem;
+		margin: 0 auto 0 auto;
+	}
+	@media (min-width: 1400px) {
+		height: 40rem;
 	}
 `
 

@@ -1,5 +1,5 @@
 import React from "react"
-import LoginPage from "./Loginpage"
+import LoginPage from "./Login"
 
 export default function Home() {
 	return (

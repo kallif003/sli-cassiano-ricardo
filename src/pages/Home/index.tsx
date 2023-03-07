@@ -5,6 +5,7 @@ import Footer from "../../components/molecules/Footer"
 import { NextPage } from "next"
 import useAuth from "@/hooks/useAuth"
 import Header from "@/components/molecules/Header"
+import { PagesContainer } from "../../components/atoms"
 
 const Homepage: NextPage = () => {
 	const { AuthStateChanged } = useAuth()
@@ -14,7 +15,7 @@ const Homepage: NextPage = () => {
 	}, [])
 
 	return (
-		<>
+		<PagesContainer background="/wallpaper.png">
 			<Head>
 				<title>HOMEPAGE</title>
 				<link rel="icon" href="/logo.ico" />
@@ -22,7 +23,7 @@ const Homepage: NextPage = () => {
 			<Header />
 			<Home />
 			<Footer />
-		</>
+		</PagesContainer>
 	)
 }
 

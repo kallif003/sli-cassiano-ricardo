@@ -9,6 +9,7 @@ import {
 import Icon from "@mdi/react"
 import { mdiMusic } from "@mdi/js"
 import { mdiBookOpenPageVariant } from "@mdi/js"
+import { useRouter } from "next/router"
 
 interface IText {
 	id: string
@@ -58,17 +59,21 @@ for (let i = 0; i < 12; i++) {
 }
 
 const Home = () => {
+	const router = useRouter()
+
 	return (
 		<>
 			<div className="flex justify-center items-center xl:h-[40rem] mt-6 h-[36rem] sm:mx-auto">
 				<AboutProjectContainer>
 					<SheetHolesContainer>{sheetHoles}</SheetHolesContainer>
-					<div className="py-3 px-8 w-full sm:w-[22rem]">
-						<H1 size={1.5} className="text-center">
-							SOBRE O PROJETO
-						</H1>
+					<div className="py-3 px-8 w-full sm:w-[22rem] ">
+						<div className="px-2 py-1 ">
+							<H1 size={1.5} className="text-center" color="#3d3d3d">
+								SOBRE O PROJETO
+							</H1>
 
-						<hr className="border-dashed border-[#d1cece] " />
+							<hr className="border-dashed border-[#d1cece] " />
+						</div>
 						{rows.map((p) => (
 							<div
 								key={p.id}
@@ -77,8 +82,10 @@ const Home = () => {
 								<hr className="border-dashed border-[#d1cece] " />
 							</div>
 						))}
-						<div className=" flex justify-end  h-10 text-black mt-3">
-							<MusicButton className="mr-3 ">
+						<div className=" flex justify-end  h-10 mt-3">
+							<MusicButton
+								className="mr-3"
+								onClick={() => router.push("/Musicalizacao")}>
 								<Icon path={mdiMusic} size={1} className="sm:ml-3" />
 								<h1 className="ml-1 mt-1  text-[0.75rem]">
 									MUSICALIZAÇÃO

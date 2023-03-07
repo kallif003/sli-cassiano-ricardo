@@ -57,7 +57,7 @@ export const AuthProvider = ({ children }: Props) => {
 			.auth()
 			.signInWithEmailAndPassword(email, password)
 			.then((value: any) => {
-				router.push("/Homepage")
+				router.push("/Home")
 				setDisabled(true)
 				setLoading(false)
 			})
