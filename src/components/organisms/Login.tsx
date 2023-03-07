@@ -43,7 +43,6 @@ const Login = () => {
 	const getPassword = (event: string) => {
 		setPassword(event.trim())
 		setErrorMsg("")
-		console.log(email.length, event.length)
 
 		if (email.length === 27 && event.length === 13) {
 			setDisabled(false)

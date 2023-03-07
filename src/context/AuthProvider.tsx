@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }: Props) => {
 	const AuthStateChanged = async () => {
 		await firebase.auth().onAuthStateChanged((user: any) => {
 			if (user) {
-				console.log(user)
+				return
 			} else {
 				router.push("./Login")
 			}
@@ -44,8 +44,7 @@ export const AuthProvider = ({ children }: Props) => {
 					sessionDurationInMilliseconds - (Date.now() - authTime)
 				userSessionTimeout = setTimeout(
 					() => firebase.auth().signOut(),
-					expirationInMilliseconds,
-					router.push("./Login")
+					expirationInMilliseconds
 				)
 			})
 		}
