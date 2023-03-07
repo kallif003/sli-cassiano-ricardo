@@ -64,9 +64,9 @@ const Login = () => {
 	}
 
 	return (
-		<LoginContainer>
+		<LoginContainer className="sm:text-white">
 			<H1>VAMOS COMEÇAR?</H1>
-			<p className="text-[0.93rem] text-[#b4b4b4] mt-1 sm:text-[0.7rem]">
+			<p className="text-[0.93rem] text-[#b4b4b4] mt-1 sm:text-[0.7rem] sm:text-white ">
 				Após inserir email e senha, você terá acesso ao conteúdo
 			</p>
 

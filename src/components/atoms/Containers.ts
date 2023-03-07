@@ -36,6 +36,7 @@ export const LoginContainer = styled.div`
 	@media (min-width: 0px) and (max-width: 1023px) {
 		height: 100vh;
 		padding: 0;
+		background: #4fb9f3;
 	}
 	@media (min-width: 1024px) and (max-width: 1279px) {
 		padding: 0 0 0 7rem;
