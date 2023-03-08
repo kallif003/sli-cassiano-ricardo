@@ -11,3 +11,10 @@ export enum Menu {
 	LITERATURE = "LITERATURA",
 	EXIT = "SAIR",
 }
+
+export enum Route {
+	MUSICALIZATION = "/Musicalizacao",
+	LITERATURE = "/Literatura",
+	LOGIN = "/Login",
+	HOME = "/Home",
+}

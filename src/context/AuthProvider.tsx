@@ -2,6 +2,7 @@ import React, { createContext, useState } from "react"
 import { Props, AuthContextType } from "../utils/interfaces"
 import { useRouter } from "next/router"
 import firebase from "../connection/FirebaseConnection"
+import { Route } from "@/utils/enum"
 
 const AuthContext = createContext({} as AuthContextType)
 
@@ -16,7 +17,7 @@ export const AuthProvider = ({ children }: Props) => {
 			.auth()
 			.signOut()
 			.then(() => {
-				router.push("./Login")
+				router.push(Route.LOGIN)
 			})
 	}
 
@@ -25,7 +26,7 @@ export const AuthProvider = ({ children }: Props) => {
 			if (user) {
 				return
 			} else {
-				router.push("./Login")
+				router.push(Route.LOGIN)
 			}
 		})
 	}
@@ -57,7 +58,7 @@ export const AuthProvider = ({ children }: Props) => {
 			.auth()
 			.signInWithEmailAndPassword(email, password)
 			.then((value: any) => {
-				router.push("/Home")
+				router.push(Route.HOME)
 				setDisabled(true)
 				setLoading(false)
 			})

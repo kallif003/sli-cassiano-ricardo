@@ -10,7 +10,7 @@ import {
 	Paragraph,
 	MobileContainer,
 } from "../atoms"
-import { Menu } from "../../utils/enum"
+import { Menu, Route } from "../../utils/enum"
 
 const Header = () => {
 	const [id, setId] = useState("")
@@ -36,13 +36,13 @@ const Header = () => {
 			await logout()
 		}
 		if (idBtn === Menu.START) {
-			router.push("/Home")
+			router.push(Route.HOME)
 		}
 		if (idBtn === Menu.MUSICALIZATION) {
-			router.push("/Musicalizacao")
+			router.push(Route.MUSICALIZATION)
 		}
 		if (idBtn === Menu.LITERATURE) {
-			router.push("/Literatura")
+			router.push(Route.LITERATURE)
 		}
 	}
 
