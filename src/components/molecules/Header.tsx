@@ -46,12 +46,6 @@ const Header = () => {
 		}
 	}
 
-	console.log(
-		Menu.EXIT,
-		Menu.START,
-		Menu.LITERATURE,
-		Menu.MUSICALIZATION
-	)
 	return (
 		<HeaderContainer>
 			<HeaderTitleContainer>
