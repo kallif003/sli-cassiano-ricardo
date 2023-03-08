@@ -3,12 +3,12 @@ import React, { useEffect } from "react"
 import TeachersArea from "../../components/organisms/TeachersArea"
 import Footer from "../../components/molecules/Footer"
 import { NextPage } from "next"
-import useAuth from "@/hooks/useAuth"
-import Header from "@/components/molecules/Header"
+import useAuth from "../../hooks/useAuth"
+import Header from "../../components/molecules/Header"
 import { PagesContainer } from "../../components/atoms"
-import { RoomOf } from "@/utils/enum"
+import { RoomOf } from "../../utils/enum"
 
-const Musicalizacao: NextPage = () => {
+const Literatura: NextPage = () => {
 	const { AuthStateChanged } = useAuth()
 
 	useEffect(() => {
@@ -16,26 +16,28 @@ const Musicalizacao: NextPage = () => {
 	}, [])
 
 	return (
-		<PagesContainer background="/musicalization.png">
+		<PagesContainer background="/literature.png">
 			<Head>
-				<title>{RoomOf.MUSICALIZATION}</title>
+				<title>{RoomOf.LITERATURE}</title>
 				<link rel="icon" href="/logo.ico" />
 			</Head>
 			<Header />
 			<TeachersArea
-				lesson={RoomOf.MUSICALIZATION}
-				afternoonTeacher={
-					process.env.NEXT_PUBLIC_AFERTERNOON_MUSIC_TEACHER
+				lesson={RoomOf.LITERATURE}
+				morningTeacher={
+					process.env.NEXT_PUBLIC_MORNING_LITERATURE_TEACHER
 				}
-				morningTeacher={process.env.NEXT_PUBLIC_MORNING_MUSIC_TEACHER}
+				afternoonTeacher={
+					process.env.NEXT_PUBLIC_AFERTERNOON_LITERATURE_TEACHER
+				}
 				pathProject=""
 				pathRepository=""
 				morningTeacherUid=""
 				afternoonTeacherUid=""
-				nameButton="REPERTÓRIO"
-				nameIcon="music"
-				morningTeacherImage="/profMusica1.png"
-				afternoonTeacherImage="/profMusica2.png"
+				nameButton="JORNAL"
+				nameIcon="read"
+				morningTeacherImage="/profLiteratura1.png"
+				afternoonTeacherImage="/profLiteratura2.png"
 			/>
 			<div className="text-center mb-14 sm:mt-[-2rem] h-8">
 				<Footer />
@@ -44,4 +46,4 @@ const Musicalizacao: NextPage = () => {
 	)
 }
 
-export default Musicalizacao
+export default Literatura

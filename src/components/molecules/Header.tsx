@@ -10,6 +10,7 @@ import {
 	Paragraph,
 	MobileContainer,
 } from "../atoms"
+import { Menu } from "../../utils/enum"
 
 const Header = () => {
 	const [id, setId] = useState("")
@@ -22,27 +23,35 @@ const Header = () => {
 	}
 
 	const buttons = [
-		{ id: "inicio", button: "INICIO" },
-		{ id: "musicalizacao", button: "MUSICALIZAÇÃO" },
-		{ id: "literatura", button: "LITERATURA" },
-		{ id: "sair", button: "SAIR" },
+		{ id: Menu.START, button: Menu.START },
+		{ id: Menu.MUSICALIZATION, button: Menu.MUSICALIZATION },
+		{ id: Menu.LITERATURE, button: Menu.LITERATURE },
+		{ id: Menu.EXIT, button: Menu.EXIT },
 	]
 
 	const handleButton = async (idBtn: string) => {
 		setId(idBtn)
 
-		if (idBtn === "sair") {
+		if (idBtn === Menu.EXIT) {
 			await logout()
 		}
-
-		if (idBtn === "inicio") {
+		if (idBtn === Menu.START) {
 			router.push("/Home")
 		}
-
-		if (idBtn === "musicalizacao") {
+		if (idBtn === Menu.MUSICALIZATION) {
 			router.push("/Musicalizacao")
 		}
+		if (idBtn === Menu.LITERATURE) {
+			router.push("/Literatura")
+		}
 	}
+
+	console.log(
+		Menu.EXIT,
+		Menu.START,
+		Menu.LITERATURE,
+		Menu.MUSICALIZATION
+	)
 	return (
 		<HeaderContainer>
 			<HeaderTitleContainer>
