@@ -18,6 +18,7 @@ import {
 	ImageContainer,
 	TeacherInfoContainer,
 	MusicalizationGrid,
+	RepertoireContainer,
 } from "./Containers"
 
 import { Input } from "./Inputs"
@@ -53,4 +54,5 @@ export {
 	ImageContainer,
 	TeacherInfoContainer,
 	MusicalizationGrid,
+	RepertoireContainer,
 }

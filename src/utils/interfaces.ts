@@ -28,3 +28,14 @@ export interface AuthContextType {
 export interface FirebaseContextType {
 	firebase: any
 }
+
+export interface IRepertoires {
+	lyrics: string
+	slug: string
+	video: string
+	title: string
+}
+
+export interface IRepertoire {
+	repertoire: IRepertoires[]
+}

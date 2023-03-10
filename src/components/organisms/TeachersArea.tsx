@@ -13,6 +13,7 @@ import {
 	MusicalizationGrid,
 } from "../atoms"
 import Icon from "@mdi/react"
+import { useRouter } from "next/router"
 import {
 	mdiBookOpenPageVariant,
 	mdiMusic,
@@ -48,6 +49,7 @@ const TeachersArea = ({
 	nameIcon,
 	morningTeacherImage,
 	afternoonTeacherImage,
+	pathRepository,
 }: ITeachers) => {
 	const rows: IText[] = [
 		{
@@ -63,6 +65,8 @@ const TeachersArea = ({
 			paragraph: "REPERTÓRIO E O PROJETO",
 		},
 	]
+
+	const router = useRouter()
 
 	return (
 		<MusicalizationGrid>
@@ -112,7 +116,7 @@ const TeachersArea = ({
 							/>
 							<h1 className="ml-1 mt-1 text-[0.75rem]">PROJETO</h1>
 						</MusicButton>
-						<ReadButton>
+						<ReadButton onClick={() => router.push(pathRepository)}>
 							<Icon
 								path={
 									nameIcon === "music"

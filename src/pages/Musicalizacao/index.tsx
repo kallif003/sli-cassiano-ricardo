@@ -29,7 +29,7 @@ const Musicalizacao: NextPage = () => {
 				}
 				morningTeacher={process.env.NEXT_PUBLIC_MORNING_MUSIC_TEACHER}
 				pathProject=""
-				pathRepository=""
+				pathRepository="/Repertorio"
 				morningTeacherUid=""
 				afternoonTeacherUid=""
 				nameButton="REPERTÓRIO"
