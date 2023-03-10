@@ -12,7 +12,7 @@ const Homepage: NextPage = () => {
 
 	useEffect(() => {
 		AuthStateChanged
-	}, [])
+	}, [AuthStateChanged])
 
 	return (
 		<PagesContainer background="/wallpaper.png">
