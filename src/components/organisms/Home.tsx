@@ -53,6 +53,7 @@ const rows: IText[] = [
 		paragraph: "jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj",
 	},
 ]
+
 for (let i = 0; i < 12; i++) {
 	sheetHoles.push(
 		<div className="bg-[#fff]  rounded-full h-4 w-4"></div>

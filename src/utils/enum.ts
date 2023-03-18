@@ -17,4 +17,6 @@ export enum Route {
 	LITERATURE = "/Literatura",
 	LOGIN = "/Login",
 	HOME = "/Home",
+	REPERTOIRE = "/Repertorio",
+	NEWSPAPER = "/Jornal-Cassianinho",
 }

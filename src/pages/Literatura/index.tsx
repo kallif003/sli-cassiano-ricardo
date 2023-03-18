@@ -1,19 +1,24 @@
+/* eslint-disable new-cap */
 import Head from "next/head"
 import React, { useEffect } from "react"
 import TeachersArea from "../../components/organisms/TeachersArea"
 import Footer from "../../components/molecules/Footer"
-import { NextPage } from "next"
 import useAuth from "../../hooks/useAuth"
 import Header from "../../components/molecules/Header"
 import { PagesContainer } from "../../components/atoms"
-import { RoomOf } from "../../utils/enum"
+import { RoomOf, Route } from "../../utils/enum"
+import { createClient } from "../../../prismicio"
+import { Teachers } from "@/utils/interfaces"
 
-const Literatura: NextPage = () => {
+const Literatura = ({
+	MormingTeacher,
+	AfternoonTeacher,
+}: Teachers) => {
 	const { AuthStateChanged } = useAuth()
 
 	useEffect(() => {
-		AuthStateChanged
-	}, [])
+		AuthStateChanged()
+	}, [AuthStateChanged])
 
 	return (
 		<PagesContainer background="/literature.png">
@@ -24,20 +29,12 @@ const Literatura: NextPage = () => {
 			<Header />
 			<TeachersArea
 				lesson={RoomOf.LITERATURE}
-				morningTeacher={
-					process.env.NEXT_PUBLIC_MORNING_LITERATURE_TEACHER
-				}
-				afternoonTeacher={
-					process.env.NEXT_PUBLIC_AFERTERNOON_LITERATURE_TEACHER
-				}
 				pathProject=""
-				pathRepository=""
-				morningTeacherUid=""
-				afternoonTeacherUid=""
+				pathRepository={Route.NEWSPAPER}
 				nameButton="JORNAL"
 				nameIcon="read"
-				morningTeacherImage="/profLiteratura1.png"
-				afternoonTeacherImage="/profLiteratura2.png"
+				MorningTeacher={MormingTeacher}
+				AfternoonTeacher={AfternoonTeacher}
 			/>
 			<div className="text-center mb-14 sm:mt-[-2rem] h-8">
 				<Footer />
@@ -47,3 +44,38 @@ const Literatura: NextPage = () => {
 }
 
 export default Literatura
+
+export async function getStaticProps() {
+	const client = createClient()
+
+	const morningTeacher = await client.getAllByType(
+		"morning_literature_teacher",
+		{}
+	)
+
+	const afternoonTeacher = await client.getAllByType(
+		"afternoon_literature_teacher",
+		{}
+	)
+
+	const AfternoonTeacher = afternoonTeacher.map((e: any) => ({
+		slug: e.uid,
+		teacherName: e.data.teacher_name,
+		teacherImg: e.data.teacher_img.url,
+		alt: e.data.teacher_img.alt,
+	}))
+
+	const MormingTeacher = morningTeacher.map((e: any) => ({
+		slug: e.uid,
+		teacherName: e.data.teacher_name,
+		teacherImg: e.data.teacher_img.url,
+		alt: e.data.teacher_img.alt,
+	}))
+
+	return {
+		props: {
+			MormingTeacher,
+			AfternoonTeacher,
+		},
+	}
+}

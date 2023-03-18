@@ -6,6 +6,265 @@ import type * as prismic from "@prismicio/client"
 type Simplify<T> = {
 	[KeyType in keyof T]: T[KeyType]
 }
+/** Content for perfil professora literatura tarde documents */
+interface AfternoonLiteratureTeacherDocumentData {
+	/**
+	 * foto_professora field in *perfil professora literatura tarde*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: afternoon_literature_teacher.teacher_img
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	teacher_img: prismicT.ImageField<never>
+	/**
+	 * nome_professora field in *perfil professora literatura tarde*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: afternoon_literature_teacher.teacher_name
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	teacher_name: prismicT.KeyTextField
+}
+/**
+ * perfil professora literatura tarde document from Prismic
+ *
+ * - **API ID**: `afternoon_literature_teacher`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AfternoonLiteratureTeacherDocument<
+	Lang extends string = string
+> = prismicT.PrismicDocumentWithUID<
+	Simplify<AfternoonLiteratureTeacherDocumentData>,
+	"afternoon_literature_teacher",
+	Lang
+>
+/** Content for perfil professora musica tarde documents */
+interface AfternoonMusicTeacherProfileDocumentData {
+	/**
+	 * foto_professora field in *perfil professora musica tarde*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: afternoon_music_teacher_profile.teacher_img
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	teacher_img: prismicT.ImageField<never>
+	/**
+	 * nome_professora field in *perfil professora musica tarde*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: afternoon_music_teacher_profile.teacher_name
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	teacher_name: prismicT.KeyTextField
+}
+/**
+ * perfil professora musica tarde document from Prismic
+ *
+ * - **API ID**: `afternoon_music_teacher_profile`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AfternoonMusicTeacherProfileDocument<
+	Lang extends string = string
+> = prismicT.PrismicDocumentWithUID<
+	Simplify<AfternoonMusicTeacherProfileDocumentData>,
+	"afternoon_music_teacher_profile",
+	Lang
+>
+/** Content for perfil professora literatura manhã documents */
+interface MorningLiteratureTeacherDocumentData {
+	/**
+	 * foto_professora field in *perfil professora literatura manhã*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: morning_literature_teacher.teacher_img
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	teacher_img: prismicT.ImageField<never>
+	/**
+	 * nome_professora field in *perfil professora literatura manhã*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: morning_literature_teacher.teacher_name
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	teacher_name: prismicT.KeyTextField
+}
+/**
+ * perfil professora literatura manhã document from Prismic
+ *
+ * - **API ID**: `morning_literature_teacher`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type MorningLiteratureTeacherDocument<
+	Lang extends string = string
+> = prismicT.PrismicDocumentWithUID<
+	Simplify<MorningLiteratureTeacherDocumentData>,
+	"morning_literature_teacher",
+	Lang
+>
+/** Content for perfil professora musica manhã documents */
+interface MorningMusicTeacherProfileDocumentData {
+	/**
+	 * foto_professora field in *perfil professora musica manhã*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: morning_music_teacher_profile.teacher_img
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	teacher_img: prismicT.ImageField<never>
+	/**
+	 * nome_professora field in *perfil professora musica manhã*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: morning_music_teacher_profile.teacher_name
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	teacher_name: prismicT.KeyTextField
+}
+/**
+ * perfil professora musica manhã document from Prismic
+ *
+ * - **API ID**: `morning_music_teacher_profile`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type MorningMusicTeacherProfileDocument<
+	Lang extends string = string
+> = prismicT.PrismicDocumentWithUID<
+	Simplify<MorningMusicTeacherProfileDocumentData>,
+	"morning_music_teacher_profile",
+	Lang
+>
+/** Content for jornal Cassianinho documents */
+interface NewspaperDocumentData {
+	/**
+	 * introdução field in *jornal Cassianinho*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newspaper.introdution
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	introdution: prismicT.RichTextField
+	/**
+	 * primeiro_titulo_pagina_um field in *jornal Cassianinho*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newspaper.first_title_page_one
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	first_title_page_one: prismicT.KeyTextField
+	/**
+	 * primeiro_texto_pagina_um field in *jornal Cassianinho*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newspaper.first_text_page_one
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	first_text_page_one: prismicT.RichTextField
+	/**
+	 * primeira_imagem_pagina_um field in *jornal Cassianinho*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newspaper.first_img_page_one
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	first_img_page_one: prismicT.ImageField<never>
+	/**
+	 * segundo_titulo_pagina_um field in *jornal Cassianinho*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newspaper.second_title_page_one
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	second_title_page_one: prismicT.KeyTextField
+	/**
+	 * segundo_texto_pagina_um field in *jornal Cassianinho*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newspaper.second_text_page_one
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	second_text_page_one: prismicT.RichTextField
+	/**
+	 * segunda_imagem_pagina_um field in *jornal Cassianinho*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newspaper.second_img_page_one
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	second_img_page_one: prismicT.ImageField<never>
+}
+/**
+ * jornal Cassianinho document from Prismic
+ *
+ * - **API ID**: `newspaper`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NewspaperDocument<Lang extends string = string> =
+	prismicT.PrismicDocumentWithUID<
+		Simplify<NewspaperDocumentData>,
+		"newspaper",
+		Lang
+	>
 /** Content for repertorio-musical documents */
 interface RepertoireDocumentData {
 	/**
@@ -57,7 +316,13 @@ export type RepertoireDocument<Lang extends string = string> =
 		"repertoire",
 		Lang
 	>
-export type AllDocumentTypes = RepertoireDocument
+export type AllDocumentTypes =
+	| AfternoonLiteratureTeacherDocument
+	| AfternoonMusicTeacherProfileDocument
+	| MorningLiteratureTeacherDocument
+	| MorningMusicTeacherProfileDocument
+	| NewspaperDocument
+	| RepertoireDocument
 declare module "@prismicio/client" {
 	interface CreateClient {
 		(
@@ -67,6 +332,16 @@ declare module "@prismicio/client" {
 	}
 	namespace Content {
 		export type {
+			AfternoonLiteratureTeacherDocumentData,
+			AfternoonLiteratureTeacherDocument,
+			AfternoonMusicTeacherProfileDocumentData,
+			AfternoonMusicTeacherProfileDocument,
+			MorningLiteratureTeacherDocumentData,
+			MorningLiteratureTeacherDocument,
+			MorningMusicTeacherProfileDocumentData,
+			MorningMusicTeacherProfileDocument,
+			NewspaperDocumentData,
+			NewspaperDocument,
 			RepertoireDocumentData,
 			RepertoireDocument,
 			AllDocumentTypes,

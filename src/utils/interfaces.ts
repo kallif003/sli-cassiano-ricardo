@@ -39,3 +39,15 @@ export interface IRepertoires {
 export interface IRepertoire {
 	repertoire: IRepertoires[]
 }
+
+export interface Iteachers {
+	slug: string
+	teacherImg: string
+	teacherName: string
+	alt: string
+}
+
+export interface Teachers {
+	MormingTeacher: Iteachers[]
+	AfternoonTeacher: Iteachers[]
+}

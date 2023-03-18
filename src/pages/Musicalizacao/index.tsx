@@ -1,19 +1,24 @@
+/* eslint-disable new-cap */
 import Head from "next/head"
 import React, { useEffect } from "react"
 import TeachersArea from "../../components/organisms/TeachersArea"
 import Footer from "../../components/molecules/Footer"
-import { NextPage } from "next"
 import useAuth from "@/hooks/useAuth"
 import Header from "@/components/molecules/Header"
 import { PagesContainer } from "../../components/atoms"
-import { RoomOf } from "@/utils/enum"
+import { RoomOf, Route } from "@/utils/enum"
+import { createClient } from "../../../prismicio"
+import { Teachers } from "@/utils/interfaces"
 
-const Musicalizacao: NextPage = () => {
+const Musicalizacao = ({
+	MormingTeacher,
+	AfternoonTeacher,
+}: Teachers) => {
 	const { AuthStateChanged } = useAuth()
 
 	useEffect(() => {
-		AuthStateChanged
-	}, [])
+		AuthStateChanged()
+	}, [AuthStateChanged])
 
 	return (
 		<PagesContainer background="/musicalization.png">
@@ -24,18 +29,12 @@ const Musicalizacao: NextPage = () => {
 			<Header />
 			<TeachersArea
 				lesson={RoomOf.MUSICALIZATION}
-				afternoonTeacher={
-					process.env.NEXT_PUBLIC_AFERTERNOON_MUSIC_TEACHER
-				}
-				morningTeacher={process.env.NEXT_PUBLIC_MORNING_MUSIC_TEACHER}
 				pathProject=""
-				pathRepository="/Repertorio"
-				morningTeacherUid=""
-				afternoonTeacherUid=""
+				pathRepository={Route.REPERTOIRE}
 				nameButton="REPERTÓRIO"
 				nameIcon="music"
-				morningTeacherImage="/profMusica1.png"
-				afternoonTeacherImage="/profMusica2.png"
+				MorningTeacher={MormingTeacher}
+				AfternoonTeacher={AfternoonTeacher}
 			/>
 			<div className="text-center mb-14 sm:mt-[-2rem] h-8">
 				<Footer />
@@ -45,3 +44,38 @@ const Musicalizacao: NextPage = () => {
 }
 
 export default Musicalizacao
+
+export async function getStaticProps() {
+	const client = createClient()
+
+	const morningTeacher = await client.getAllByType(
+		"morning_music_teacher_profile",
+		{}
+	)
+
+	const afternoonTeacher = await client.getAllByType(
+		"afternoon_music_teacher_profile",
+		{}
+	)
+
+	const AfternoonTeacher = afternoonTeacher.map((e: any) => ({
+		slug: e.uid,
+		teacherName: e.data.teacher_name,
+		teacherImg: e.data.teacher_img.url,
+		alt: e.data.teacher_img.alt,
+	}))
+
+	const MormingTeacher = morningTeacher.map((e: any) => ({
+		slug: e.uid,
+		teacherName: e.data.teacher_name,
+		teacherImg: e.data.teacher_img.url,
+		alt: e.data.teacher_img.alt,
+	}))
+
+	return {
+		props: {
+			MormingTeacher,
+			AfternoonTeacher,
+		},
+	}
+}

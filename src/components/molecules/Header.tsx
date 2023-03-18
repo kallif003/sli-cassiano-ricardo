@@ -50,7 +50,7 @@ const Header = () => {
 		<HeaderContainer>
 			<HeaderTitleContainer>
 				<Paragraph weight={600} size={1}>
-					SALA DE LEITURA INTERATIVA
+					SALA DE LEITURA INFANTIL
 				</Paragraph>
 			</HeaderTitleContainer>
 

@@ -1,5 +1,10 @@
 {
 	"_cts": {
-		"repertoire": {}
+		"repertoire": {},
+		"morning_music_teacher_profile": {},
+		"afternoon_music_teacher_profile": {},
+		"morning_literature_teacher": {},
+		"afternoon_literature_teacher": {},
+		"newspaper": {}
 	}
 }

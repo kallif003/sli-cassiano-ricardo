@@ -3,14 +3,14 @@ import {
 	H1,
 	MusicalizationContainer,
 	MusicButton,
-	GeneralContainer,
+	ProjectContainer,
 	ReadButton,
-	GeneralContainer2,
+	ProfileTeacherContainer,
 	TeacherContainer,
 	ImageContainer,
 	H2,
 	TeacherInfoContainer,
-	MusicalizationGrid,
+	TeachersGrid,
 } from "../atoms"
 import Icon from "@mdi/react"
 import { useRouter } from "next/router"
@@ -21,36 +21,31 @@ import {
 	mdiNewspaperVariantOutline,
 	mdiPostOutline,
 } from "@mdi/js"
+import { Iteachers } from "@/utils/interfaces"
 
 interface IText {
 	id: string
 	paragraph: string
 }
 
-interface ITeachers {
+interface ITeachersArea {
 	lesson: string
-	afternoonTeacher: string | undefined
-	morningTeacher: string | undefined
 	pathProject: string
 	pathRepository: string
-	morningTeacherUid: string
-	afternoonTeacherUid: string
 	nameButton: string
 	nameIcon: string
-	morningTeacherImage: string
-	afternoonTeacherImage: string
+	MorningTeacher: Iteachers[]
+	AfternoonTeacher: Iteachers[]
 }
 
 const TeachersArea = ({
 	lesson,
-	afternoonTeacher,
-	morningTeacher,
 	nameButton,
 	nameIcon,
-	morningTeacherImage,
-	afternoonTeacherImage,
 	pathRepository,
-}: ITeachers) => {
+	MorningTeacher,
+	AfternoonTeacher,
+}: ITeachersArea) => {
 	const rows: IText[] = [
 		{
 			id: "1",
@@ -69,8 +64,8 @@ const TeachersArea = ({
 	const router = useRouter()
 
 	return (
-		<MusicalizationGrid>
-			<GeneralContainer>
+		<TeachersGrid>
+			<ProjectContainer>
 				<MusicalizationContainer>
 					<div className="px-2 py-1 ">
 						<Icon
@@ -132,20 +127,22 @@ const TeachersArea = ({
 						</ReadButton>
 					</div>
 				</MusicalizationContainer>
-			</GeneralContainer>
+			</ProjectContainer>
 
-			<GeneralContainer2>
+			<ProfileTeacherContainer>
 				<TeacherContainer>
 					<div className="flex justify-between pl-2 ml-14 sm:ml-0 sm:flex-col sm:items-center">
 						<ImageContainer
-							src={morningTeacherImage}
-							alt="professora"
+							src={MorningTeacher[0].teacherImg}
+							alt={MorningTeacher[0].alt}
 							width={1200}
 							height={1600}
 							className="mt-3 bg-[#48D2B0]"
 						/>
 						<TeacherInfoContainer>
-							<H1 size={1}>PROFESSORA {morningTeacher}</H1>
+							<H1 size={1}>
+								PROFESSORA {MorningTeacher[0].teacherName}
+							</H1>
 							<H2 size={1}>MANHÃ</H2>
 							<MusicButton className="mt-2">
 								<Icon
@@ -164,7 +161,9 @@ const TeachersArea = ({
 
 					<div className="flex justify-between pr-2 mr-14 sm:mr-0 sm:flex-col-reverse sm:items-center">
 						<TeacherInfoContainer>
-							<H1 size={1}>PROFESSORA {afternoonTeacher}</H1>
+							<H1 size={1}>
+								PROFESSORA {AfternoonTeacher[0].teacherName}
+							</H1>
 							<H2 size={1}>TARDE</H2>
 							<ReadButton className="mt-2">
 								<Icon
@@ -179,16 +178,16 @@ const TeachersArea = ({
 						</TeacherInfoContainer>
 
 						<ImageContainer
-							src={afternoonTeacherImage}
-							alt="professora"
+							src={AfternoonTeacher[0].teacherImg}
+							alt={AfternoonTeacher[0].alt}
 							width={1800}
 							height={1800}
 							className="mt-3 sm:mb-2 bg-[#9B58B5]"
 						/>
 					</div>
 				</TeacherContainer>
-			</GeneralContainer2>
-		</MusicalizationGrid>
+			</ProfileTeacherContainer>
+		</TeachersGrid>
 	)
 }
 

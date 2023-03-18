@@ -1,12 +1,20 @@
+/* eslint-disable new-cap */
 import Head from "next/head"
-import React from "react"
+import React, { useEffect } from "react"
 import { PagesContainer } from "@/components/atoms"
 import Header from "@/components/molecules/Header"
 import Repertoire from "@/components/molecules/Repertoire"
 import { createClient } from "../../../prismicio"
 import { IRepertoire } from "@/utils/interfaces"
+import useAuth from "@/hooks/useAuth"
 
 const RepertoirePage = ({ repertoire }: IRepertoire) => {
+	const { AuthStateChanged } = useAuth()
+
+	useEffect(() => {
+		AuthStateChanged()
+	}, [AuthStateChanged])
+
 	return (
 		<PagesContainer background="/musicalization.png">
 			<Head>
