@@ -1,3 +1,4 @@
+/* eslint-disable new-cap */
 import Head from "next/head"
 import React, { useEffect } from "react"
 import Home from "../../components/organisms/Home"
@@ -11,7 +12,7 @@ const Homepage: NextPage = () => {
 	const { AuthStateChanged } = useAuth()
 
 	useEffect(() => {
-		AuthStateChanged
+		AuthStateChanged()
 	}, [AuthStateChanged])
 
 	return (
@@ -22,7 +23,7 @@ const Homepage: NextPage = () => {
 			</Head>
 			<Header />
 			<Home />
-			<div className="text-center mb-2 mt-8 h-8">
+			<div className="text-center mb-2 mt-5 h-8">
 				<Footer />
 			</div>
 		</PagesContainer>

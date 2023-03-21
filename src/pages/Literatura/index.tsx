@@ -11,8 +11,8 @@ import { createClient } from "../../../prismicio"
 import { Teachers } from "@/utils/interfaces"
 
 const Literatura = ({
-	MormingTeacher,
-	AfternoonTeacher,
+	mormingTeacher,
+	afternoonTeacher,
 }: Teachers) => {
 	const { AuthStateChanged } = useAuth()
 
@@ -33,10 +33,10 @@ const Literatura = ({
 				pathRepository={Route.NEWSPAPER}
 				nameButton="JORNAL"
 				nameIcon="read"
-				MorningTeacher={MormingTeacher}
-				AfternoonTeacher={AfternoonTeacher}
+				morningTeacher={mormingTeacher}
+				afternoonTeacher={afternoonTeacher}
 			/>
-			<div className="text-center mb-14 sm:mt-[-2rem] h-8">
+			<div className="text-center mb-14 xl:mt-2 mt-[-2rem]  h-20 xl:h-8">
 				<Footer />
 			</div>
 		</PagesContainer>
@@ -48,24 +48,24 @@ export default Literatura
 export async function getStaticProps() {
 	const client = createClient()
 
-	const morningTeacher = await client.getAllByType(
+	const dataMorningTeacher = await client.getAllByType(
 		"morning_literature_teacher",
 		{}
 	)
 
-	const afternoonTeacher = await client.getAllByType(
+	const dataAfternoonTeacher = await client.getAllByType(
 		"afternoon_literature_teacher",
 		{}
 	)
 
-	const AfternoonTeacher = afternoonTeacher.map((e: any) => ({
+	const mormingTeacher = dataMorningTeacher.map((e: any) => ({
 		slug: e.uid,
 		teacherName: e.data.teacher_name,
 		teacherImg: e.data.teacher_img.url,
 		alt: e.data.teacher_img.alt,
 	}))
 
-	const MormingTeacher = morningTeacher.map((e: any) => ({
+	const afternoonTeacher = dataAfternoonTeacher.map((e: any) => ({
 		slug: e.uid,
 		teacherName: e.data.teacher_name,
 		teacherImg: e.data.teacher_img.url,
@@ -74,8 +74,8 @@ export async function getStaticProps() {
 
 	return {
 		props: {
-			MormingTeacher,
-			AfternoonTeacher,
+			mormingTeacher,
+			afternoonTeacher,
 		},
 	}
 }

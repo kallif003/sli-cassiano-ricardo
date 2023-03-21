@@ -21,30 +21,15 @@ import {
 	mdiNewspaperVariantOutline,
 	mdiPostOutline,
 } from "@mdi/js"
-import { Iteachers } from "@/utils/interfaces"
-
-interface IText {
-	id: string
-	paragraph: string
-}
-
-interface ITeachersArea {
-	lesson: string
-	pathProject: string
-	pathRepository: string
-	nameButton: string
-	nameIcon: string
-	MorningTeacher: Iteachers[]
-	AfternoonTeacher: Iteachers[]
-}
+import { ITeachersArea, IText } from "@/utils/interfaces"
 
 const TeachersArea = ({
 	lesson,
 	nameButton,
 	nameIcon,
 	pathRepository,
-	MorningTeacher,
-	AfternoonTeacher,
+	morningTeacher,
+	afternoonTeacher,
 }: ITeachersArea) => {
 	const rows: IText[] = [
 		{
@@ -133,15 +118,15 @@ const TeachersArea = ({
 				<TeacherContainer>
 					<div className="flex justify-between pl-2 ml-14 sm:ml-0 sm:flex-col sm:items-center">
 						<ImageContainer
-							src={MorningTeacher[0].teacherImg}
-							alt={MorningTeacher[0].alt}
-							width={1200}
-							height={1600}
+							src={morningTeacher[0].teacherImg}
+							alt={morningTeacher[0].alt}
+							width={1800}
+							height={1800}
 							className="mt-3 bg-[#48D2B0]"
 						/>
 						<TeacherInfoContainer>
 							<H1 size={1}>
-								PROFESSORA {MorningTeacher[0].teacherName}
+								PROFESSORA {morningTeacher[0].teacherName}
 							</H1>
 							<H2 size={1}>MANHÃ</H2>
 							<MusicButton className="mt-2">
@@ -162,7 +147,7 @@ const TeachersArea = ({
 					<div className="flex justify-between pr-2 mr-14 sm:mr-0 sm:flex-col-reverse sm:items-center">
 						<TeacherInfoContainer>
 							<H1 size={1}>
-								PROFESSORA {AfternoonTeacher[0].teacherName}
+								PROFESSORA {afternoonTeacher[0].teacherName}
 							</H1>
 							<H2 size={1}>TARDE</H2>
 							<ReadButton className="mt-2">
@@ -178,8 +163,8 @@ const TeachersArea = ({
 						</TeacherInfoContainer>
 
 						<ImageContainer
-							src={AfternoonTeacher[0].teacherImg}
-							alt={AfternoonTeacher[0].alt}
+							src={afternoonTeacher[0].teacherImg}
+							alt={afternoonTeacher[0].alt}
 							width={1800}
 							height={1800}
 							className="mt-3 sm:mb-2 bg-[#9B58B5]"

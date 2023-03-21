@@ -249,6 +249,94 @@ interface NewspaperDocumentData {
 	 *
 	 */
 	second_img_page_one: prismicT.ImageField<never>
+	/**
+	 * primeiro_titulo_pagina_dois field in *jornal Cassianinho*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newspaper.first_title_page_two
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	first_title_page_two: prismicT.KeyTextField
+	/**
+	 * primeiro_texto_pagina_dois field in *jornal Cassianinho*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newspaper.first_text_page_two
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	first_text_page_two: prismicT.RichTextField
+	/**
+	 * primeira_imagem_pagina_dois field in *jornal Cassianinho*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newspaper.first_img_page_two
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	first_img_page_two: prismicT.ImageField<never>
+	/**
+	 * segundo_titulo_pagina_dois field in *jornal Cassianinho*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newspaper.second_title_page_two
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	second_title_page_two: prismicT.KeyTextField
+	/**
+	 * segundo_texto_pagina_dois field in *jornal Cassianinho*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newspaper.second_text_page_two
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	second_text_page_two: prismicT.RichTextField
+	/**
+	 * segunda_imagem_pagina_dois field in *jornal Cassianinho*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newspaper.second_img_page_two
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	second_img_page_two: prismicT.ImageField<never>
+	/**
+	 * edição field in *jornal Cassianinho*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newspaper.edition
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	edition: prismicT.RichTextField
+	/**
+	 * responsaveis field in *jornal Cassianinho*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newspaper.responsible
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	responsible: prismicT.RichTextField
 }
 /**
  * jornal Cassianinho document from Prismic

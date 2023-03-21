@@ -65,7 +65,7 @@ const Home = () => {
 
 	return (
 		<>
-			<div className="flex justify-center items-center xl:h-[40rem] mt-6 h-[36rem] sm:mx-auto">
+			<div className="flex justify-center items-center xl:h-[40rem] mt-2 h-[36rem] sm:mx-auto">
 				<AboutProjectContainer>
 					<SheetHolesContainer>{sheetHoles}</SheetHolesContainer>
 					<div className="py-3 px-8 w-full sm:w-[22rem] ">

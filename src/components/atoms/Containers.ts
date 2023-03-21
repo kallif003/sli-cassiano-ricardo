@@ -299,6 +299,9 @@ export const NewspaperContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+	@media (max-width: 800px) {
+		margin-top: 1rem;
+	}
 `
 
 export const NewspaperArticleContainer = styled.div`
@@ -307,6 +310,9 @@ export const NewspaperArticleContainer = styled.div`
 	grid-template-rows: 1fr;
 	grid-gap: 2rem;
 	margin: 2rem 0;
+	@media (max-width: 800px) {
+		grid-template-columns: 100%;
+	}
 `
 
 // #FF8343

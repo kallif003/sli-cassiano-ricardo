@@ -68,6 +68,72 @@
 					"constraint": {},
 					"thumbnails": []
 				}
+			},
+			"first_title_page_two": {
+				"type": "Text",
+				"config": {
+					"label": "primeiro_titulo_pagina_dois",
+					"placeholder": ""
+				}
+			},
+			"first_text_page_two": {
+				"type": "StructuredText",
+				"config": {
+					"label": "primeiro_texto_pagina_dois",
+					"placeholder": "",
+					"allowTargetBlank": true,
+					"single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+				}
+			},
+			"first_img_page_two": {
+				"type": "Image",
+				"config": {
+					"label": "primeira_imagem_pagina_dois",
+					"constraint": {},
+					"thumbnails": []
+				}
+			},
+			"second_title_page_two": {
+				"type": "Text",
+				"config": {
+					"label": "segundo_titulo_pagina_dois",
+					"placeholder": ""
+				}
+			},
+			"second_text_page_two": {
+				"type": "StructuredText",
+				"config": {
+					"label": "segundo_texto_pagina_dois",
+					"placeholder": "",
+					"allowTargetBlank": true,
+					"single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+				}
+			},
+			"second_img_page_two": {
+				"type": "Image",
+				"config": {
+					"label": "segunda_imagem_pagina_dois",
+					"constraint": {},
+					"thumbnails": []
+				}
+			},
+			"edition": {
+				"type": "StructuredText",
+				"config": {
+					"label": "edição",
+					"placeholder": "",
+					"allowTargetBlank": true,
+					"single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+				}
+			},
+			"responsible": {
+				"type": "StructuredText",
+				"config": {
+					"label": "responsaveis",
+					"placeholder": "",
+					"allowTargetBlank": true,
+					"single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+				}
 			}
 		}
 	}

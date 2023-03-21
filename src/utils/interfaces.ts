@@ -48,6 +48,48 @@ export interface Iteachers {
 }
 
 export interface Teachers {
-	MormingTeacher: Iteachers[]
-	AfternoonTeacher: Iteachers[]
+	mormingTeacher: Iteachers[]
+	afternoonTeacher: Iteachers[]
+}
+
+export interface IText {
+	id: string
+	paragraph: string
+}
+
+export interface ITeachersArea {
+	lesson: string
+	pathProject: string
+	pathRepository: string
+	nameButton: string
+	nameIcon: string
+	morningTeacher: Iteachers[]
+	afternoonTeacher: Iteachers[]
+}
+
+export interface INewspaper {
+	slug: string
+	introdution: string
+	first_title_page_one: string
+	first_text_page_one: string
+	first_img_page_one: string
+	alt_first_img_page_one: string
+	second_title_page_one: string
+	second_text_page_one: string
+	second_img_page_one: string
+	alt_second_img_page_one: string
+	first_title_page_two: string
+	first_text_page_two: string
+	first_img_page_two: string
+	alt_first_img_page_two: string
+	second_title_page_two: string
+	second_text_page_two: string
+	second_img_page_two: string
+	alt_second_img_page_two: string
+	edition: string
+	responsible: string
+}
+
+export interface INews {
+	news: INewspaper[]
 }
