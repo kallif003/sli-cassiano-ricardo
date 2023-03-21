@@ -10,6 +10,7 @@ import {
 	Paragraph,
 	MobileContainer,
 } from "../atoms"
+import { Menu, Route } from "../../utils/enum"
 
 const Header = () => {
 	const [id, setId] = useState("")
@@ -22,32 +23,34 @@ const Header = () => {
 	}
 
 	const buttons = [
-		{ id: "inicio", button: "INICIO" },
-		{ id: "musicalizacao", button: "MUSICALIZAÇÃO" },
-		{ id: "literatura", button: "LITERATURA" },
-		{ id: "sair", button: "SAIR" },
+		{ id: Menu.START, button: Menu.START },
+		{ id: Menu.MUSICALIZATION, button: Menu.MUSICALIZATION },
+		{ id: Menu.LITERATURE, button: Menu.LITERATURE },
+		{ id: Menu.EXIT, button: Menu.EXIT },
 	]
 
 	const handleButton = async (idBtn: string) => {
 		setId(idBtn)
 
-		if (idBtn === "sair") {
+		if (idBtn === Menu.EXIT) {
 			await logout()
 		}
-
-		if (idBtn === "inicio") {
-			router.push("/Home")
+		if (idBtn === Menu.START) {
+			router.push(Route.HOME)
 		}
-
-		if (idBtn === "musicalizacao") {
-			router.push("/Musicalizacao")
+		if (idBtn === Menu.MUSICALIZATION) {
+			router.push(Route.MUSICALIZATION)
+		}
+		if (idBtn === Menu.LITERATURE) {
+			router.push(Route.LITERATURE)
 		}
 	}
+
 	return (
 		<HeaderContainer>
 			<HeaderTitleContainer>
 				<Paragraph weight={600} size={1}>
-					SALA DE LEITURA INTERATIVA
+					SALA DE LEITURA INFANTIL
 				</Paragraph>
 			</HeaderTitleContainer>
 

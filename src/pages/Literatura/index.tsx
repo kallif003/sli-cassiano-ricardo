@@ -3,14 +3,14 @@ import Head from "next/head"
 import React, { useEffect } from "react"
 import TeachersArea from "../../components/organisms/TeachersArea"
 import Footer from "../../components/molecules/Footer"
-import useAuth from "@/hooks/useAuth"
-import Header from "@/components/molecules/Header"
+import useAuth from "../../hooks/useAuth"
+import Header from "../../components/molecules/Header"
 import { PagesContainer } from "../../components/atoms"
-import { RoomOf, Route } from "@/utils/enum"
+import { RoomOf, Route } from "../../utils/enum"
 import { createClient } from "../../../prismicio"
 import { Teachers } from "@/utils/interfaces"
 
-const Musicalizacao = ({
+const Literatura = ({
 	mormingTeacher,
 	afternoonTeacher,
 }: Teachers) => {
@@ -21,18 +21,18 @@ const Musicalizacao = ({
 	}, [AuthStateChanged])
 
 	return (
-		<PagesContainer background="/musicalization.png">
+		<PagesContainer background="/literature.png">
 			<Head>
-				<title>{RoomOf.MUSICALIZATION}</title>
+				<title>{RoomOf.LITERATURE}</title>
 				<link rel="icon" href="/logo.ico" />
 			</Head>
 			<Header />
 			<TeachersArea
-				lesson={RoomOf.MUSICALIZATION}
+				lesson={RoomOf.LITERATURE}
 				pathProject=""
-				pathRepository={Route.REPERTOIRE}
-				nameButton="REPERTÓRIO"
-				nameIcon="music"
+				pathRepository={Route.NEWSPAPER}
+				nameButton="JORNAL"
+				nameIcon="read"
 				morningTeacher={mormingTeacher}
 				afternoonTeacher={afternoonTeacher}
 			/>
@@ -43,18 +43,18 @@ const Musicalizacao = ({
 	)
 }
 
-export default Musicalizacao
+export default Literatura
 
 export async function getStaticProps() {
 	const client = createClient()
 
 	const dataMorningTeacher = await client.getAllByType(
-		"morning_music_teacher_profile",
+		"morning_literature_teacher",
 		{}
 	)
 
 	const dataAfternoonTeacher = await client.getAllByType(
-		"afternoon_music_teacher_profile",
+		"afternoon_literature_teacher",
 		{}
 	)
 

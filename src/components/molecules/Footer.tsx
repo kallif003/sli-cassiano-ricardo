@@ -1,12 +1,16 @@
 import React from "react"
-import { H2 } from "../atoms"
 
 const Footer = () => {
 	return (
-		<H2 size={0.5}>
-			De acordo com a lei 1937/1990 é proíbido extrair images ou
-			conteúdo desse site
-		</H2>
+		<>
+			<h1 className="text-[0.8rem] sm:text-[0.6rem]">
+				Proibido compartilhar o conteúdo desse site de forma total ou
+				parcial.
+			</h1>
+			<h1 className="text-[0.8rem] sm:text-[0.6rem]">
+				Documento com fins pedagógicos!
+			</h1>
+		</>
 	)
 }
 

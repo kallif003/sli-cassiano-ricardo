@@ -18,6 +18,7 @@ module.exports = {
 		ecmaVersion: 13,
 	},
 	plugins: ["@typescript-eslint", "prettier"],
+	ignorePatterns: [".slicemachine/prismicio.d.ts"],
 	rules: {
 		"prettier/prettier": [
 			"error",

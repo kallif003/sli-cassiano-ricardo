@@ -77,11 +77,11 @@ export const IconContainer = styled.div`
 `
 export const HeaderContainer = styled.div`
 	display: grid;
-	height: 200px;
 	grid-template-columns: 25% 1fr;
 	grid-template-rows: 3rem;
 	height: 3rem;
 	color: #fff;
+
 	@media (min-width: 0px) and (max-width: 767px) {
 		grid-template-columns: 60% 40%;
 	}
@@ -152,7 +152,7 @@ export const MusicalizationContainer = styled.div`
 	}
 `
 
-export const GeneralContainer = styled.div`
+export const ProjectContainer = styled.div`
 	display: flex;
 	justify-content: center;
 	padding-top: 2rem;
@@ -172,7 +172,7 @@ export const GeneralContainer = styled.div`
 	}
 `
 
-export const GeneralContainer2 = styled.div`
+export const ProfileTeacherContainer = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: flex-end;
@@ -232,8 +232,7 @@ export const MobileContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	padding-left: 1.25rem;
-	padding-right: 1.25rem;
+	padding: 0 1.25rem;
 	@media (min-width: 1023px) {
 		display: none;
 	}
@@ -254,7 +253,7 @@ export const TeacherInfoContainer = styled.div`
 	align-items: center;
 	justify-content: center;
 `
-export const MusicalizationGrid = styled.div`
+export const TeachersGrid = styled.div`
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 	margin-top: 1.5rem;
@@ -274,6 +273,45 @@ export const MusicalizationGrid = styled.div`
 	}
 	@media (min-width: 1400px) {
 		height: 40rem;
+	}
+`
+export const RepertoireContainer = styled.div`
+	box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.8);
+	width: 17rem;
+	height: 15rem;
+	color: #3d3d3d;
+	background: #f8f8f8;
+	border-radius: 1.2rem;
+	margin-bottom: 1rem;
+	padding: 1rem 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+`
+
+export const NewspaperContainer = styled.div`
+	width: 100vw;
+	color: #111111;
+	margin-top: 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	@media (max-width: 800px) {
+		margin-top: 1rem;
+	}
+`
+
+export const NewspaperArticleContainer = styled.div`
+	display: grid;
+	grid-template-columns: 46% 0.2% 46%;
+	grid-template-rows: 1fr;
+	grid-gap: 2rem;
+	margin: 2rem 0;
+	@media (max-width: 800px) {
+		grid-template-columns: 100%;
 	}
 `
 

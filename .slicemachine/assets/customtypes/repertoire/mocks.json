@@ -1,0 +1,25 @@
+{
+	"uid": {
+		"__TYPE__": "UIDContent",
+		"value": "trade"
+	},
+	"video": {
+		"__TYPE__": "LinkContent",
+		"value": {
+			"__TYPE__": "ExternalLink",
+			"url": "https://prismic.io"
+		}
+	},
+	"letramusica": {
+		"__TYPE__": "LinkContent",
+		"value": {
+			"__TYPE__": "ExternalLink",
+			"url": "http://twitter.com"
+		}
+	},
+	"titulo": {
+		"__TYPE__": "FieldContent",
+		"value": "base",
+		"type": "Text"
+	}
+}
