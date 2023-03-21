@@ -36,7 +36,7 @@ const Musicalizacao = ({
 				morningTeacher={mormingTeacher}
 				afternoonTeacher={afternoonTeacher}
 			/>
-			<div className="text-center mb-14 sm:mt-[-2rem] h-8">
+			<div className="text-center mb-14 xl:mt-2 mt-[-2rem] h-20 xl:h-8">
 				<Footer />
 			</div>
 		</PagesContainer>
