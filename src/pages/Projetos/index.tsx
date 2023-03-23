@@ -8,7 +8,7 @@ import Newspaper from "@/components/organisms/Newspaper"
 import { createClient } from "../../../prismicio"
 import { INews } from "@/utils/interfaces"
 
-const JornalCassianimho = ({ news }: INews) => {
+const Projetos = ({ news }: INews) => {
 	const { AuthStateChanged } = useAuth()
 
 	useEffect(() => {
@@ -16,9 +16,9 @@ const JornalCassianimho = ({ news }: INews) => {
 	}, [AuthStateChanged])
 
 	return (
-		<PagesContainer background="/jornal.png">
+		<PagesContainer background="/wallpaper.png">
 			<Head>
-				<title>JORNAL CASSIANINHO</title>
+				<title>PROJETOS</title>
 
 				<link rel="icon" href="/logo.ico" />
 			</Head>
@@ -28,7 +28,7 @@ const JornalCassianimho = ({ news }: INews) => {
 	)
 }
 
-export default JornalCassianimho
+export default Projetos
 
 export async function getStaticProps() {
 	const client = createClient()

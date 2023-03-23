@@ -32,12 +32,25 @@ export const MusicButton = styled.button`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	@media (min-width: 0) and (max-width: 767px) {
-		width: 14rem;
-	}
 `
 export const ReadButton = styled.button`
 	background-image: url("/marcaTexto2.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: 0;
+	border-radius: 0.3rem;
+	width: 13rem;
+	height: 4rem;
+	color: #fff;
+	font-weight: 600;
+	border-style: dashed;
+	border-color: #616060;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`
+export const ProjectButton = styled.button`
+	background-image: url("/marcaTexto3.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	z-index: 0;

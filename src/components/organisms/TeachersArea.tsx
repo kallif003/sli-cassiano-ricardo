@@ -1,7 +1,7 @@
 import React from "react"
 import {
 	H1,
-	MusicalizationContainer,
+	AboutClassContainer,
 	MusicButton,
 	ProjectContainer,
 	ReadButton,
@@ -21,7 +21,8 @@ import {
 	mdiNewspaperVariantOutline,
 	mdiPostOutline,
 } from "@mdi/js"
-import { ITeachersArea, IText } from "@/utils/interfaces"
+import { ITeachersArea } from "@/utils/interfaces"
+import { RoomOf } from "@/utils/enum"
 
 const TeachersArea = ({
 	lesson,
@@ -31,19 +32,22 @@ const TeachersArea = ({
 	morningTeacher,
 	afternoonTeacher,
 }: ITeachersArea) => {
-	const rows: IText[] = [
-		{
-			id: "1",
-			paragraph: `A IMPORTÂNCIA DA ${lesson} NA EDUCAÇÃO INFANTIL.`,
-		},
-		{
-			id: "2",
-			paragraph: "AQUI VOCÊ PODE ACOMPANHAR O CONTEÚDO SEMANAL, O",
-		},
-		{
-			id: "3",
-			paragraph: "REPERTÓRIO E O PROJETO",
-		},
+	const aboutMusicalization: string[] = [
+		"O TRABALHO COM A MUSICALIZAÇÃO INFANTIL NA ESCOLA É",
+		"INDISPENSÁVEL, POIS, ALÉM DO DESENVOLVIMENTO DA SENSIBILIDADE",
+		"À MÚSICA CONTRIBUI PARA A CONCENTRAÇÃO, MEMÓRIA,",
+		"COORDENAÇÃO MOTORA, SOCIALIZAÇÃO, ACUIDADE AUDITIVA E",
+		"DISCIPLINA. PARA AS AULAS DE MUSICALIZAÇÃO, PERCEBEMOS UMA",
+		"GRANDE EXPECTATIVA, AS CRIANÇAS ANSEIAM A CHEGADA DA",
+		"PROFESSORA NA SALA DE AULA",
+	]
+
+	const aboutTheLiterature: string[] = [
+		"AS EXPERIÊNCIAS COM A LITERATURA INFANTIL, PROPOSTAS PELO",
+		"EDUCADOR, MEDIADOR ENTRE OS TEXTOS E AS CRIANÇAS,",
+		"CONTRIBUEM PARA O DESENVOLVIMENTO DO GOSTO PELA LEITURA,",
+		"DO ESTÍMULO À IMAGINAÇÃO E DA AMPLIAÇÃO DO CONHECIMENTO",
+		"DE MUNDO.",
 	]
 
 	const router = useRouter()
@@ -51,7 +55,7 @@ const TeachersArea = ({
 	return (
 		<TeachersGrid>
 			<ProjectContainer>
-				<MusicalizationContainer>
+				<AboutClassContainer>
 					<div className="px-2 py-1 ">
 						<Icon
 							path={
@@ -70,32 +74,34 @@ const TeachersArea = ({
 						<H1 size={1.5} className="text-center sm:ml-10">
 							{lesson}
 						</H1>
-						<hr className="border-dashed border-[#d1cece] " />
+						<hr className="border-dashed border-[#d1cece] sm:mb-2 " />
 					</div>
-					{rows.map((p) => (
-						<div
-							key={p.id}
-							className="px-2 sm:px-0 py-1 sm:w-[17.9rem] truncate ">
-							<p className="mx-2 text-[0.98rem] sm:text-[0.6rem]">
-								{p.paragraph}
-							</p>
-							<hr className="border-dashed border-[#d1cece] " />
+					{lesson === RoomOf.MUSICALIZATION ? (
+						<div>
+							{aboutMusicalization.map((text, index) => (
+								<div className="px-2 sm:text-center" key={index}>
+									<div className="sm:hidden md:hidden text-[0.98rem] ">
+										<p>{text}</p>
+										<hr className="border-dashed border-[#d1cece] " />
+									</div>
+									<p className="lg:hidden xl:hidden ">{text}</p>
+								</div>
+							))}
 						</div>
-					))}
-
+					) : (
+						<div>
+							{aboutTheLiterature.map((text, index) => (
+								<div className="px-2 sm:text-center " key={index}>
+									<div className="sm:hidden md:hidden text-[0.98rem] ">
+										<p>{text}</p>
+										<hr className="border-dashed border-[#d1cece] " />
+									</div>
+									<p className="lg:hidden xl:hidden ">{text}</p>
+								</div>
+							))}
+						</div>
+					)}
 					<div className=" flex justify-end  h-10 mt-3">
-						<MusicButton className="mr-3">
-							<Icon
-								path={
-									nameIcon === "music"
-										? mdiMusic
-										: mdiBookOpenPageVariant
-								}
-								size={1}
-								className="sm:ml-3 "
-							/>
-							<h1 className="ml-1 mt-1 text-[0.75rem]">PROJETO</h1>
-						</MusicButton>
 						<ReadButton onClick={() => router.push(pathRepository)}>
 							<Icon
 								path={
@@ -111,7 +117,7 @@ const TeachersArea = ({
 							</h1>
 						</ReadButton>
 					</div>
-				</MusicalizationContainer>
+				</AboutClassContainer>
 			</ProjectContainer>
 
 			<ProfileTeacherContainer>

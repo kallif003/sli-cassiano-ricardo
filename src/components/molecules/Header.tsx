@@ -26,6 +26,7 @@ const Header = () => {
 		{ id: Menu.START, button: Menu.START },
 		{ id: Menu.MUSICALIZATION, button: Menu.MUSICALIZATION },
 		{ id: Menu.LITERATURE, button: Menu.LITERATURE },
+		{ id: Menu.PROJECTS, button: Menu.PROJECTS },
 		{ id: Menu.EXIT, button: Menu.EXIT },
 	]
 
@@ -43,6 +44,9 @@ const Header = () => {
 		}
 		if (idBtn === Menu.LITERATURE) {
 			router.push(Route.LITERATURE)
+		}
+		if (idBtn === Menu.PROJECTS) {
+			router.push(Route.PROJECTS)
 		}
 	}
 

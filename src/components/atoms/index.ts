@@ -11,7 +11,7 @@ import {
 	SheetHolesContainer,
 	PagesContainer,
 	MobileContainer,
-	MusicalizationContainer,
+	AboutClassContainer,
 	ProjectContainer,
 	ProfileTeacherContainer,
 	TeacherContainer,
@@ -27,7 +27,12 @@ import { Input } from "./Inputs"
 
 import { H1, H2, Paragraph } from "./Typographies"
 
-import { MainButton, MusicButton, ReadButton } from "./Buttons"
+import {
+	MainButton,
+	MusicButton,
+	ReadButton,
+	ProjectButton,
+} from "./Buttons"
 
 export {
 	Container,
@@ -49,7 +54,7 @@ export {
 	SheetHolesContainer,
 	MobileContainer,
 	PagesContainer,
-	MusicalizationContainer,
+	AboutClassContainer,
 	ProjectContainer,
 	ProfileTeacherContainer,
 	TeacherContainer,
@@ -59,4 +64,5 @@ export {
 	RepertoireContainer,
 	NewspaperContainer,
 	NewspaperArticleContainer,
+	ProjectButton,
 }

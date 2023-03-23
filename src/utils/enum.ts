@@ -9,6 +9,7 @@ export enum Menu {
 	START = "INICIO",
 	MUSICALIZATION = "MUSICALIZAÇÃO",
 	LITERATURE = "LITERATURA",
+	PROJECTS = "PROJETOS",
 	EXIT = "SAIR",
 }
 
@@ -18,5 +19,5 @@ export enum Route {
 	LOGIN = "/Login",
 	HOME = "/Home",
 	REPERTOIRE = "/Repertorio",
-	NEWSPAPER = "/Jornal-Cassianinho",
+	PROJECTS = "/Projetos",
 }
