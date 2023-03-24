@@ -4,11 +4,11 @@ import React, { useEffect } from "react"
 import { PagesContainer } from "@/components/atoms"
 import useAuth from "@/hooks/useAuth"
 import Header from "@/components/molecules/Header"
-import Newspaper from "@/components/organisms/Newspaper"
+import Projects from "@/components/organisms/Projects"
 import { createClient } from "../../../prismicio"
-import { INews } from "@/utils/interfaces"
+import { IProject } from "@/utils/interfaces"
 
-const Projetos = ({ news }: INews) => {
+const Projetos = ({ project }: IProject) => {
 	const { AuthStateChanged } = useAuth()
 
 	useEffect(() => {
@@ -23,7 +23,7 @@ const Projetos = ({ news }: INews) => {
 				<link rel="icon" href="/logo.ico" />
 			</Head>
 			<Header />
-			<Newspaper news={news} />
+			<Projects project={project} />
 		</PagesContainer>
 	)
 }
@@ -33,35 +33,23 @@ export default Projetos
 export async function getStaticProps() {
 	const client = createClient()
 
-	const data = await client.getAllByType("newspaper", {
+	const data = await client.getAllByType("projects", {
 		orderings: [
 			{ field: "document.first_publication_date", direction: "desc" },
 		],
 	})
 
-	const news = data.map((e: any) => ({
+	console.log(data)
+
+	const project = data.map((e: any) => ({
 		slug: e.uid,
-		introdution: e.data.introdution[0].text,
-		first_title_page_one: e.data.first_title_page_one,
-		first_text_page_one: e.data.first_text_page_one[0].text,
-		first_img_page_one: e.data.first_img_page_one.url,
-		alt_first_img_page_one: e.data.first_img_page_one.alt,
-		second_title_page_one: e.data.second_title_page_one,
-		second_text_page_one: e.data.second_text_page_one[0].text,
-		second_img_page_one: e.data.second_img_page_one.url,
-		alt_second_img_page_one: e.data.second_img_page_one.alt,
-		first_title_page_two: e.data.first_title_page_two,
-		first_text_page_two: e.data.first_text_page_two[0].text,
-		first_img_page_two: e.data.first_img_page_two.url,
-		alt_first_img_page_two: e.data.first_img_page_two.alt,
-		second_title_page_two: e.data.second_title_page_two,
-		second_text_page_two: e.data.second_text_page_two[0].text,
-		second_img_page_two: e.data.second_img_page_two.url,
-		alt_second_img_page_two: e.data.second_img_page_two.alt,
-		edition: e.data.edition[0].text,
-		responsible: e.data.responsible[0].text,
+		title: e.data.title,
+		text: e.data.text[0].text,
 	}))
+
+	console.log(project)
+
 	return {
-		props: { news },
+		props: { project },
 	}
 }

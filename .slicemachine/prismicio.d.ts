@@ -170,187 +170,44 @@ export type MorningMusicTeacherProfileDocument<
 	"morning_music_teacher_profile",
 	Lang
 >
-/** Content for jornal Cassianinho documents */
-interface NewspaperDocumentData {
+/** Content for projetos documents */
+interface ProjectsDocumentData {
 	/**
-	 * introdução field in *jornal Cassianinho*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.introdution
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-	 *
-	 */
-	introdution: prismicT.RichTextField
-	/**
-	 * primeiro_titulo_pagina_um field in *jornal Cassianinho*
+	 * titulo field in *projetos*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.first_title_page_one
+	 * - **API ID Path**: projects.title
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
 	 *
 	 */
-	first_title_page_one: prismicT.KeyTextField
+	title: prismicT.KeyTextField
 	/**
-	 * primeiro_texto_pagina_um field in *jornal Cassianinho*
+	 * texto field in *projetos*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.first_text_page_one
+	 * - **API ID Path**: projects.text
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
 	 *
 	 */
-	first_text_page_one: prismicT.RichTextField
-	/**
-	 * primeira_imagem_pagina_um field in *jornal Cassianinho*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.first_img_page_one
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
-	 *
-	 */
-	first_img_page_one: prismicT.ImageField<never>
-	/**
-	 * segundo_titulo_pagina_um field in *jornal Cassianinho*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.second_title_page_one
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-	 *
-	 */
-	second_title_page_one: prismicT.KeyTextField
-	/**
-	 * segundo_texto_pagina_um field in *jornal Cassianinho*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.second_text_page_one
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-	 *
-	 */
-	second_text_page_one: prismicT.RichTextField
-	/**
-	 * segunda_imagem_pagina_um field in *jornal Cassianinho*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.second_img_page_one
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
-	 *
-	 */
-	second_img_page_one: prismicT.ImageField<never>
-	/**
-	 * primeiro_titulo_pagina_dois field in *jornal Cassianinho*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.first_title_page_two
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-	 *
-	 */
-	first_title_page_two: prismicT.KeyTextField
-	/**
-	 * primeiro_texto_pagina_dois field in *jornal Cassianinho*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.first_text_page_two
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-	 *
-	 */
-	first_text_page_two: prismicT.RichTextField
-	/**
-	 * primeira_imagem_pagina_dois field in *jornal Cassianinho*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.first_img_page_two
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
-	 *
-	 */
-	first_img_page_two: prismicT.ImageField<never>
-	/**
-	 * segundo_titulo_pagina_dois field in *jornal Cassianinho*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.second_title_page_two
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-	 *
-	 */
-	second_title_page_two: prismicT.KeyTextField
-	/**
-	 * segundo_texto_pagina_dois field in *jornal Cassianinho*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.second_text_page_two
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-	 *
-	 */
-	second_text_page_two: prismicT.RichTextField
-	/**
-	 * segunda_imagem_pagina_dois field in *jornal Cassianinho*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.second_img_page_two
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
-	 *
-	 */
-	second_img_page_two: prismicT.ImageField<never>
-	/**
-	 * edição field in *jornal Cassianinho*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.edition
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-	 *
-	 */
-	edition: prismicT.RichTextField
-	/**
-	 * responsaveis field in *jornal Cassianinho*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.responsible
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-	 *
-	 */
-	responsible: prismicT.RichTextField
+	text: prismicT.RichTextField
 }
 /**
- * jornal Cassianinho document from Prismic
+ * projetos document from Prismic
  *
- * - **API ID**: `newspaper`
+ * - **API ID**: `projects`
  * - **Repeatable**: `true`
  * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type NewspaperDocument<Lang extends string = string> =
+export type ProjectsDocument<Lang extends string = string> =
 	prismicT.PrismicDocumentWithUID<
-		Simplify<NewspaperDocumentData>,
-		"newspaper",
+		Simplify<ProjectsDocumentData>,
+		"projects",
 		Lang
 	>
 /** Content for repertorio-musical documents */
@@ -409,7 +266,7 @@ export type AllDocumentTypes =
 	| AfternoonMusicTeacherProfileDocument
 	| MorningLiteratureTeacherDocument
 	| MorningMusicTeacherProfileDocument
-	| NewspaperDocument
+	| ProjectsDocument
 	| RepertoireDocument
 declare module "@prismicio/client" {
 	interface CreateClient {
@@ -428,8 +285,8 @@ declare module "@prismicio/client" {
 			MorningLiteratureTeacherDocument,
 			MorningMusicTeacherProfileDocumentData,
 			MorningMusicTeacherProfileDocument,
-			NewspaperDocumentData,
-			NewspaperDocument,
+			ProjectsDocumentData,
+			ProjectsDocument,
 			RepertoireDocumentData,
 			RepertoireDocument,
 			AllDocumentTypes,

@@ -33,21 +33,17 @@ const TeachersArea = ({
 	afternoonTeacher,
 }: ITeachersArea) => {
 	const aboutMusicalization: string[] = [
-		"O TRABALHO COM A MUSICALIZAÇÃO INFANTIL NA ESCOLA É",
-		"INDISPENSÁVEL, POIS, ALÉM DO DESENVOLVIMENTO DA SENSIBILIDADE",
-		"À MÚSICA CONTRIBUI PARA A CONCENTRAÇÃO, MEMÓRIA,",
-		"COORDENAÇÃO MOTORA, SOCIALIZAÇÃO, ACUIDADE AUDITIVA E",
-		"DISCIPLINA. PARA AS AULAS DE MUSICALIZAÇÃO, PERCEBEMOS UMA",
-		"GRANDE EXPECTATIVA, AS CRIANÇAS ANSEIAM A CHEGADA DA",
-		"PROFESSORA NA SALA DE AULA",
+		"O trabalho com musicalização infantil feito na escola é ",
+		"indispensável, pois, além do desenvolvimento da sensibilidade",
+		"musical, potencializa a concentração, memória, coordenação",
+		"motora, socialização, acuidade auditiva e disciplina.",
 	]
 
 	const aboutTheLiterature: string[] = [
-		"AS EXPERIÊNCIAS COM A LITERATURA INFANTIL, PROPOSTAS PELO",
-		"EDUCADOR, MEDIADOR ENTRE OS TEXTOS E AS CRIANÇAS,",
-		"CONTRIBUEM PARA O DESENVOLVIMENTO DO GOSTO PELA LEITURA,",
-		"DO ESTÍMULO À IMAGINAÇÃO E DA AMPLIAÇÃO DO CONHECIMENTO",
-		"DE MUNDO.",
+		"A experiência com a literatura infantil, proposta pelo",
+		"educador, mediador entre textos e as crianças, contribuem",
+		"para o desenvolvimentodo gosto pela leitura, do estímulo",
+		"à imaginação e da ampliação do conhecimento de mundo.",
 	]
 
 	const router = useRouter()
@@ -80,11 +76,15 @@ const TeachersArea = ({
 						<div>
 							{aboutMusicalization.map((text, index) => (
 								<div className="px-2 sm:text-center" key={index}>
-									<div className="sm:hidden md:hidden text-[0.98rem] ">
-										<p>{text}</p>
+									<div className="sm:hidden  text-[0.98rem] ">
+										<p className={index === 0 ? "ml-8" : ""}>
+											{text.toUpperCase()}
+										</p>
 										<hr className="border-dashed border-[#d1cece] " />
 									</div>
-									<p className="lg:hidden xl:hidden ">{text}</p>
+									<p className="lg:hidden xl:hidden md:hidden ">
+										{text.toUpperCase()}
+									</p>
 								</div>
 							))}
 						</div>
@@ -92,11 +92,15 @@ const TeachersArea = ({
 						<div>
 							{aboutTheLiterature.map((text, index) => (
 								<div className="px-2 sm:text-center " key={index}>
-									<div className="sm:hidden md:hidden text-[0.98rem] ">
-										<p>{text}</p>
+									<div className="sm:hidden  text-[0.98rem]">
+										<p className={index === 0 ? "ml-8" : ""}>
+											{text.toUpperCase()}
+										</p>
 										<hr className="border-dashed border-[#d1cece] " />
 									</div>
-									<p className="lg:hidden xl:hidden ">{text}</p>
+									<p className="lg:hidden xl:hidden md:hidden">
+										{text.toUpperCase()}
+									</p>
 								</div>
 							))}
 						</div>

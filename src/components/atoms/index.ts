@@ -19,7 +19,7 @@ import {
 	TeacherInfoContainer,
 	TeachersGrid,
 	RepertoireContainer,
-	NewspaperContainer,
+	ProjectsContainer,
 	NewspaperArticleContainer,
 } from "./Containers"
 
@@ -62,7 +62,7 @@ export {
 	TeacherInfoContainer,
 	TeachersGrid,
 	RepertoireContainer,
-	NewspaperContainer,
+	ProjectsContainer,
 	NewspaperArticleContainer,
 	ProjectButton,
 }

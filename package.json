@@ -10,7 +10,9 @@
 		"prepare": "husky install",
 		"commit": "cz",
 		"prettier": "npx prettier --write .",
-		"slicemachine": "start-slicemachine"
+		"slicemachine": "start-slicemachine",
+		"logout-prismic": "prismic logout",
+		"login-prismic": "prismic login"
 	},
 	"dependencies": {
 		"@mdi/js": "^7.0.96",

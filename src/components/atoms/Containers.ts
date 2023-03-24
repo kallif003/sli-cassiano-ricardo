@@ -138,7 +138,7 @@ export const AboutProjectContainer = styled.div`
 export const AboutClassContainer = styled.div`
 	box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.8);
 	width: 40rem;
-	height: 22rem;
+	height: 18rem;
 	color: #3d3d3d;
 	background: #f8f8f8;
 	position: relative;
@@ -148,12 +148,12 @@ export const AboutClassContainer = styled.div`
 
 	@media (min-width: 0) and (max-width: 767px) {
 		width: 22rem;
-		height: 33rem;
+		height: 26.5rem;
 		padding: 2.5rem 1rem;
 	}
 
 	@media (min-width: 768px) and (max-width: 1267px) {
-		height: 23rem;
+		height: 18rem;
 	}
 `
 
@@ -269,14 +269,14 @@ export const TeachersGrid = styled.div`
 	@media (min-width: 0) and (max-width: 767px) {
 		grid-template-columns: auto;
 		grid-template-rows: repeat(2, 60%);
-		height: 65rem;
+		height: 60rem;
 		margin: 0 auto 10rem auto;
 	}
 
 	@media (min-width: 768px) and (max-width: 1279px) {
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(2, 50%);
-		height: 58rem;
+		height: 52rem;
 		margin: 0 auto 0 auto;
 	}
 	@media (min-width: 1400px) {
@@ -298,7 +298,7 @@ export const RepertoireContainer = styled.div`
 	align-items: center;
 `
 
-export const NewspaperContainer = styled.div`
+export const ProjectsContainer = styled.div`
 	width: 100vw;
 	color: #111111;
 	margin-top: 2rem;
