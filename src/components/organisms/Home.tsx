@@ -63,7 +63,9 @@ const Home = () => {
 									<p>{text}</p>
 									<hr className="border-dashed border-[#d1cece]" />
 								</div>
-								<p className="lg:hidden xl:hidden">{text}</p>
+								<p className="lg:hidden xl:hidden text-justify">
+									{text}
+								</p>
 							</div>
 						))}
 
