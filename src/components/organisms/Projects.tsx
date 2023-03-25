@@ -1,6 +1,8 @@
 import React from "react"
 import { ProjectsContainer, H1, Paragraph } from "@/components/atoms"
 import { IProject } from "@/utils/interfaces"
+import Carousel from "react-elastic-carousel"
+import Image from "next/image"
 
 const Projects = ({ project }: IProject) => {
 	return (
@@ -13,6 +15,47 @@ const Projects = ({ project }: IProject) => {
 					<Paragraph className="mt-4 indent-8">
 						{p.text.toUpperCase()}
 					</Paragraph>
+					<Carousel showArrows={false} className="mt-5 mb-8">
+						<div className="w-[60rem] h-[30rem] sm:h-[10rem] sm:w-[30rem]">
+							<Image
+								src={p.img_one_project}
+								alt={p.alt_one_project}
+								width="1200"
+								height="100"
+								layout="responsive"
+							/>
+						</div>
+
+						<div className="w-[60rem] h-[35rem]">
+							<Image
+								src={p.img_two_project}
+								alt={p.alt_two_project}
+								width="1200"
+								height="1200"
+								layout="responsive"
+							/>
+						</div>
+
+						<div className="w-[60rem] h-[35rem]">
+							<Image
+								src={p.img_three_project}
+								alt={p.alt_three_project}
+								width="1200"
+								height="1200"
+								layout="responsive"
+							/>
+						</div>
+
+						<div className="w-[60rem] h-[35rem]">
+							<Image
+								src={p.img_four_project}
+								alt={p.alt_four_project}
+								width="1200"
+								height="1200"
+								layout="responsive"
+							/>
+						</div>
+					</Carousel>
 				</div>
 			))}
 		</ProjectsContainer>

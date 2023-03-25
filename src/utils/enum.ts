@@ -18,6 +18,7 @@ export enum Route {
 	LITERATURE = "/Literatura",
 	LOGIN = "/Login",
 	HOME = "/Home",
-	REPERTOIRE = "/Repertorio",
+	REPERTOIRE = "/Musicalizacao/Repertorio",
+	VIDEOS = "/Literatura/Videos",
 	PROJECTS = "/Projetos",
 }

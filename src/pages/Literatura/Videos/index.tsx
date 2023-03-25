@@ -3,12 +3,12 @@ import Head from "next/head"
 import React, { useEffect } from "react"
 import { PagesContainer } from "@/components/atoms"
 import Header from "@/components/molecules/Header"
-import Repertoire from "@/components/molecules/Repertoire"
-import { createClient } from "../../../prismicio"
-import { IRepertoire } from "@/utils/interfaces"
+import Video from "@/components/organisms/Videos"
+import { createClient } from "../../../../prismicio"
+import { IVideo } from "@/utils/interfaces"
 import useAuth from "@/hooks/useAuth"
 
-const RepertoirePage = ({ repertoire }: IRepertoire) => {
+const Videos = ({ videos }: IVideo) => {
 	const { AuthStateChanged } = useAuth()
 
 	useEffect(() => {
@@ -16,39 +16,38 @@ const RepertoirePage = ({ repertoire }: IRepertoire) => {
 	}, [AuthStateChanged])
 
 	return (
-		<PagesContainer background="/musicalization.png">
+		<PagesContainer background="/literature.png">
 			<Head>
-				<title>REPERTÓRIO</title>
+				<title>VIDEOS</title>
 
 				<link rel="icon" href="/logo.ico" />
 			</Head>
 			<Header />
-			<Repertoire repertoire={repertoire} />
+			<Video videos={videos} />
 		</PagesContainer>
 	)
 }
 
-export default RepertoirePage
+export default Videos
 
 export async function getStaticProps() {
 	const client = createClient()
 
-	const data = await client.getAllByType("repertoire", {
+	const data = await client.getAllByType("videos", {
 		orderings: [
 			{ field: "document.first_publication_date", direction: "desc" },
 		],
 	})
 
-	const repertoire = data.map((e: any) => ({
+	const videos = data.map((e: any) => ({
 		slug: e.uid,
-		title: e.data.titulo,
-		video: e.data.video.url || "",
-		lyrics: e.data.letramusica.url,
+		title: e.data.title,
+		videos: e.data.videos.url,
+		date: e.data.date,
+		link_type: e.data.videos.link_type,
 	}))
 
 	return {
-		props: {
-			repertoire,
-		},
+		props: { videos },
 	}
 }

@@ -194,6 +194,50 @@ interface ProjectsDocumentData {
 	 *
 	 */
 	text: prismicT.RichTextField
+	/**
+	 * imagem_um_projeto field in *projetos*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: projects.img_one_project
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	img_one_project: prismicT.ImageField<never>
+	/**
+	 * imagen_dois_projeto field in *projetos*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: projects.img_two_project
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	img_two_project: prismicT.ImageField<never>
+	/**
+	 * imagem_tres_projeto field in *projetos*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: projects.img_three_project
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	img_three_project: prismicT.ImageField<never>
+	/**
+	 * imagen_quatro_projeto field in *projetos*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: projects.img_four_project
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	img_four_project: prismicT.ImageField<never>
 }
 /**
  * projetos document from Prismic
@@ -261,6 +305,57 @@ export type RepertoireDocument<Lang extends string = string> =
 		"repertoire",
 		Lang
 	>
+/** Content for videos documents */
+interface VideosDocumentData {
+	/**
+	 * titulo field in *videos*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: videos.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	title: prismicT.KeyTextField
+	/**
+	 * data field in *videos*
+	 *
+	 * - **Field Type**: Date
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: videos.date
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/date
+	 *
+	 */
+	date: prismicT.DateField
+	/**
+	 * videos field in *videos*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: videos.videos
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+	 *
+	 */
+	videos: prismicT.LinkField
+}
+/**
+ * videos document from Prismic
+ *
+ * - **API ID**: `videos`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type VideosDocument<Lang extends string = string> =
+	prismicT.PrismicDocumentWithUID<
+		Simplify<VideosDocumentData>,
+		"videos",
+		Lang
+	>
 export type AllDocumentTypes =
 	| AfternoonLiteratureTeacherDocument
 	| AfternoonMusicTeacherProfileDocument
@@ -268,6 +363,7 @@ export type AllDocumentTypes =
 	| MorningMusicTeacherProfileDocument
 	| ProjectsDocument
 	| RepertoireDocument
+	| VideosDocument
 declare module "@prismicio/client" {
 	interface CreateClient {
 		(
@@ -289,6 +385,8 @@ declare module "@prismicio/client" {
 			ProjectsDocument,
 			RepertoireDocumentData,
 			RepertoireDocument,
+			VideosDocumentData,
+			VideosDocument,
 			AllDocumentTypes,
 		}
 	}

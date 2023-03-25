@@ -21,6 +21,7 @@ import {
 	RepertoireContainer,
 	ProjectsContainer,
 	NewspaperArticleContainer,
+	VideosContainer,
 } from "./Containers"
 
 import { Input } from "./Inputs"
@@ -65,4 +66,5 @@ export {
 	ProjectsContainer,
 	NewspaperArticleContainer,
 	ProjectButton,
+	VideosContainer,
 }

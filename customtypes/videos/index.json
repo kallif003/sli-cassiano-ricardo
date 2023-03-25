@@ -1,0 +1,39 @@
+{
+	"id": "videos",
+	"label": "videos",
+	"repeatable": true,
+	"status": true,
+	"json": {
+		"Main": {
+			"uid": {
+				"type": "UID",
+				"config": {
+					"label": "uid",
+					"placeholder": ""
+				}
+			},
+			"title": {
+				"type": "Text",
+				"config": {
+					"label": "titulo",
+					"placeholder": ""
+				}
+			},
+			"date": {
+				"type": "Date",
+				"config": {
+					"label": "data",
+					"placeholder": ""
+				}
+			},
+			"videos": {
+				"type": "Link",
+				"config": {
+					"label": "videos",
+					"placeholder": "",
+					"select": null
+				}
+			}
+		}
+	}
+}

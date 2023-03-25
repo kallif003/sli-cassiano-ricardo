@@ -71,8 +71,28 @@ export interface IProjects {
 	slug: string
 	title: string
 	text: string
+	img_one_project: string
+	alt_one_project: string
+	img_two_project: string
+	alt_two_project: string
+	img_three_project: string
+	alt_three_project: string
+	img_four_project: string
+	alt_four_project: string
 }
 
 export interface IProject {
 	project: IProjects[]
+}
+
+export interface IVideos {
+	slug: string
+	videos: string
+	title: string
+	date: string
+	link_type: string
+}
+
+export interface IVideo {
+	videos: IVideos[]
 }

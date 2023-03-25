@@ -39,15 +39,22 @@ export async function getStaticProps() {
 		],
 	})
 
-	console.log(data)
-
 	const project = data.map((e: any) => ({
 		slug: e.uid,
 		title: e.data.title,
 		text: e.data.text[0].text,
-	}))
+		img_one_project: e.data.img_one_project.url,
+		alt_one_project: e.data.img_one_project.alt,
 
-	console.log(project)
+		img_two_project: e.data.img_two_project.url,
+		alt_two_project: e.data.img_two_project.alt,
+
+		img_three_project: e.data.img_three_project.url,
+		alt_three_project: e.data.img_three_project.alt,
+
+		img_four_project: e.data.img_four_project.url,
+		alt_four_project: e.data.img_four_project.alt,
+	}))
 
 	return {
 		props: { project },

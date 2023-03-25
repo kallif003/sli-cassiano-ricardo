@@ -30,7 +30,7 @@ const Literatura = ({
 			<TeachersArea
 				lesson={RoomOf.LITERATURE}
 				pathProject=""
-				pathRepository={Route.PROJECTS}
+				pathRepository={Route.VIDEOS}
 				nameButton="VIDEOS"
 				nameIcon="read"
 				morningTeacher={mormingTeacher}

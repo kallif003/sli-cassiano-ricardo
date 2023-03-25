@@ -323,6 +323,25 @@ export const NewspaperArticleContainer = styled.div`
 	}
 `
 
+export const VideosContainer = styled.div`
+	box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.8);
+	width: 25rem;
+	height: 15rem;
+	color: #3d3d3d;
+	background: #f8f8f8;
+	border-radius: 1.2rem;
+	margin-bottom: 1rem;
+	padding: 1rem 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	@media (max-width: 800px) {
+		height: 18rem;
+		width: 20rem;
+	}
+`
+
 // #FF8343
 // #F03D5A
 // #FECA04
