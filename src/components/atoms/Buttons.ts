@@ -23,8 +23,8 @@ export const MusicButton = styled.button`
 	background-size: cover;
 	z-index: 0;
 	border-radius: 0.3rem;
-	width: 12rem;
-	height: 3.5rem;
+	width: 13rem;
+	height: 4rem;
 	color: #fff;
 	font-weight: 600;
 	border-style: dashed;

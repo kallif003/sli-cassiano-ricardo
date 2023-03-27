@@ -6,6 +6,10 @@
 		"morning_literature_teacher": {},
 		"afternoon_literature_teacher": {},
 		"projects": {},
-		"videos": {}
+		"videos": {},
+		"posts_professora_musica_manha": {},
+		"posts_professora_musica_tarde": {},
+		"posts_professora_literatura_manha": {},
+		"posts_professora_literatura_tarde": {}
 	}
 }

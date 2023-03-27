@@ -1,12 +1,12 @@
 import React from "react"
-import { Paragraph, VideosContainer } from "../../components/atoms"
+import { Paragraph, Card } from "../../components/atoms"
 import { IVideo } from "../../utils/interfaces"
 
 const Repertoire = ({ videos }: IVideo) => {
 	return (
 		<div className="flex justify-evenly flex-wrap items-center mt-10">
 			{videos.map((v) => (
-				<VideosContainer key={v.slug}>
+				<Card key={v.slug} width={25} height={15}>
 					{v.link_type === "Web" ? (
 						<iframe
 							src={v.videos}
@@ -21,12 +21,14 @@ const Repertoire = ({ videos }: IVideo) => {
 						</div>
 					)}
 					<div className="flex justify-between items-center w-full px-10 mt-5 flex-col">
-						<h1 className="sm:text-[0.8rem]">{v.title}</h1>
+						<h1 className="sm:text-[0.8rem] font-[700]">
+							{v.title.toUpperCase()}
+						</h1>
 						<Paragraph size={0.8} className="text-[#b4b4b4]">
 							{v.date.split("-").reverse().join("/")}
 						</Paragraph>
 					</div>
-				</VideosContainer>
+				</Card>
 			))}
 		</div>
 	)

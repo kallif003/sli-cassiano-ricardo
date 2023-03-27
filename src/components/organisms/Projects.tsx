@@ -23,6 +23,7 @@ const Projects = ({ project }: IProject) => {
 								width="1200"
 								height="100"
 								layout="responsive"
+								className="rounded-md"
 							/>
 						</div>
 
@@ -33,6 +34,7 @@ const Projects = ({ project }: IProject) => {
 								width="1200"
 								height="1200"
 								layout="responsive"
+								className="rounded-md"
 							/>
 						</div>
 
@@ -43,6 +45,7 @@ const Projects = ({ project }: IProject) => {
 								width="1200"
 								height="1200"
 								layout="responsive"
+								className="rounded-md"
 							/>
 						</div>
 

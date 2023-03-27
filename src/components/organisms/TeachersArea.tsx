@@ -31,6 +31,8 @@ const TeachersArea = ({
 	pathRepository,
 	morningTeacher,
 	afternoonTeacher,
+	mormingTeacherSlug,
+	afternoonTeacherSlug,
 }: ITeachersArea) => {
 	const aboutMusicalization: string[] = [
 		"O trabalho com musicalização infantil feito na escola é ",
@@ -47,6 +49,8 @@ const TeachersArea = ({
 	]
 
 	const router = useRouter()
+
+	const currentRoute = router.pathname
 
 	return (
 		<TeachersGrid>
@@ -139,16 +143,18 @@ const TeachersArea = ({
 								PROFESSORA {morningTeacher[0].teacherName}
 							</H1>
 							<H2 size={1}>MANHÃ</H2>
-							<MusicButton className="mt-2">
-								<Icon
-									path={mdiPostOutline}
-									size={1}
-									className="sm:ml-3 sm:mt-2"
-								/>
-								<h1 className="ml-1 mt-1 sm:mt-2 text-[0.75rem]">
-									VER CONTEÚDO
-								</h1>
-							</MusicButton>
+							<a href={`${currentRoute}/${mormingTeacherSlug}`}>
+								<MusicButton className="mt-2">
+									<Icon
+										path={mdiPostOutline}
+										size={1}
+										className="sm:ml-3 sm:mt-2"
+									/>
+									<h1 className="ml-1 mt-1 sm:mt-2 text-[0.75rem]">
+										VER CONTEÚDO
+									</h1>
+								</MusicButton>
+							</a>
 						</TeacherInfoContainer>
 					</div>
 
@@ -160,16 +166,18 @@ const TeachersArea = ({
 								PROFESSORA {afternoonTeacher[0].teacherName}
 							</H1>
 							<H2 size={1}>TARDE</H2>
-							<ReadButton className="mt-2">
-								<Icon
-									path={mdiPostOutline}
-									size={1}
-									className="sm:ml-3"
-								/>
-								<h1 className="ml-1 mt-1  text-[0.75rem]">
-									VER CONTEÚDO
-								</h1>
-							</ReadButton>
+							<a href={`${currentRoute}/${afternoonTeacherSlug}`}>
+								<ReadButton className="mt-2">
+									<Icon
+										path={mdiPostOutline}
+										size={1}
+										className="sm:ml-3"
+									/>
+									<h1 className="ml-1 mt-1  text-[0.75rem]">
+										VER CONTEÚDO
+									</h1>
+								</ReadButton>
+							</a>
 						</TeacherInfoContainer>
 
 						<ImageContainer

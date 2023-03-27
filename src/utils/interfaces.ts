@@ -34,10 +34,30 @@ export interface IRepertoires {
 	slug: string
 	video: string
 	title: string
+	link_type: string
 }
 
 export interface IRepertoire {
 	repertoire: IRepertoires[]
+}
+
+interface IPost {
+	slug: string
+	title: string
+	text: string
+	img_one_post: string
+	alt_one_post: string
+	img_two_post?: string
+	alt_two_post?: string
+	img_three_post?: string
+	alt_three_post?: string
+	img_four_post?: string
+	alt_four_post?: string
+	posts?: string
+}
+
+export interface Posts {
+	post: IPost[]
 }
 
 export interface Iteachers {
@@ -65,6 +85,8 @@ export interface ITeachersArea {
 	nameIcon: string
 	morningTeacher: Iteachers[]
 	afternoonTeacher: Iteachers[]
+	mormingTeacherSlug: string
+	afternoonTeacherSlug: string
 }
 
 export interface IProjects {

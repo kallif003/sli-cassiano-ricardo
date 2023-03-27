@@ -18,10 +18,10 @@ import {
 	ImageContainer,
 	TeacherInfoContainer,
 	TeachersGrid,
-	RepertoireContainer,
 	ProjectsContainer,
 	NewspaperArticleContainer,
-	VideosContainer,
+	Card,
+	OverflowContainer,
 } from "./Containers"
 
 import { Input } from "./Inputs"
@@ -62,9 +62,9 @@ export {
 	ImageContainer,
 	TeacherInfoContainer,
 	TeachersGrid,
-	RepertoireContainer,
 	ProjectsContainer,
 	NewspaperArticleContainer,
 	ProjectButton,
-	VideosContainer,
+	Card,
+	OverflowContainer,
 }

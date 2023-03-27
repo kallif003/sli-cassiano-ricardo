@@ -35,6 +35,8 @@ const Literatura = ({
 				nameIcon="read"
 				morningTeacher={mormingTeacher}
 				afternoonTeacher={afternoonTeacher}
+				mormingTeacherSlug={"posts_professora_literatura_manha"}
+				afternoonTeacherSlug={"posts_professora_literatura_tarde"}
 			/>
 			<div className="text-center pt-2 sm:h-16 h-16 md:mt-[-2rem]">
 				<Footer />

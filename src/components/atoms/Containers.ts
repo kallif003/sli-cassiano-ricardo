@@ -24,6 +24,9 @@ export const PagesContainer = styled.div.attrs(
 	background-image: url(${({ background }) => background});
 	background-repeat: no-repeat;
 	background-size: cover;
+	@media (min-width: 0px) and (max-width: 1023px) {
+		position: relative;
+	}
 `
 export const LoginContainer = styled.div`
 	padding: 0 0 0 8rem;
@@ -283,20 +286,6 @@ export const TeachersGrid = styled.div`
 		height: 40rem;
 	}
 `
-export const RepertoireContainer = styled.div`
-	box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.8);
-	width: 17rem;
-	height: 15rem;
-	color: #3d3d3d;
-	background: #f8f8f8;
-	border-radius: 1.2rem;
-	margin-bottom: 1rem;
-	padding: 1rem 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-`
 
 export const ProjectsContainer = styled.div`
 	width: 100vw;
@@ -323,10 +312,12 @@ export const NewspaperArticleContainer = styled.div`
 	}
 `
 
-export const VideosContainer = styled.div`
+export const Card = styled.div.attrs(
+	(props: { width: number; height: number }) => props
+)`
 	box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.8);
-	width: 25rem;
-	height: 15rem;
+	width: ${({ width }) => width}rem;
+	height: ${({ height }) => height}rem;
 	color: #3d3d3d;
 	background: #f8f8f8;
 	border-radius: 1.2rem;
@@ -339,6 +330,23 @@ export const VideosContainer = styled.div`
 	@media (max-width: 800px) {
 		height: 18rem;
 		width: 20rem;
+	}
+`
+
+export const OverflowContainer = styled.div`
+	height: 25rem;
+	width: 28rem;
+	text-align: justify;
+	margin: 1rem 0;
+	overflow-y: auto;
+	overflow-x: auto;
+	text-indent: 2rem;
+	::-webkit-scrollbar {
+		display: none;
+	}
+	@media (max-width: 800px) {
+		width: auto;
+		padding: 0 2rem;
 	}
 `
 

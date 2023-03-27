@@ -35,6 +35,8 @@ const Musicalizacao = ({
 				nameIcon="music"
 				morningTeacher={mormingTeacher}
 				afternoonTeacher={afternoonTeacher}
+				mormingTeacherSlug={"posts_professora_musica_manha"}
+				afternoonTeacherSlug={"posts_professora_musica_tarde"}
 			/>
 			<div className="text-center pt-2 sm:h-16 h-16 md:mt-[-2rem]">
 				<Footer />
@@ -46,7 +48,7 @@ const Musicalizacao = ({
 export default Musicalizacao
 
 export async function getStaticProps() {
-	const client = createClient()
+	const client: any = createClient()
 
 	const dataMorningTeacher = await client.getAllByType(
 		"morning_music_teacher_profile",

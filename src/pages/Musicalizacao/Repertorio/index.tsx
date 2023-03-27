@@ -44,6 +44,7 @@ export async function getStaticProps() {
 		title: e.data.titulo,
 		video: e.data.video.url || "",
 		lyrics: e.data.letramusica.url,
+		link_type: e.data.video.link_type,
 	}))
 
 	return {
