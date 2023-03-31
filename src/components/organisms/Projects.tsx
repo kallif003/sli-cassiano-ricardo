@@ -15,7 +15,9 @@ const Projects = ({ project }: IProject) => {
 					<Paragraph className="mt-4 indent-8">
 						{p.text.toUpperCase()}
 					</Paragraph>
-					<Carousel showArrows={false} className="mt-5 mb-8">
+					<Carousel
+						showArrows={false}
+						className="mt-5 mb-8 sm:h-[12rem]">
 						<div className="w-[60rem] h-[30rem] sm:h-[10rem] sm:w-[30rem]">
 							<Image
 								src={p.img_one_project}

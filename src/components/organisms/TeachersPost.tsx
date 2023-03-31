@@ -19,9 +19,9 @@ const TeachersPost = ({ post }: Posts) => {
 						</OverflowContainer>
 					</div>
 
-					<div className="w-[35rem] md:w-[45rem] sm:w-full mt-32 md:mt-12 mb-8 sm:px-7 sm:mt-10 ">
-						<Carousel showArrows={false} className="sm:h-[12rem]">
-							<div className="w-[28rem] h-[20rem] sm:h-[10rem] sm:w-[30rem]">
+					<div className="w-[35rem] md:w-[45rem] sm:w-full mt-32 md:mt-12 mb-8 sm:px-7 sm:mt-5 ">
+						<Carousel showArrows={false} className="sm:h-[15rem]">
+							<div className="w-[28rem] h-[20rem] sm:h-[14rem] sm:w-[30rem]">
 								<Image
 									src={p.img_one_post}
 									alt={p.alt_one_post}

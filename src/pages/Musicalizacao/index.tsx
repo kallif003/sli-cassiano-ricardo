@@ -60,19 +60,23 @@ export async function getStaticProps() {
 		{}
 	)
 
-	const mormingTeacher = dataMorningTeacher.map((e: any) => ({
-		slug: e.uid,
-		teacherName: e.data.teacher_name,
-		teacherImg: e.data.teacher_img.url,
-		alt: e.data.teacher_img.alt,
-	}))
+	const mormingTeacher: Teachers[] = dataMorningTeacher.map(
+		(e: any) => ({
+			slug: e.uid,
+			teacherName: e.data.teacher_name,
+			teacherImg: e.data.teacher_img.url,
+			alt: e.data.teacher_img.alt,
+		})
+	)
 
-	const afternoonTeacher = dataAfternoonTeacher.map((e: any) => ({
-		slug: e.uid,
-		teacherName: e.data.teacher_name,
-		teacherImg: e.data.teacher_img.url,
-		alt: e.data.teacher_img.alt,
-	}))
+	const afternoonTeacher: Teachers[] = dataAfternoonTeacher.map(
+		(e: any) => ({
+			slug: e.uid,
+			teacherName: e.data.teacher_name,
+			teacherImg: e.data.teacher_img.url,
+			alt: e.data.teacher_img.alt,
+		})
+	)
 
 	return {
 		props: {

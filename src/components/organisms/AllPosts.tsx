@@ -10,8 +10,6 @@ const AllPosts = ({ post }: Posts) => {
 
 	const currentRoute = router.pathname.split("/")[1]
 
-	console.log(currentRoute)
-
 	return (
 		<div className="flex justify-evenly flex-wrap items-center mt-10">
 			{post.map((p) => (
@@ -21,7 +19,7 @@ const AllPosts = ({ post }: Posts) => {
 					}}
 					key={p.slug}>
 					<Card width={20} height={15}>
-						<div className="w-[18rem] h-[12rem] sm:h-[10rem] sm:w-[30rem]">
+						<div className="w-[18rem] h-[12rem] sm:h-[10rem] sm:w-[16rem]">
 							<Image
 								src={p.img_one_post}
 								alt={p.alt_one_post}
