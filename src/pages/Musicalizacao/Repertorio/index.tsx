@@ -1,15 +1,18 @@
 /* eslint-disable new-cap */
 import Head from "next/head"
 import React, { useEffect } from "react"
-import { PagesContainer } from "@/components/atoms"
+import { PagesContainer, FloatingButton } from "@/components/atoms"
 import Header from "@/components/molecules/Header"
 import Repertoire from "@/components/organisms/Repertoire"
 import { createClient } from "../../../../prismicio"
 import { IRepertoire } from "@/utils/interfaces"
 import useAuth from "@/hooks/useAuth"
+import { useRouter } from "next/router"
 
 const RepertoirePage = ({ repertoire }: IRepertoire) => {
 	const { AuthStateChanged } = useAuth()
+
+	const router = useRouter()
 
 	useEffect(() => {
 		AuthStateChanged()
@@ -24,6 +27,8 @@ const RepertoirePage = ({ repertoire }: IRepertoire) => {
 			</Head>
 			<Header />
 			<Repertoire repertoire={repertoire} />
+
+			<FloatingButton onClick={router.back}>Voltar</FloatingButton>
 		</PagesContainer>
 	)
 }

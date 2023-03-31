@@ -33,6 +33,7 @@ import {
 	MusicButton,
 	ReadButton,
 	ProjectButton,
+	FloatingButton,
 } from "./Buttons"
 
 export {
@@ -67,4 +68,5 @@ export {
 	ProjectButton,
 	Card,
 	OverflowContainer,
+	FloatingButton,
 }

@@ -5,17 +5,21 @@ import TeachersArea from "../../components/organisms/TeachersArea"
 import Footer from "../../components/molecules/Footer"
 import useAuth from "../../hooks/useAuth"
 import Header from "../../components/molecules/Header"
-import { PagesContainer } from "../../components/atoms"
+import {
+	FloatingButton,
+	PagesContainer,
+} from "../../components/atoms"
 import { RoomOf, Route } from "../../utils/enum"
 import { createClient } from "../../../prismicio"
 import { Teachers } from "@/utils/interfaces"
+import { useRouter } from "next/router"
 
 const Literatura = ({
 	mormingTeacher,
 	afternoonTeacher,
 }: Teachers) => {
 	const { AuthStateChanged } = useAuth()
-
+	const router = useRouter()
 	useEffect(() => {
 		AuthStateChanged()
 	}, [AuthStateChanged])
@@ -38,9 +42,9 @@ const Literatura = ({
 				mormingTeacherSlug={"posts_professora_literatura_manha"}
 				afternoonTeacherSlug={"posts_professora_literatura_tarde"}
 			/>
-			<div className="text-center pt-2 sm:h-16 h-16 md:mt-[-2rem]">
-				<Footer />
-			</div>
+
+			<Footer />
+			<FloatingButton onClick={router.back}>Voltar</FloatingButton>
 		</PagesContainer>
 	)
 }

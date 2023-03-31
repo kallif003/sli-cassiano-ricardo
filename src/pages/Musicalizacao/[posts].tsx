@@ -1,15 +1,17 @@
 /* eslint-disable new-cap */
 import Head from "next/head"
 import React, { useEffect } from "react"
-import { PagesContainer } from "@/components/atoms"
+import { PagesContainer, FloatingButton } from "@/components/atoms"
 import Header from "@/components/molecules/Header"
 import { createClient } from "../../../prismicio"
 import { Posts } from "@/utils/interfaces"
 import useAuth from "@/hooks/useAuth"
 import AllPosts from "@/components/organisms/AllPosts"
+import { useRouter } from "next/router"
 
 const TodosOsPosts = ({ post }: Posts) => {
 	const { AuthStateChanged } = useAuth()
+	const router = useRouter()
 
 	useEffect(() => {
 		AuthStateChanged()
@@ -24,6 +26,8 @@ const TodosOsPosts = ({ post }: Posts) => {
 			</Head>
 			<Header />
 			<AllPosts post={post} />
+
+			<FloatingButton onClick={router.back}>Voltar</FloatingButton>
 		</PagesContainer>
 	)
 }

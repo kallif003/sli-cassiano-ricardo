@@ -1,15 +1,18 @@
 /* eslint-disable new-cap */
 import Head from "next/head"
 import React, { useEffect } from "react"
-import { PagesContainer } from "@/components/atoms"
+import { PagesContainer, FloatingButton } from "@/components/atoms"
 import Header from "@/components/molecules/Header"
 import Video from "@/components/organisms/Videos"
 import { createClient } from "../../../../prismicio"
 import { IVideo } from "@/utils/interfaces"
 import useAuth from "@/hooks/useAuth"
+import { useRouter } from "next/router"
 
 const Videos = ({ videos }: IVideo) => {
 	const { AuthStateChanged } = useAuth()
+
+	const router = useRouter()
 
 	useEffect(() => {
 		AuthStateChanged()
@@ -24,6 +27,8 @@ const Videos = ({ videos }: IVideo) => {
 			</Head>
 			<Header />
 			<Video videos={videos} />
+
+			<FloatingButton onClick={router.back}>Voltar</FloatingButton>
 		</PagesContainer>
 	)
 }

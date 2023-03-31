@@ -1,15 +1,17 @@
 /* eslint-disable new-cap */
 import Head from "next/head"
 import React, { useEffect } from "react"
-import { PagesContainer } from "@/components/atoms"
+import { PagesContainer, FloatingButton } from "@/components/atoms"
 import useAuth from "@/hooks/useAuth"
 import Header from "@/components/molecules/Header"
 import Projects from "@/components/organisms/Projects"
 import { createClient } from "../../../prismicio"
 import { IProject } from "@/utils/interfaces"
+import { useRouter } from "next/router"
 
 const Projetos = ({ project }: IProject) => {
 	const { AuthStateChanged } = useAuth()
+	const router = useRouter()
 
 	useEffect(() => {
 		AuthStateChanged()
@@ -24,6 +26,8 @@ const Projetos = ({ project }: IProject) => {
 			</Head>
 			<Header />
 			<Projects project={project} />
+
+			<FloatingButton onClick={router.back}>Voltar</FloatingButton>
 		</PagesContainer>
 	)
 }

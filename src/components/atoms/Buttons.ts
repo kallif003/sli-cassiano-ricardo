@@ -65,3 +65,23 @@ export const ProjectButton = styled.button`
 	justify-content: center;
 	align-items: center;
 `
+
+export const FloatingButton = styled.button`
+	width: 4rem;
+	height: 4rem;
+	color: #fff;
+	border-radius: 20rem;
+	background: #ff8343;
+	position: fixed;
+	right: 5rem;
+	top: 35rem;
+
+	@media (min-width: 0) and (max-width: 768px) {
+		right: 1rem;
+		top: 28rem;
+		background: rgba(255, 131, 67, 0.2);
+		color: #ff8343;
+		font-weight: bold;
+		border: 2px solid #ff8343;
+	}
+`
