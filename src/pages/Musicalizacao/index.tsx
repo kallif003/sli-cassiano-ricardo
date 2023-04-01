@@ -2,7 +2,6 @@
 import Head from "next/head"
 import React, { useEffect } from "react"
 import TeachersArea from "../../components/organisms/TeachersArea"
-import Footer from "../../components/molecules/Footer"
 import useAuth from "@/hooks/useAuth"
 import Header from "@/components/molecules/Header"
 import {
@@ -13,6 +12,8 @@ import { RoomOf, Route } from "@/utils/enum"
 import { createClient } from "../../../prismicio"
 import { Teachers } from "@/utils/interfaces"
 import { useRouter } from "next/router"
+import { mdiArrowLeft } from "@mdi/js"
+import Icon from "@mdi/react"
 
 const Musicalizacao = ({
 	mormingTeacher,
@@ -44,9 +45,9 @@ const Musicalizacao = ({
 				afternoonTeacherSlug={"posts_professora_musica_tarde"}
 			/>
 
-			<Footer />
-
-			<FloatingButton onClick={router.back}>Voltar</FloatingButton>
+			<FloatingButton onClick={router.back}>
+				<Icon path={mdiArrowLeft} size={1} />
+			</FloatingButton>
 		</PagesContainer>
 	)
 }

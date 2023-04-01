@@ -22,6 +22,7 @@ import {
 	NewspaperArticleContainer,
 	Card,
 	OverflowContainer,
+	OverflowHomeContainer,
 } from "./Containers"
 
 import { Input } from "./Inputs"
@@ -69,4 +70,5 @@ export {
 	Card,
 	OverflowContainer,
 	FloatingButton,
+	OverflowHomeContainer,
 }

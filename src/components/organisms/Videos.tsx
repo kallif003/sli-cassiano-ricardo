@@ -6,7 +6,7 @@ const Repertoire = ({ videos }: IVideo) => {
 	return (
 		<div className="flex justify-evenly flex-wrap items-center mt-10">
 			{videos.map((v) => (
-				<Card key={v.slug} width={25} height={15}>
+				<Card key={v.slug} width={25} height={18}>
 					{v.link_type === "Web" ? (
 						<iframe
 							src={v.videos}

@@ -8,6 +8,8 @@ import { Posts } from "@/utils/interfaces"
 import useAuth from "@/hooks/useAuth"
 import TeachersPost from "@/components/organisms/TeachersPost"
 import { useRouter } from "next/router"
+import { mdiArrowLeft } from "@mdi/js"
+import Icon from "@mdi/react"
 
 const Post = ({ post }: Posts) => {
 	const { AuthStateChanged } = useAuth()
@@ -28,7 +30,9 @@ const Post = ({ post }: Posts) => {
 			<Header />
 			<TeachersPost post={post} />
 
-			<FloatingButton onClick={router.back}>Voltar</FloatingButton>
+			<FloatingButton onClick={router.back}>
+				<Icon path={mdiArrowLeft} size={1} />
+			</FloatingButton>
 		</PagesContainer>
 	)
 }

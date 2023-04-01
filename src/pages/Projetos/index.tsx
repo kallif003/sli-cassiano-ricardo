@@ -8,6 +8,8 @@ import Projects from "@/components/organisms/Projects"
 import { createClient } from "../../../prismicio"
 import { IProject } from "@/utils/interfaces"
 import { useRouter } from "next/router"
+import { mdiArrowLeft } from "@mdi/js"
+import Icon from "@mdi/react"
 
 const Projetos = ({ project }: IProject) => {
 	const { AuthStateChanged } = useAuth()
@@ -27,7 +29,9 @@ const Projetos = ({ project }: IProject) => {
 			<Header />
 			<Projects project={project} />
 
-			<FloatingButton onClick={router.back}>Voltar</FloatingButton>
+			<FloatingButton onClick={router.back}>
+				<Icon path={mdiArrowLeft} size={1} />
+			</FloatingButton>
 		</PagesContainer>
 	)
 }

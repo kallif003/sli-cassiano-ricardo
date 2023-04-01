@@ -6,6 +6,7 @@ import {
 	ReadButton,
 	SheetHolesContainer,
 	ProjectButton,
+	OverflowHomeContainer,
 } from "../atoms"
 import Icon from "@mdi/react"
 import {
@@ -26,12 +27,11 @@ const rows: string[] = [
 	"DE FORMA AUTÔNOMA E CRÍTICA CONSIGO MESMO E COM O MUNDO,",
 	"EXERCENDO O PROTAGONISMO. CONSIDERANDO QUE O TRABALHO COM",
 	"MUSICALIZAÇÃO E LITERATURA OFERECEM POSSIBILIDADES DE",
-	"MUSICALIZAÇÃO E LITERATURA OFERECEM POSSIBILIDADES DE",
 	"CAPACIDADES NECESSÁRIAS NESSA FAIXA ETÁRIA E AO LONGO DA VIDA,",
 	"CADA SALA É ATENDIDA SEMANALMENTE COM QUATRO AULAS DE 50",
 	"MINUTOS, SENDO DUAS DE DE LITERATURA E DUAS DE MUSICALIZAÇÃO.",
-	"ABAIXO VOCÊ PODE CONFERIR UM POUCO DO QUE É TRABALHADO E FICAR",
-	"A PAR DA NOSSA SEMANA:",
+	"ABAIXO VOCÊ PODE CONFERIR UM POUCO DO QUE É TRABALHADO",
+	"E FICAR A PAR DA NOSSA SEMANA:",
 ]
 
 for (let i = 0; i < 12; i++) {
@@ -45,7 +45,7 @@ const Home = () => {
 
 	return (
 		<>
-			<div className="flex justify-center items-center pt-16 sm:pt-10 sm:mx-auto">
+			<div className="flex justify-center items-center pt-12 sm:pt-10 sm:mx-auto">
 				<AboutProjectContainer>
 					<SheetHolesContainer>{sheetHoles}</SheetHolesContainer>
 					<div className="py-3 px-8 sm:px-6 w-full sm:w-[22rem]">
@@ -57,19 +57,26 @@ const Home = () => {
 							<hr className="border-dashed border-[#d1cece] " />
 						</div>
 
-						{rows.map((text, index) => (
-							<div key={index}>
-								<div className="px-2 py-1 sm:hidden md:hidden">
-									<p>{text}</p>
-									<hr className="border-dashed border-[#d1cece]" />
+						<OverflowHomeContainer>
+							{rows.map((text, index) => (
+								<div key={index}>
+									<div className="px-2 py-1 sm:hidden">
+										<p
+											className={
+												index === 0 || index === 10 ? "ml-2" : "ml-0"
+											}>
+											{text}
+										</p>
+										<hr className="border-dashed border-[#d1cece]" />
+									</div>
+									<p className="lg:hidden xl:hidden md:hidden text-justify">
+										{text}
+									</p>
 								</div>
-								<p className="lg:hidden xl:hidden text-justify">
-									{text}
-								</p>
-							</div>
-						))}
+							))}
+						</OverflowHomeContainer>
 
-						<div className="flex justify-end h-10 mt-3 sm:hidden md:hidden">
+						<div className="flex justify-end h-10 mt-5 sm:hidden md:mt-8">
 							<MusicButton
 								className="mr-3"
 								onClick={() => router.push(Route.MUSICALIZATION)}>
@@ -93,7 +100,7 @@ const Home = () => {
 							</ProjectButton>
 						</div>
 
-						<div className="flex justify-evenly h-10 mt-3 text-[0.5rem] lg:hidden xl:hidden">
+						<div className="flex justify-evenly h-10 mt-3 text-[0.5rem] lg:hidden xl:hidden md:hidden">
 							<button
 								className="text-[#FECA04] flex justify-evenly items-center ml-[-0.8rem]"
 								onClick={() => router.push(Route.MUSICALIZATION)}>

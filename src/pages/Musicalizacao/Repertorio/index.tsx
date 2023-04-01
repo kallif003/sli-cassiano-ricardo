@@ -8,6 +8,8 @@ import { createClient } from "../../../../prismicio"
 import { IRepertoire } from "@/utils/interfaces"
 import useAuth from "@/hooks/useAuth"
 import { useRouter } from "next/router"
+import { mdiArrowLeft } from "@mdi/js"
+import Icon from "@mdi/react"
 
 const RepertoirePage = ({ repertoire }: IRepertoire) => {
 	const { AuthStateChanged } = useAuth()
@@ -28,7 +30,9 @@ const RepertoirePage = ({ repertoire }: IRepertoire) => {
 			<Header />
 			<Repertoire repertoire={repertoire} />
 
-			<FloatingButton onClick={router.back}>Voltar</FloatingButton>
+			<FloatingButton onClick={router.back}>
+				<Icon path={mdiArrowLeft} size={1} />
+			</FloatingButton>
 		</PagesContainer>
 	)
 }

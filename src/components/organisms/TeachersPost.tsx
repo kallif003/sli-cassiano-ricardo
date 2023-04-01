@@ -9,9 +9,9 @@ const TeachersPost = ({ post }: Posts) => {
 			{post.map((p) => (
 				<div
 					key={p.slug}
-					className="flex justify-evenly items-center sm:flex-col md:flex-col xl:mt-10">
+					className="flex justify-evenly items-center sm:flex-col md:flex-col xl:mt-5">
 					<div className="mt-24 md:mt-10 sm:mt-10 ">
-						<h1 className="text-[1.8rem] sm:text-[1rem] font-bold sm:text-center">
+						<h1 className="text-[1.8rem] sm:text-[1rem] font-bold text-center">
 							{p.title.toUpperCase()}
 						</h1>
 						<OverflowContainer>

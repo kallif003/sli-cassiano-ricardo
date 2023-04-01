@@ -131,10 +131,18 @@ export const AboutProjectContainer = styled.div`
 	border-radius: 1.5rem;
 	border-top-left-radius: 1.2rem;
 	background: #f8f8f8;
-	@media (min-width: 0) and (max-width: 1023px) {
+	@media (max-width: 768px) {
 		flex-direction: column;
 		width: 22rem;
 		height: auto;
+	}
+
+	@media (min-width: 769px) and (max-width: 1023px) {
+		height: 32rem;
+	}
+
+	@media (max-height: 700px) {
+		height: 31rem;
 	}
 `
 
@@ -210,7 +218,7 @@ export const SheetHolesContainer = styled.div`
 	background: #ff8343;
 	border-top-left-radius: 1.2rem;
 	border-bottom-left-radius: 1.2rem;
-	@media (min-width: 0) and (max-width: 1023px) {
+	@media (min-width: 0) and (max-width: 768px) {
 		flex-direction: row;
 		padding-left: 1rem;
 		border-bottom-left-radius: 0;
@@ -278,9 +286,9 @@ export const TeachersGrid = styled.div`
 
 	@media (min-width: 768px) and (max-width: 1279px) {
 		grid-template-columns: 1fr;
-		grid-template-rows: repeat(2, 50%);
+		grid-template-rows: 40% 60%;
 		height: 52rem;
-		margin: 0 auto 0 auto;
+		margin: 0 auto;
 	}
 	@media (min-width: 1400px) {
 		height: 40rem;
@@ -321,7 +329,7 @@ export const Card = styled.div.attrs(
 	color: #3d3d3d;
 	background: #f8f8f8;
 	border-radius: 1.2rem;
-	margin-bottom: 1rem;
+	margin-bottom: 3rem;
 	padding: 1rem 0;
 	display: flex;
 	flex-direction: column;
@@ -347,6 +355,37 @@ export const OverflowContainer = styled.div`
 	@media (max-width: 800px) {
 		width: auto;
 		padding: 0 2rem;
+		height: 15.5rem;
+	}
+`
+
+export const OverflowHomeContainer = styled.div`
+	@media (max-height: 700px) {
+		height: 20rem;
+		width: 40rem;
+		overflow-y: auto;
+		overflow-x: auto;
+		::-webkit-scrollbar {
+			display: none;
+		}
+	}
+
+	@media (max-width: 768px) {
+		height: 20rem;
+		overflow-y: auto;
+		overflow-x: auto;
+		::-webkit-scrollbar {
+			display: none;
+		}
+	}
+
+	@media (min-width: 769px) and (max-width: 1023px) {
+		height: 20rem;
+		overflow-y: auto;
+		overflow-x: auto;
+		::-webkit-scrollbar {
+			display: none;
+		}
 	}
 `
 

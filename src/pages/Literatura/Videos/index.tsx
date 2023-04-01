@@ -8,6 +8,8 @@ import { createClient } from "../../../../prismicio"
 import { IVideo } from "@/utils/interfaces"
 import useAuth from "@/hooks/useAuth"
 import { useRouter } from "next/router"
+import { mdiArrowLeft } from "@mdi/js"
+import Icon from "@mdi/react"
 
 const Videos = ({ videos }: IVideo) => {
 	const { AuthStateChanged } = useAuth()
@@ -28,7 +30,9 @@ const Videos = ({ videos }: IVideo) => {
 			<Header />
 			<Video videos={videos} />
 
-			<FloatingButton onClick={router.back}>Voltar</FloatingButton>
+			<FloatingButton onClick={router.back}>
+				<Icon path={mdiArrowLeft} size={1} />
+			</FloatingButton>
 		</PagesContainer>
 	)
 }

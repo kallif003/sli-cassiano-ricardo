@@ -1,6 +1,5 @@
 import React from "react"
 import {
-	H1,
 	AboutClassContainer,
 	MusicButton,
 	ProjectContainer,
@@ -71,9 +70,9 @@ const TeachersArea = ({
 									: "absolute top-3 left-6"
 							}
 						/>
-						<H1 size={1.5} className="text-center sm:ml-10">
+						<h1 className="text-center sm:ml-10 sm:text-[1.2rem] text-[1.5rem] font-bold">
 							{lesson}
-						</H1>
+						</h1>
 						<hr className="border-dashed border-[#d1cece] sm:mb-2 " />
 					</div>
 					{lesson === RoomOf.MUSICALIZATION ? (
@@ -139,9 +138,9 @@ const TeachersArea = ({
 							className="mt-3 bg-[#48D2B0]"
 						/>
 						<TeacherInfoContainer>
-							<H1 size={1}>
+							<h1 className="sm:text-[1rem] font-bold text-[1.2rem]">
 								PROFESSORA {morningTeacher[0].teacherName}
-							</H1>
+							</h1>
 							<H2 size={1}>MANHÃ</H2>
 							<a href={`${currentRoute}/${mormingTeacherSlug}`}>
 								<MusicButton className="mt-2">
@@ -162,9 +161,9 @@ const TeachersArea = ({
 
 					<div className="flex justify-between pr-2 mr-14 sm:mr-0 sm:flex-col-reverse sm:items-center">
 						<TeacherInfoContainer>
-							<H1 size={1}>
+							<h1 className="sm:text-[1rem] font-bold text-[1.2rem]">
 								PROFESSORA {afternoonTeacher[0].teacherName}
-							</H1>
+							</h1>
 							<H2 size={1}>TARDE</H2>
 							<a href={`${currentRoute}/${afternoonTeacherSlug}`}>
 								<ReadButton className="mt-2">

@@ -74,14 +74,26 @@ export const FloatingButton = styled.button`
 	background: #ff8343;
 	position: fixed;
 	right: 5rem;
-	top: 35rem;
-
+	top: 45rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	@media (min-width: 0) and (max-width: 768px) {
 		right: 1rem;
-		top: 28rem;
+		top: 38rem;
 		background: rgba(255, 131, 67, 0.2);
 		color: #ff8343;
 		font-weight: bold;
 		border: 2px solid #ff8343;
+	}
+
+	@media (min-width: 769px) and (max-width: 1023px) {
+		top: 38rem;
+		right: 2rem;
+	}
+
+	@media (min-width: 1024px) and (max-width: 1279px) {
+		right: 5rem;
+		top: 43rem;
 	}
 `

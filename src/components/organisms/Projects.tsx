@@ -11,13 +11,15 @@ const Projects = ({ project }: IProject) => {
 				<div
 					key={p.slug}
 					className="text-justify w-[60%] leading-8 mb-5 ">
-					<H1 className="text-center">{p.title.toUpperCase()}</H1>
+					<H1 className="text-center sm:mt-5">
+						{p.title.toUpperCase()}
+					</H1>
 					<Paragraph className="mt-4 indent-8">
 						{p.text.toUpperCase()}
 					</Paragraph>
 					<Carousel
 						showArrows={false}
-						className="mt-5 mb-8 sm:h-[12rem]">
+						className="mt-5 mb-8 sm:h-[12rem] h-[26rem]">
 						<div className="w-[60rem] h-[30rem] sm:h-[10rem] sm:w-[30rem]">
 							<Image
 								src={p.img_one_project}
