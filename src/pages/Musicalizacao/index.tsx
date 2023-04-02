@@ -35,7 +35,6 @@ const Musicalizacao = ({
 			<Header />
 			<TeachersArea
 				lesson={RoomOf.MUSICALIZATION}
-				pathProject=""
 				pathRepository={Route.REPERTOIRE}
 				nameButton="REPERTÓRIO/VÍDEOS"
 				nameIcon="music"

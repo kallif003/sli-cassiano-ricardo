@@ -34,7 +34,6 @@ const Literatura = ({
 			<Header />
 			<TeachersArea
 				lesson={RoomOf.LITERATURE}
-				pathProject=""
 				pathRepository={Route.VIDEOS}
 				nameButton="VIDEOS"
 				nameIcon="read"

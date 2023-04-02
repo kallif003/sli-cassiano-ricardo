@@ -45,7 +45,7 @@ const TeachersPost = ({ type, slug }: IPrismic) => {
 		<>
 			{post.map((p) => (
 				<TeacherPostContainer key={p.slug}>
-					<div>
+					<div className="mt-24">
 						<h1 className="text-[1.8rem] sm:text-[1rem] font-bold text-center">
 							{p.title.toUpperCase()}
 						</h1>

@@ -415,7 +415,7 @@ export const TeacherPostContainer = styled.div`
 	}
 
 	@media (max-height: 700px) {
-		margin-top: 2rem;
+		margin-top: -1rem;
 	}
 `
 

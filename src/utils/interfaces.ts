@@ -77,7 +77,6 @@ export interface IText {
 
 export interface ITeachersArea {
 	lesson: string
-	pathProject: string
 	pathRepository: string
 	nameButton: string
 	nameIcon: string
