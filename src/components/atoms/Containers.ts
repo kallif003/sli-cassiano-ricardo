@@ -353,7 +353,7 @@ export const OverflowContainer = styled.div`
 		display: none;
 	}
 	@media (max-width: 800px) {
-		width: 10rem;
+		width: auto;
 		padding: 0 2rem;
 		height: 15.5rem;
 	}
