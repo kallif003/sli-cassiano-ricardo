@@ -1,21 +1,54 @@
-import React from "react"
-import { Card } from "../atoms"
+import React, { useEffect, useState } from "react"
+import { Card, AllPostsContainer } from "../atoms"
 import Image from "next/image"
-import { Posts } from "@/utils/interfaces"
+import { ISlug, IPost } from "@/utils/interfaces"
 import Link from "next/link"
 import { useRouter } from "next/router"
+import { createClient } from "../../../prismicio"
 
-const AllPosts = ({ post }: Posts) => {
+const AllPosts = ({ slug }: ISlug) => {
 	const router = useRouter()
+	const [posts, setPosts] = useState<IPost[]>([])
 
 	const currentRoute = router.pathname.split("/")[1]
 
+	const getPosts = async () => {
+		const client = createClient()
+
+		const data = await client.getAllByType(String(slug), {
+			orderings: [
+				{
+					field: "document.first_publication_date",
+					direction: "desc",
+				},
+			],
+		})
+
+		const posts = data.map((e: any) => ({
+			slug: e.uid,
+			title: e.data.title,
+			text: e.data.text[0].text,
+			img_one_post: e.data.img_one_post.url,
+			alt_one_post: e.data.img_one_post.alt,
+			type: slug,
+		}))
+
+		setPosts(posts)
+	}
+
+	useEffect(() => {
+		if (slug !== undefined) {
+			getPosts()
+		}
+	}, [slug])
+
 	return (
-		<div className="flex justify-evenly flex-wrap items-center mt-10">
-			{post.map((p) => (
+		<AllPostsContainer>
+			{posts.map((p) => (
 				<Link
 					href={{
-						pathname: `/${currentRoute}/${p.posts}/post/${p.slug}`,
+						pathname: `/${currentRoute}/Posts/post`,
+						query: { type: p.type, slug: p.slug },
 					}}
 					key={p.slug}>
 					<Card width={20} height={15}>
@@ -35,7 +68,7 @@ const AllPosts = ({ post }: Posts) => {
 					</Card>
 				</Link>
 			))}
-		</div>
+		</AllPostsContainer>
 	)
 }
 

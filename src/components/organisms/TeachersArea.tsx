@@ -22,6 +22,7 @@ import {
 } from "@mdi/js"
 import { ITeachersArea } from "@/utils/interfaces"
 import { RoomOf } from "@/utils/enum"
+import Link from "next/link"
 
 const TeachersArea = ({
 	lesson,
@@ -142,7 +143,11 @@ const TeachersArea = ({
 								PROFESSORA {morningTeacher[0].teacherName}
 							</h1>
 							<H2 size={1}>MANHÃ</H2>
-							<a href={`${currentRoute}/${mormingTeacherSlug}`}>
+							<Link
+								href={{
+									pathname: `${currentRoute}/Posts`,
+									query: { slug: mormingTeacherSlug },
+								}}>
 								<MusicButton className="mt-2">
 									<Icon
 										path={mdiPostOutline}
@@ -153,7 +158,7 @@ const TeachersArea = ({
 										VER CONTEÚDO
 									</h1>
 								</MusicButton>
-							</a>
+							</Link>
 						</TeacherInfoContainer>
 					</div>
 
@@ -165,7 +170,11 @@ const TeachersArea = ({
 								PROFESSORA {afternoonTeacher[0].teacherName}
 							</h1>
 							<H2 size={1}>TARDE</H2>
-							<a href={`${currentRoute}/${afternoonTeacherSlug}`}>
+							<Link
+								href={{
+									pathname: `${currentRoute}/Posts`,
+									query: { slug: afternoonTeacherSlug },
+								}}>
 								<ReadButton className="mt-2">
 									<Icon
 										path={mdiPostOutline}
@@ -176,7 +185,7 @@ const TeachersArea = ({
 										VER CONTEÚDO
 									</h1>
 								</ReadButton>
-							</a>
+							</Link>
 						</TeacherInfoContainer>
 
 						<ImageContainer

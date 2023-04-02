@@ -1,16 +1,51 @@
-import { Posts } from "@/utils/interfaces"
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Carousel from "react-elastic-carousel"
-import { Paragraph, OverflowContainer } from "../atoms"
+import {
+	Paragraph,
+	OverflowContainer,
+	TeacherPostContainer,
+} from "../atoms"
+import { createClient } from "../../../prismicio"
 import Image from "next/image"
-const TeachersPost = ({ post }: Posts) => {
+import { IPost } from "@/utils/interfaces"
+
+interface IPrismic {
+	type: string
+	slug: string
+}
+
+const TeachersPost = ({ type, slug }: IPrismic) => {
+	const [post, setPost] = useState<IPost[]>([])
+
+	const getPost = async () => {
+		const client = createClient()
+
+		const data = [await client.getByUID(String(type), String(slug))]
+
+		const post = data.map((e: any) => ({
+			slug: e.uid,
+			title: e.data.title,
+			text: e.data.text[0].text,
+			img_one_post: e.data.img_one_post.url,
+			alt_one_post: e.data.img_one_post.alt,
+			img_two_post: e.data.img_two_post.url,
+			alt_two_post: e.data.img_two_post.alt,
+			img_three_post: e.data.img_three_post.url,
+			alt_three_post: e.data.img_three_post.alt,
+		}))
+
+		setPost(post)
+	}
+
+	useEffect(() => {
+		if (type && slug) getPost()
+	}, [type, slug])
+
 	return (
 		<>
 			{post.map((p) => (
-				<div
-					key={p.slug}
-					className="flex justify-evenly items-center sm:flex-col md:flex-col xl:mt-5">
-					<div className="mt-24 md:mt-10 sm:mt-10 ">
+				<TeacherPostContainer key={p.slug}>
+					<div>
 						<h1 className="text-[1.8rem] sm:text-[1rem] font-bold text-center">
 							{p.title.toUpperCase()}
 						</h1>
@@ -53,7 +88,7 @@ const TeachersPost = ({ post }: Posts) => {
 							</div>
 						</Carousel>
 					</div>
-				</div>
+				</TeacherPostContainer>
 			))}
 		</>
 	)

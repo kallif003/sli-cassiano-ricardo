@@ -41,7 +41,7 @@ export interface IRepertoire {
 	repertoire: IRepertoires[]
 }
 
-interface IPost {
+export interface IPost {
 	slug: string
 	title: string
 	text: string
@@ -51,13 +51,11 @@ interface IPost {
 	alt_two_post?: string
 	img_three_post?: string
 	alt_three_post?: string
-	img_four_post?: string
-	alt_four_post?: string
-	posts?: string
+	type?: string | string[]
 }
 
-export interface Posts {
-	post: IPost[]
+export interface ISlug {
+	slug: string | string[]
 }
 
 export interface Iteachers {

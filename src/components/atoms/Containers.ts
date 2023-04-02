@@ -353,7 +353,7 @@ export const OverflowContainer = styled.div`
 		display: none;
 	}
 	@media (max-width: 800px) {
-		width: auto;
+		width: 10rem;
 		padding: 0 2rem;
 		height: 15.5rem;
 	}
@@ -386,6 +386,36 @@ export const OverflowHomeContainer = styled.div`
 		::-webkit-scrollbar {
 			display: none;
 		}
+	}
+`
+
+export const AllPostsContainer = styled.div`
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-top: 2.5rem;
+`
+
+export const TeacherPostContainer = styled.div`
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+
+	@media (min-width: 0px) and (max-width: 767px) {
+		flex-direction: column;
+	}
+
+	@media (min-width: 768px) and (max-width: 1023px) {
+		flex-direction: column;
+	}
+
+	@media (min-width: 1280px) {
+		margin-top: 1.25rem /* 20px */;
+	}
+
+	@media (max-height: 700px) {
+		margin-top: 2rem;
 	}
 `
 

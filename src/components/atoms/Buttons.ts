@@ -96,4 +96,8 @@ export const FloatingButton = styled.button`
 		right: 5rem;
 		top: 43rem;
 	}
+
+	@media (max-height: 700px) {
+		top: 35rem;
+	}
 `

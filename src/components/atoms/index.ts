@@ -23,6 +23,8 @@ import {
 	Card,
 	OverflowContainer,
 	OverflowHomeContainer,
+	AllPostsContainer,
+	TeacherPostContainer,
 } from "./Containers"
 
 import { Input } from "./Inputs"
@@ -71,4 +73,6 @@ export {
 	OverflowContainer,
 	FloatingButton,
 	OverflowHomeContainer,
+	AllPostsContainer,
+	TeacherPostContainer,
 }
