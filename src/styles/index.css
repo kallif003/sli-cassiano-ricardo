@@ -7,8 +7,31 @@ body {
 	margin: 0;
 	font-size: 16px;
 	font-family: Arial, Helvetica, sans-serif;
+	user-select: none;
 }
 
 * {
 	box-sizing: border-box;
+}
+
+button:active {
+	transform: scale(0.9);
+}
+
+.rec-dot_active {
+	background: transparent !important;
+	border: 2px solid #ff8343 !important;
+	box-shadow: 0 0 1px 3px rgb(255, 131, 67) !important;
+}
+
+@media (max-width: 767px) {
+	.rec-carousel-item {
+		height: 15rem !important;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	.rec-carousel-item {
+		height: 18rem !important;
+	}
 }

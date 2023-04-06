@@ -12,6 +12,7 @@ export const Input = styled.input.attrs(
 	height: 4.5rem;
 	outline-color: #b4b4b4;
 	border: 2px solid ${({ borderColor }) => borderColor};
+	color: #000;
 	::placeholder,
 	::-webkit-input-placeholder {
 		color: #b4b4b4;
@@ -28,8 +29,7 @@ export const Input = styled.input.attrs(
 	input {
 		-moz-appearance: textfield;
 	}
-
 	@media (min-width: 0) and (max-width: 767px) {
-		width: 23rem;
+		width: 20rem;
 	}
 `

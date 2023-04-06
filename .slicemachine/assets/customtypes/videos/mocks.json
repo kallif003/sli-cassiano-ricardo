@@ -1,0 +1,23 @@
+{
+	"uid": {
+		"__TYPE__": "UIDContent",
+		"value": "label"
+	},
+	"title": {
+		"__TYPE__": "FieldContent",
+		"value": "design",
+		"type": "Text"
+	},
+	"date": {
+		"__TYPE__": "FieldContent",
+		"type": "Date",
+		"value": "2016-05-19"
+	},
+	"videos": {
+		"__TYPE__": "LinkContent",
+		"value": {
+			"__TYPE__": "ExternalLink",
+			"url": "http://twitter.com"
+		}
+	}
+}

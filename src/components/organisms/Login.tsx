@@ -12,20 +12,22 @@ import {
 import Icon from "@mdi/react"
 import { mdiEyeOutline } from "@mdi/js"
 import { mdiEyeOffOutline } from "@mdi/js"
-import useFirebase from "@/hooks/useFirebase"
 import FadeLoader from "react-spinners/FadeLoader"
-import { useRouter } from "next/router"
 import Image from "next/image"
+import useAuth from "@/hooks/useAuth"
 
 const Login = () => {
 	const [eyeIcon, setEyeIcon] = useState(false)
 	const [email, setEmail] = useState("")
 	const [password, setPassword] = useState("")
-	const [disabled, setDisabled] = useState(true)
-	const [loading, setLoading] = useState(false)
-	const [errorMsg, setErrorMsg] = useState("")
-	const router = useRouter()
-	const { firebase } = useFirebase()
+	const {
+		loading,
+		disabled,
+		errorMsg,
+		signin,
+		setDisabled,
+		setErrorMsg,
+	} = useAuth()
 
 	const showPassword = () => {
 		setEyeIcon(!eyeIcon)
@@ -39,9 +41,10 @@ const Login = () => {
 	}
 
 	const getPassword = (event: string) => {
-		setPassword(event)
+		setPassword(event.trim())
 		setErrorMsg("")
-		if (email !== "" && event !== "") {
+
+		if (email.length === 27 && event.length === 13) {
 			setDisabled(false)
 		} else {
 			setDisabled(true)
@@ -49,7 +52,7 @@ const Login = () => {
 	}
 
 	const getEmail = (event: string) => {
-		setEmail(event)
+		setEmail(event.trim())
 		setErrorMsg("")
 		if (event === "") {
 			setDisabled(true)
@@ -57,25 +60,13 @@ const Login = () => {
 	}
 
 	const login = async () => {
-		setLoading(true)
-		setDisabled(true)
-		await firebase
-			.auth()
-			.signInWithEmailAndPassword(email, password)
-			.then((value: any) => {
-				router.push("./Home")
-				setLoading(false)
-			})
-			.catch((error: any) => {
-				console.log("e", error)
-				setErrorMsg("Email ou senha inválidos")
-				setLoading(false)
-			})
+		await signin(email, password)
 	}
+
 	return (
-		<LoginContainer>
+		<LoginContainer className="sm:text-white">
 			<H1>VAMOS COMEÇAR?</H1>
-			<p className="text-[0.8rem] text-[#b4b4b4] mt-1 sm:text-[0.7rem]">
+			<p className="text-[0.93rem] text-[#b4b4b4] mt-1 sm:text-[0.7rem] sm:text-white ">
 				Após inserir email e senha, você terá acesso ao conteúdo
 			</p>
 
@@ -119,7 +110,7 @@ const Login = () => {
 			<MainButton
 				disabled={disabled}
 				onClick={() => login()}
-				background={!disabled ? "#89b2a2" : "#b4b4b4"}
+				background={!disabled ? "#FECA04" : "#b4b4b4"}
 				className={
 					disabled === false
 						? "active:scale-90 mt-[-4rem]"
@@ -146,24 +137,15 @@ const Login = () => {
 					ESCOLA CASSIANO RICARDO
 				</Paragraph>
 			</div>
+
+			<p className="text-[0.5rem] text-[#000] mt-8 sm:text-white">
+				Desenvolvido por Kallif Abrahão
+			</p>
+			<p className="text-[0.6rem] text-[#000] sm:text-white">
+				Contato: kallifabrahao@gmail.com
+			</p>
 		</LoginContainer>
 	)
 }
 
 export default Login
-
-// this.firebaseAuth.onAuthStateChanged((user) => {
-//     let userSessionTimeout = null;
-
-//     if (user === null && userSessionTimeout) {
-//       clearTimeout(userSessionTimeout);
-//       userSessionTimeout = null;
-//     } else {
-//       user.getIdTokenResult().then((idTokenResult) => {
-//         const authTime = idTokenResult.claims.auth_time * 1000;
-//         const sessionDurationInMilliseconds = 60 * 60 * 1000; // 60 min
-//         const expirationInMilliseconds = sessionDurationInMilliseconds - (Date.now() - authTime);
-//         userSessionTimeout = setTimeout(() => this.firebaseAuth.signOut(), expirationInMilliseconds);
-//       });
-//     }
-//   });

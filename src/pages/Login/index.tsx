@@ -1,8 +1,9 @@
 import Head from "next/head"
 import React from "react"
 import { Container, Login, Welcome } from "@/components"
+import { NextPage } from "next"
 
-const LoginPage = () => {
+const LoginPage: NextPage = () => {
 	return (
 		<Container>
 			<Head>

@@ -1,0 +1,57 @@
+{
+	"id": "posts_professora_musica_tarde",
+	"label": "posts_professora_musica_tarde",
+	"repeatable": true,
+	"status": true,
+	"json": {
+		"Main": {
+			"uid": {
+				"type": "UID",
+				"config": {
+					"label": "uid",
+					"placeholder": ""
+				}
+			},
+			"title": {
+				"type": "Text",
+				"config": {
+					"label": "titulo",
+					"placeholder": ""
+				}
+			},
+			"text": {
+				"type": "StructuredText",
+				"config": {
+					"label": "texto",
+					"placeholder": "",
+					"allowTargetBlank": true,
+					"single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+				}
+			},
+			"img_one_post": {
+				"type": "Image",
+				"config": {
+					"label": "imagen_um_post",
+					"constraint": {},
+					"thumbnails": []
+				}
+			},
+			"img_two_post": {
+				"type": "Image",
+				"config": {
+					"label": "imagem_dois_post",
+					"constraint": {},
+					"thumbnails": []
+				}
+			},
+			"img_three_post": {
+				"type": "Image",
+				"config": {
+					"label": "imagen_tres_post",
+					"constraint": {},
+					"thumbnails": []
+				}
+			}
+		}
+	}
+}

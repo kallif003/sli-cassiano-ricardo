@@ -1,15 +1,21 @@
 import "../styles/index.css"
 import type { AppProps } from "next/app"
-import { PropsProvider } from "../context/PropsProvider"
-import { FirebaseProvider } from "@/context/FirebaseProvider"
+import { AuthProvider } from "../context/AuthProvider"
 import React from "react"
+import Link from "next/link"
+import { PrismicProvider } from "@prismicio/react"
+import { PrismicPreview } from "@prismicio/next"
+import { repositoryName } from "../../prismicio"
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
-		<PropsProvider>
-			<FirebaseProvider>
-				<Component {...pageProps} />
-			</FirebaseProvider>
-		</PropsProvider>
+		<AuthProvider>
+			<PrismicProvider
+				internalLinkComponent={(props) => <Link {...props} />}>
+				<PrismicPreview repositoryName={repositoryName}>
+					<Component {...pageProps} />
+				</PrismicPreview>
+			</PrismicProvider>
+		</AuthProvider>
 	)
 }
