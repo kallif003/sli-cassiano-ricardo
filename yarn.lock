@@ -1032,7 +1032,7 @@
     react-easy-crop "4.6.1"
     tslib "2.4.0"
 
-"@prismicio/helpers@^2.3.5", "@prismicio/helpers@^2.3.8", "@prismicio/helpers@^2.3.9":
+"@prismicio/helpers@^2.3.6", "@prismicio/helpers@^2.3.8", "@prismicio/helpers@^2.3.9":
   version "2.3.9"
   resolved "https://registry.yarnpkg.com/@prismicio/helpers/-/helpers-2.3.9.tgz#dd2513a429644ed2d7a6fbc8955de6b2e9659fc0"
   integrity sha512-p7Y1sG83A2YPZvptfAzuZA8xH1bdM2wGRjqSKW9Qa0rAnBq2OfVKRvwl9OMCZML4eLUMxSEUAEWRVSoKpQnJvA==
@@ -1057,13 +1057,13 @@
     tslib "^2.3.1"
     uuid "^8.3.2"
 
-"@prismicio/next@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@prismicio/next/-/next-1.0.1.tgz#375355dc444cf6a6b7a2ac98193b259bfecefc0e"
-  integrity sha512-a4hWDK5R6jjqUKr5ILauwlybjZZpVECDUBAJm4m+0NIBpiNaZI3gZWdeUoBIxWXE07tjA4WzSZpr/vztq538MQ==
+"@prismicio/next@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@prismicio/next/-/next-1.0.3.tgz#78e7851fa972f254417eef815aa60173d581c794"
+  integrity sha512-5nJCBwwcltaf1Gcr6Losxtl7L5jjkRXo4wmUiAdtwjKgAYTKI7kXmyrsm86jeBwugV5FilgRTbSa7b8HBhqTag==
   dependencies:
-    "@prismicio/helpers" "^2.3.5"
-    "@prismicio/types" "^0.2.3"
+    "@prismicio/helpers" "^2.3.6"
+    "@prismicio/types" "^0.2.4"
     imgix-url-builder "^0.0.3"
 
 "@prismicio/react@^2.5.2":
@@ -1141,7 +1141,7 @@
     newtype-ts "^0.3.5"
     tslib "^2.3.1"
 
-"@prismicio/types@^0.2.0", "@prismicio/types@^0.2.3", "@prismicio/types@^0.2.7":
+"@prismicio/types@^0.2.0", "@prismicio/types@^0.2.4", "@prismicio/types@^0.2.7":
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/@prismicio/types/-/types-0.2.7.tgz#4091136fa198b366d3fefb49d1dd31d336522540"
   integrity sha512-xHPBWg+lPcl8U97VB/2oYK3MJlQoVPZq91hbeQO8WRyvq+zgpNST3xFOTk8SkQpgoH6wd50AxGZELvPrpojajQ==
