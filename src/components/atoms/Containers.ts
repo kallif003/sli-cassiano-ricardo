@@ -372,6 +372,7 @@ export const OverflowHomeContainer = styled.div`
 
 	@media (max-width: 768px) {
 		height: 20rem;
+		width: auto;
 		overflow-y: auto;
 		overflow-x: auto;
 		::-webkit-scrollbar {

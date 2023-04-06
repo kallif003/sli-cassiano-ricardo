@@ -10,7 +10,7 @@ const Projects = ({ project }: IProject) => {
 			{project.map((p) => (
 				<div
 					key={p.slug}
-					className="text-justify w-[60%] leading-8 mb-5 ">
+					className="text-justify w-[80%] leading-8 mb-5 ">
 					<H1 className="text-center sm:mt-5">
 						{p.title.toUpperCase()}
 					</H1>
