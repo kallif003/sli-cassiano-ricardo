@@ -2,20 +2,25 @@
 import Head from "next/head"
 import React, { useEffect } from "react"
 import TeachersArea from "../../components/organisms/TeachersArea"
-import Footer from "../../components/molecules/Footer"
 import useAuth from "../../hooks/useAuth"
 import Header from "../../components/molecules/Header"
-import { PagesContainer } from "../../components/atoms"
+import {
+	FloatingButton,
+	PagesContainer,
+} from "../../components/atoms"
 import { RoomOf, Route } from "../../utils/enum"
 import { createClient } from "../../../prismicio"
 import { Teachers } from "@/utils/interfaces"
+import { useRouter } from "next/router"
+import { mdiArrowLeft } from "@mdi/js"
+import Icon from "@mdi/react"
 
 const Literatura = ({
 	mormingTeacher,
 	afternoonTeacher,
 }: Teachers) => {
 	const { AuthStateChanged } = useAuth()
-
+	const router = useRouter()
 	useEffect(() => {
 		AuthStateChanged()
 	}, [AuthStateChanged])
@@ -29,16 +34,18 @@ const Literatura = ({
 			<Header />
 			<TeachersArea
 				lesson={RoomOf.LITERATURE}
-				pathProject=""
-				pathRepository={Route.NEWSPAPER}
-				nameButton="JORNAL"
+				pathRepository={Route.VIDEOS}
+				nameButton="VIDEOS"
 				nameIcon="read"
 				morningTeacher={mormingTeacher}
 				afternoonTeacher={afternoonTeacher}
+				mormingTeacherSlug={"posts_professora_literatura_manha"}
+				afternoonTeacherSlug={"posts_professora_literatura_tarde"}
 			/>
-			<div className="text-center mb-14 xl:mt-2 mt-[-2rem] h-20 xl:h-8">
-				<Footer />
-			</div>
+
+			<FloatingButton onClick={router.back}>
+				<Icon path={mdiArrowLeft} size={1} />
+			</FloatingButton>
 		</PagesContainer>
 	)
 }

@@ -34,10 +34,28 @@ export interface IRepertoires {
 	slug: string
 	video: string
 	title: string
+	link_type: string
 }
 
 export interface IRepertoire {
 	repertoire: IRepertoires[]
+}
+
+export interface IPost {
+	slug: string
+	title: string
+	text: string
+	img_one_post: string
+	alt_one_post: string
+	img_two_post?: string
+	alt_two_post?: string
+	img_three_post?: string
+	alt_three_post?: string
+	type?: string | string[]
+}
+
+export interface ISlug {
+	slug: string | string[]
 }
 
 export interface Iteachers {
@@ -59,37 +77,41 @@ export interface IText {
 
 export interface ITeachersArea {
 	lesson: string
-	pathProject: string
 	pathRepository: string
 	nameButton: string
 	nameIcon: string
 	morningTeacher: Iteachers[]
 	afternoonTeacher: Iteachers[]
+	mormingTeacherSlug: string
+	afternoonTeacherSlug: string
 }
 
-export interface INewspaper {
+export interface IProjects {
 	slug: string
-	introdution: string
-	first_title_page_one: string
-	first_text_page_one: string
-	first_img_page_one: string
-	alt_first_img_page_one: string
-	second_title_page_one: string
-	second_text_page_one: string
-	second_img_page_one: string
-	alt_second_img_page_one: string
-	first_title_page_two: string
-	first_text_page_two: string
-	first_img_page_two: string
-	alt_first_img_page_two: string
-	second_title_page_two: string
-	second_text_page_two: string
-	second_img_page_two: string
-	alt_second_img_page_two: string
-	edition: string
-	responsible: string
+	title: string
+	text: string
+	img_one_project: string
+	alt_one_project: string
+	img_two_project: string
+	alt_two_project: string
+	img_three_project: string
+	alt_three_project: string
+	img_four_project: string
+	alt_four_project: string
 }
 
-export interface INews {
-	news: INewspaper[]
+export interface IProject {
+	project: IProjects[]
+}
+
+export interface IVideos {
+	slug: string
+	videos: string
+	title: string
+	date: string
+	link_type: string
+}
+
+export interface IVideo {
+	videos: IVideos[]
 }

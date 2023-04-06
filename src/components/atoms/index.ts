@@ -11,23 +11,33 @@ import {
 	SheetHolesContainer,
 	PagesContainer,
 	MobileContainer,
-	MusicalizationContainer,
+	AboutClassContainer,
 	ProjectContainer,
 	ProfileTeacherContainer,
 	TeacherContainer,
 	ImageContainer,
 	TeacherInfoContainer,
 	TeachersGrid,
-	RepertoireContainer,
-	NewspaperContainer,
+	ProjectsContainer,
 	NewspaperArticleContainer,
+	Card,
+	OverflowContainer,
+	OverflowHomeContainer,
+	AllPostsContainer,
+	TeacherPostContainer,
 } from "./Containers"
 
 import { Input } from "./Inputs"
 
 import { H1, H2, Paragraph } from "./Typographies"
 
-import { MainButton, MusicButton, ReadButton } from "./Buttons"
+import {
+	MainButton,
+	MusicButton,
+	ReadButton,
+	ProjectButton,
+	FloatingButton,
+} from "./Buttons"
 
 export {
 	Container,
@@ -49,14 +59,20 @@ export {
 	SheetHolesContainer,
 	MobileContainer,
 	PagesContainer,
-	MusicalizationContainer,
+	AboutClassContainer,
 	ProjectContainer,
 	ProfileTeacherContainer,
 	TeacherContainer,
 	ImageContainer,
 	TeacherInfoContainer,
 	TeachersGrid,
-	RepertoireContainer,
-	NewspaperContainer,
+	ProjectsContainer,
 	NewspaperArticleContainer,
+	ProjectButton,
+	Card,
+	OverflowContainer,
+	FloatingButton,
+	OverflowHomeContainer,
+	AllPostsContainer,
+	TeacherPostContainer,
 }

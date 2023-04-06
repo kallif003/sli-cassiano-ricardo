@@ -170,187 +170,384 @@ export type MorningMusicTeacherProfileDocument<
 	"morning_music_teacher_profile",
 	Lang
 >
-/** Content for jornal Cassianinho documents */
-interface NewspaperDocumentData {
+/** Content for posts_professora_literatura_manha documents */
+interface PostsProfessoraLiteraturaManhaDocumentData {
 	/**
-	 * introdução field in *jornal Cassianinho*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.introdution
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-	 *
-	 */
-	introdution: prismicT.RichTextField
-	/**
-	 * primeiro_titulo_pagina_um field in *jornal Cassianinho*
+	 * titulo field in *posts_professora_literatura_manha*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.first_title_page_one
+	 * - **API ID Path**: posts_professora_literatura_manha.title
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
 	 *
 	 */
-	first_title_page_one: prismicT.KeyTextField
+	title: prismicT.KeyTextField
 	/**
-	 * primeiro_texto_pagina_um field in *jornal Cassianinho*
+	 * texto field in *posts_professora_literatura_manha*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.first_text_page_one
+	 * - **API ID Path**: posts_professora_literatura_manha.text
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
 	 *
 	 */
-	first_text_page_one: prismicT.RichTextField
+	text: prismicT.RichTextField
 	/**
-	 * primeira_imagem_pagina_um field in *jornal Cassianinho*
+	 * imagen_um_post field in *posts_professora_literatura_manha*
 	 *
 	 * - **Field Type**: Image
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.first_img_page_one
+	 * - **API ID Path**: posts_professora_literatura_manha.img_one_post
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
 	 *
 	 */
-	first_img_page_one: prismicT.ImageField<never>
+	img_one_post: prismicT.ImageField<never>
 	/**
-	 * segundo_titulo_pagina_um field in *jornal Cassianinho*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.second_title_page_one
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-	 *
-	 */
-	second_title_page_one: prismicT.KeyTextField
-	/**
-	 * segundo_texto_pagina_um field in *jornal Cassianinho*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.second_text_page_one
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-	 *
-	 */
-	second_text_page_one: prismicT.RichTextField
-	/**
-	 * segunda_imagem_pagina_um field in *jornal Cassianinho*
+	 * imagem_dois_post field in *posts_professora_literatura_manha*
 	 *
 	 * - **Field Type**: Image
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.second_img_page_one
+	 * - **API ID Path**: posts_professora_literatura_manha.img_two_post
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
 	 *
 	 */
-	second_img_page_one: prismicT.ImageField<never>
+	img_two_post: prismicT.ImageField<never>
 	/**
-	 * primeiro_titulo_pagina_dois field in *jornal Cassianinho*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.first_title_page_two
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-	 *
-	 */
-	first_title_page_two: prismicT.KeyTextField
-	/**
-	 * primeiro_texto_pagina_dois field in *jornal Cassianinho*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.first_text_page_two
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-	 *
-	 */
-	first_text_page_two: prismicT.RichTextField
-	/**
-	 * primeira_imagem_pagina_dois field in *jornal Cassianinho*
+	 * imagen_tres_post field in *posts_professora_literatura_manha*
 	 *
 	 * - **Field Type**: Image
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.first_img_page_two
+	 * - **API ID Path**: posts_professora_literatura_manha.img_three_post
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
 	 *
 	 */
-	first_img_page_two: prismicT.ImageField<never>
-	/**
-	 * segundo_titulo_pagina_dois field in *jornal Cassianinho*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.second_title_page_two
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-	 *
-	 */
-	second_title_page_two: prismicT.KeyTextField
-	/**
-	 * segundo_texto_pagina_dois field in *jornal Cassianinho*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.second_text_page_two
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-	 *
-	 */
-	second_text_page_two: prismicT.RichTextField
-	/**
-	 * segunda_imagem_pagina_dois field in *jornal Cassianinho*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.second_img_page_two
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
-	 *
-	 */
-	second_img_page_two: prismicT.ImageField<never>
-	/**
-	 * edição field in *jornal Cassianinho*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.edition
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-	 *
-	 */
-	edition: prismicT.RichTextField
-	/**
-	 * responsaveis field in *jornal Cassianinho*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: newspaper.responsible
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-	 *
-	 */
-	responsible: prismicT.RichTextField
+	img_three_post: prismicT.ImageField<never>
 }
 /**
- * jornal Cassianinho document from Prismic
+ * posts_professora_literatura_manha document from Prismic
  *
- * - **API ID**: `newspaper`
+ * - **API ID**: `posts_professora_literatura_manha`
  * - **Repeatable**: `true`
  * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type NewspaperDocument<Lang extends string = string> =
+export type PostsProfessoraLiteraturaManhaDocument<
+	Lang extends string = string
+> = prismicT.PrismicDocumentWithUID<
+	Simplify<PostsProfessoraLiteraturaManhaDocumentData>,
+	"posts_professora_literatura_manha",
+	Lang
+>
+/** Content for posts_professora_literatura_tarde documents */
+interface PostsProfessoraLiteraturaTardeDocumentData {
+	/**
+	 * titulo field in *posts_professora_literatura_tarde*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: posts_professora_literatura_tarde.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	title: prismicT.KeyTextField
+	/**
+	 * texto field in *posts_professora_literatura_tarde*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: posts_professora_literatura_tarde.text
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	text: prismicT.RichTextField
+	/**
+	 * imagen_um_post field in *posts_professora_literatura_tarde*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: posts_professora_literatura_tarde.img_one_post
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	img_one_post: prismicT.ImageField<never>
+	/**
+	 * imagem_dois_post field in *posts_professora_literatura_tarde*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: posts_professora_literatura_tarde.img_two_post
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	img_two_post: prismicT.ImageField<never>
+	/**
+	 * imagen_tres_post field in *posts_professora_literatura_tarde*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: posts_professora_literatura_tarde.img_three_post
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	img_three_post: prismicT.ImageField<never>
+}
+/**
+ * posts_professora_literatura_tarde document from Prismic
+ *
+ * - **API ID**: `posts_professora_literatura_tarde`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PostsProfessoraLiteraturaTardeDocument<
+	Lang extends string = string
+> = prismicT.PrismicDocumentWithUID<
+	Simplify<PostsProfessoraLiteraturaTardeDocumentData>,
+	"posts_professora_literatura_tarde",
+	Lang
+>
+/** Content for posts_professora_musica_manha documents */
+interface PostsProfessoraMusicaManhaDocumentData {
+	/**
+	 * titulo field in *posts_professora_musica_manha*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: posts_professora_musica_manha.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	title: prismicT.KeyTextField
+	/**
+	 * texto field in *posts_professora_musica_manha*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: posts_professora_musica_manha.text
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	text: prismicT.RichTextField
+	/**
+	 * imagen_um_post field in *posts_professora_musica_manha*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: posts_professora_musica_manha.img_one_post
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	img_one_post: prismicT.ImageField<never>
+	/**
+	 * imagem_dois_post field in *posts_professora_musica_manha*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: posts_professora_musica_manha.img_two_post
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	img_two_post: prismicT.ImageField<never>
+	/**
+	 * imagen_tres_post field in *posts_professora_musica_manha*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: posts_professora_musica_manha.img_three_post
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	img_three_post: prismicT.ImageField<never>
+}
+/**
+ * posts_professora_musica_manha document from Prismic
+ *
+ * - **API ID**: `posts_professora_musica_manha`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PostsProfessoraMusicaManhaDocument<
+	Lang extends string = string
+> = prismicT.PrismicDocumentWithUID<
+	Simplify<PostsProfessoraMusicaManhaDocumentData>,
+	"posts_professora_musica_manha",
+	Lang
+>
+/** Content for posts_professora_musica_tarde documents */
+interface PostsProfessoraMusicaTardeDocumentData {
+	/**
+	 * titulo field in *posts_professora_musica_tarde*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: posts_professora_musica_tarde.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	title: prismicT.KeyTextField
+	/**
+	 * texto field in *posts_professora_musica_tarde*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: posts_professora_musica_tarde.text
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	text: prismicT.RichTextField
+	/**
+	 * imagen_um_post field in *posts_professora_musica_tarde*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: posts_professora_musica_tarde.img_one_post
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	img_one_post: prismicT.ImageField<never>
+	/**
+	 * imagem_dois_post field in *posts_professora_musica_tarde*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: posts_professora_musica_tarde.img_two_post
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	img_two_post: prismicT.ImageField<never>
+	/**
+	 * imagen_tres_post field in *posts_professora_musica_tarde*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: posts_professora_musica_tarde.img_three_post
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	img_three_post: prismicT.ImageField<never>
+}
+/**
+ * posts_professora_musica_tarde document from Prismic
+ *
+ * - **API ID**: `posts_professora_musica_tarde`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PostsProfessoraMusicaTardeDocument<
+	Lang extends string = string
+> = prismicT.PrismicDocumentWithUID<
+	Simplify<PostsProfessoraMusicaTardeDocumentData>,
+	"posts_professora_musica_tarde",
+	Lang
+>
+/** Content for projetos documents */
+interface ProjectsDocumentData {
+	/**
+	 * titulo field in *projetos*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: projects.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	title: prismicT.KeyTextField
+	/**
+	 * texto field in *projetos*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: projects.text
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	text: prismicT.RichTextField
+	/**
+	 * imagem_um_projeto field in *projetos*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: projects.img_one_project
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	img_one_project: prismicT.ImageField<never>
+	/**
+	 * imagen_dois_projeto field in *projetos*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: projects.img_two_project
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	img_two_project: prismicT.ImageField<never>
+	/**
+	 * imagem_tres_projeto field in *projetos*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: projects.img_three_project
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	img_three_project: prismicT.ImageField<never>
+	/**
+	 * imagen_quatro_projeto field in *projetos*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: projects.img_four_project
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	img_four_project: prismicT.ImageField<never>
+}
+/**
+ * projetos document from Prismic
+ *
+ * - **API ID**: `projects`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProjectsDocument<Lang extends string = string> =
 	prismicT.PrismicDocumentWithUID<
-		Simplify<NewspaperDocumentData>,
-		"newspaper",
+		Simplify<ProjectsDocumentData>,
+		"projects",
 		Lang
 	>
 /** Content for repertorio-musical documents */
@@ -404,13 +601,69 @@ export type RepertoireDocument<Lang extends string = string> =
 		"repertoire",
 		Lang
 	>
+/** Content for videos documents */
+interface VideosDocumentData {
+	/**
+	 * titulo field in *videos*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: videos.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	title: prismicT.KeyTextField
+	/**
+	 * data field in *videos*
+	 *
+	 * - **Field Type**: Date
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: videos.date
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/date
+	 *
+	 */
+	date: prismicT.DateField
+	/**
+	 * videos field in *videos*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: videos.videos
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+	 *
+	 */
+	videos: prismicT.LinkField
+}
+/**
+ * videos document from Prismic
+ *
+ * - **API ID**: `videos`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type VideosDocument<Lang extends string = string> =
+	prismicT.PrismicDocumentWithUID<
+		Simplify<VideosDocumentData>,
+		"videos",
+		Lang
+	>
 export type AllDocumentTypes =
 	| AfternoonLiteratureTeacherDocument
 	| AfternoonMusicTeacherProfileDocument
 	| MorningLiteratureTeacherDocument
 	| MorningMusicTeacherProfileDocument
-	| NewspaperDocument
+	| PostsProfessoraLiteraturaManhaDocument
+	| PostsProfessoraLiteraturaTardeDocument
+	| PostsProfessoraMusicaManhaDocument
+	| PostsProfessoraMusicaTardeDocument
+	| ProjectsDocument
 	| RepertoireDocument
+	| VideosDocument
 declare module "@prismicio/client" {
 	interface CreateClient {
 		(
@@ -428,10 +681,20 @@ declare module "@prismicio/client" {
 			MorningLiteratureTeacherDocument,
 			MorningMusicTeacherProfileDocumentData,
 			MorningMusicTeacherProfileDocument,
-			NewspaperDocumentData,
-			NewspaperDocument,
+			PostsProfessoraLiteraturaManhaDocumentData,
+			PostsProfessoraLiteraturaManhaDocument,
+			PostsProfessoraLiteraturaTardeDocumentData,
+			PostsProfessoraLiteraturaTardeDocument,
+			PostsProfessoraMusicaManhaDocumentData,
+			PostsProfessoraMusicaManhaDocument,
+			PostsProfessoraMusicaTardeDocumentData,
+			PostsProfessoraMusicaTardeDocument,
+			ProjectsDocumentData,
+			ProjectsDocument,
 			RepertoireDocumentData,
 			RepertoireDocument,
+			VideosDocumentData,
+			VideosDocument,
 			AllDocumentTypes,
 		}
 	}

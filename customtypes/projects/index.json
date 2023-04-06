@@ -1,0 +1,65 @@
+{
+	"id": "projects",
+	"label": "projetos",
+	"repeatable": true,
+	"status": true,
+	"json": {
+		"Main": {
+			"uid": {
+				"type": "UID",
+				"config": {
+					"label": "uid",
+					"placeholder": ""
+				}
+			},
+			"title": {
+				"type": "Text",
+				"config": {
+					"label": "titulo",
+					"placeholder": ""
+				}
+			},
+			"text": {
+				"type": "StructuredText",
+				"config": {
+					"label": "texto",
+					"placeholder": "",
+					"allowTargetBlank": true,
+					"single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+				}
+			},
+			"img_one_project": {
+				"type": "Image",
+				"config": {
+					"label": "imagem_um_projeto",
+					"constraint": {},
+					"thumbnails": []
+				}
+			},
+			"img_two_project": {
+				"type": "Image",
+				"config": {
+					"label": "imagen_dois_projeto",
+					"constraint": {},
+					"thumbnails": []
+				}
+			},
+			"img_three_project": {
+				"type": "Image",
+				"config": {
+					"label": "imagem_tres_projeto",
+					"constraint": {},
+					"thumbnails": []
+				}
+			},
+			"img_four_project": {
+				"type": "Image",
+				"config": {
+					"label": "imagen_quatro_projeto",
+					"constraint": {},
+					"thumbnails": []
+				}
+			}
+		}
+	}
+}

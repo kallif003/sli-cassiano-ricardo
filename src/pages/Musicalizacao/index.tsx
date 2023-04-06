@@ -2,19 +2,25 @@
 import Head from "next/head"
 import React, { useEffect } from "react"
 import TeachersArea from "../../components/organisms/TeachersArea"
-import Footer from "../../components/molecules/Footer"
 import useAuth from "@/hooks/useAuth"
 import Header from "@/components/molecules/Header"
-import { PagesContainer } from "../../components/atoms"
+import {
+	FloatingButton,
+	PagesContainer,
+} from "../../components/atoms"
 import { RoomOf, Route } from "@/utils/enum"
 import { createClient } from "../../../prismicio"
 import { Teachers } from "@/utils/interfaces"
+import { useRouter } from "next/router"
+import { mdiArrowLeft } from "@mdi/js"
+import Icon from "@mdi/react"
 
 const Musicalizacao = ({
 	mormingTeacher,
 	afternoonTeacher,
 }: Teachers) => {
 	const { AuthStateChanged } = useAuth()
+	const router = useRouter()
 
 	useEffect(() => {
 		AuthStateChanged()
@@ -29,16 +35,18 @@ const Musicalizacao = ({
 			<Header />
 			<TeachersArea
 				lesson={RoomOf.MUSICALIZATION}
-				pathProject=""
 				pathRepository={Route.REPERTOIRE}
-				nameButton="REPERTÓRIO"
+				nameButton="REPERTÓRIO/VÍDEOS"
 				nameIcon="music"
 				morningTeacher={mormingTeacher}
 				afternoonTeacher={afternoonTeacher}
+				mormingTeacherSlug={"posts_professora_musica_manha"}
+				afternoonTeacherSlug={"posts_professora_musica_tarde"}
 			/>
-			<div className="text-center mb-14 xl:mt-2 mt-[-2rem] h-20 xl:h-8">
-				<Footer />
-			</div>
+
+			<FloatingButton onClick={router.back}>
+				<Icon path={mdiArrowLeft} size={1} />
+			</FloatingButton>
 		</PagesContainer>
 	)
 }
@@ -46,7 +54,7 @@ const Musicalizacao = ({
 export default Musicalizacao
 
 export async function getStaticProps() {
-	const client = createClient()
+	const client: any = createClient()
 
 	const dataMorningTeacher = await client.getAllByType(
 		"morning_music_teacher_profile",
@@ -58,19 +66,23 @@ export async function getStaticProps() {
 		{}
 	)
 
-	const mormingTeacher = dataMorningTeacher.map((e: any) => ({
-		slug: e.uid,
-		teacherName: e.data.teacher_name,
-		teacherImg: e.data.teacher_img.url,
-		alt: e.data.teacher_img.alt,
-	}))
+	const mormingTeacher: Teachers[] = dataMorningTeacher.map(
+		(e: any) => ({
+			slug: e.uid,
+			teacherName: e.data.teacher_name,
+			teacherImg: e.data.teacher_img.url,
+			alt: e.data.teacher_img.alt,
+		})
+	)
 
-	const afternoonTeacher = dataAfternoonTeacher.map((e: any) => ({
-		slug: e.uid,
-		teacherName: e.data.teacher_name,
-		teacherImg: e.data.teacher_img.url,
-		alt: e.data.teacher_img.alt,
-	}))
+	const afternoonTeacher: Teachers[] = dataAfternoonTeacher.map(
+		(e: any) => ({
+			slug: e.uid,
+			teacherName: e.data.teacher_name,
+			teacherImg: e.data.teacher_img.url,
+			alt: e.data.teacher_img.alt,
+		})
+	)
 
 	return {
 		props: {

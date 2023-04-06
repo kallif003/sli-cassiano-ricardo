@@ -1,7 +1,6 @@
 import React from "react"
 import {
-	H1,
-	MusicalizationContainer,
+	AboutClassContainer,
 	MusicButton,
 	ProjectContainer,
 	ReadButton,
@@ -21,7 +20,9 @@ import {
 	mdiNewspaperVariantOutline,
 	mdiPostOutline,
 } from "@mdi/js"
-import { ITeachersArea, IText } from "@/utils/interfaces"
+import { ITeachersArea } from "@/utils/interfaces"
+import { RoomOf } from "@/utils/enum"
+import Link from "next/link"
 
 const TeachersArea = ({
 	lesson,
@@ -30,28 +31,31 @@ const TeachersArea = ({
 	pathRepository,
 	morningTeacher,
 	afternoonTeacher,
+	mormingTeacherSlug,
+	afternoonTeacherSlug,
 }: ITeachersArea) => {
-	const rows: IText[] = [
-		{
-			id: "1",
-			paragraph: `A IMPORTÂNCIA DA ${lesson} NA EDUCAÇÃO INFANTIL.`,
-		},
-		{
-			id: "2",
-			paragraph: "AQUI VOCÊ PODE ACOMPANHAR O CONTEÚDO SEMANAL, O",
-		},
-		{
-			id: "3",
-			paragraph: "REPERTÓRIO E O PROJETO",
-		},
+	const aboutMusicalization: string[] = [
+		"O trabalho com musicalização infantil feito na escola é ",
+		"indispensável, pois, além do desenvolvimento da sensibilidade",
+		"musical, potencializa a concentração, memória, coordenação",
+		"motora, socialização, acuidade auditiva e disciplina.",
+	]
+
+	const aboutTheLiterature: string[] = [
+		"A experiência com a literatura infantil, proposta pelo",
+		"educador, mediador entre textos e as crianças, contribuem",
+		"para o desenvolvimentodo gosto pela leitura, do estímulo",
+		"à imaginação e da ampliação do conhecimento de mundo.",
 	]
 
 	const router = useRouter()
 
+	const currentRoute = router.pathname
+
 	return (
 		<TeachersGrid>
 			<ProjectContainer>
-				<MusicalizationContainer>
+				<AboutClassContainer>
 					<div className="px-2 py-1 ">
 						<Icon
 							path={
@@ -67,35 +71,45 @@ const TeachersArea = ({
 									: "absolute top-3 left-6"
 							}
 						/>
-						<H1 size={1.5} className="text-center sm:ml-10">
+						<h1 className="text-center sm:ml-10 sm:text-[1.2rem] text-[1.5rem] font-bold">
 							{lesson}
-						</H1>
-						<hr className="border-dashed border-[#d1cece] " />
+						</h1>
+						<hr className="border-dashed border-[#d1cece] sm:mb-2 " />
 					</div>
-					{rows.map((p) => (
-						<div
-							key={p.id}
-							className="px-2 sm:px-0 py-1 sm:w-[17.9rem] truncate ">
-							<p className="mx-2 text-[0.98rem] sm:text-[0.6rem]">
-								{p.paragraph}
-							</p>
-							<hr className="border-dashed border-[#d1cece] " />
+					{lesson === RoomOf.MUSICALIZATION ? (
+						<div>
+							{aboutMusicalization.map((text, index) => (
+								<div className="px-2 sm:text-center" key={index}>
+									<div className="sm:hidden  text-[0.98rem] ">
+										<p className={index === 0 ? "ml-8" : ""}>
+											{text.toUpperCase()}
+										</p>
+										<hr className="border-dashed border-[#d1cece] " />
+									</div>
+									<p className="lg:hidden xl:hidden md:hidden ">
+										{text.toUpperCase()}
+									</p>
+								</div>
+							))}
 						</div>
-					))}
-
+					) : (
+						<div>
+							{aboutTheLiterature.map((text, index) => (
+								<div className="px-2 sm:text-center " key={index}>
+									<div className="sm:hidden  text-[0.98rem]">
+										<p className={index === 0 ? "ml-8" : ""}>
+											{text.toUpperCase()}
+										</p>
+										<hr className="border-dashed border-[#d1cece] " />
+									</div>
+									<p className="lg:hidden xl:hidden md:hidden">
+										{text.toUpperCase()}
+									</p>
+								</div>
+							))}
+						</div>
+					)}
 					<div className=" flex justify-end  h-10 mt-3">
-						<MusicButton className="mr-3">
-							<Icon
-								path={
-									nameIcon === "music"
-										? mdiMusic
-										: mdiBookOpenPageVariant
-								}
-								size={1}
-								className="sm:ml-3 "
-							/>
-							<h1 className="ml-1 mt-1 text-[0.75rem]">PROJETO</h1>
-						</MusicButton>
 						<ReadButton onClick={() => router.push(pathRepository)}>
 							<Icon
 								path={
@@ -111,7 +125,7 @@ const TeachersArea = ({
 							</h1>
 						</ReadButton>
 					</div>
-				</MusicalizationContainer>
+				</AboutClassContainer>
 			</ProjectContainer>
 
 			<ProfileTeacherContainer>
@@ -125,20 +139,26 @@ const TeachersArea = ({
 							className="mt-3 bg-[#48D2B0]"
 						/>
 						<TeacherInfoContainer>
-							<H1 size={1}>
+							<h1 className="sm:text-[1rem] font-bold text-[1.2rem]">
 								PROFESSORA {morningTeacher[0].teacherName}
-							</H1>
+							</h1>
 							<H2 size={1}>MANHÃ</H2>
-							<MusicButton className="mt-2">
-								<Icon
-									path={mdiPostOutline}
-									size={1}
-									className="sm:ml-3 sm:mt-2"
-								/>
-								<h1 className="ml-1 mt-1 sm:mt-2 text-[0.75rem]">
-									VER CONTEÚDO
-								</h1>
-							</MusicButton>
+							<Link
+								href={{
+									pathname: `${currentRoute}/Posts`,
+									query: { slug: mormingTeacherSlug },
+								}}>
+								<MusicButton className="mt-2">
+									<Icon
+										path={mdiPostOutline}
+										size={1}
+										className="sm:ml-3 sm:mt-2"
+									/>
+									<h1 className="ml-1 mt-1 sm:mt-2 text-[0.75rem]">
+										VER CONTEÚDO
+									</h1>
+								</MusicButton>
+							</Link>
 						</TeacherInfoContainer>
 					</div>
 
@@ -146,20 +166,26 @@ const TeachersArea = ({
 
 					<div className="flex justify-between pr-2 mr-14 sm:mr-0 sm:flex-col-reverse sm:items-center">
 						<TeacherInfoContainer>
-							<H1 size={1}>
+							<h1 className="sm:text-[1rem] font-bold text-[1.2rem]">
 								PROFESSORA {afternoonTeacher[0].teacherName}
-							</H1>
+							</h1>
 							<H2 size={1}>TARDE</H2>
-							<ReadButton className="mt-2">
-								<Icon
-									path={mdiPostOutline}
-									size={1}
-									className="sm:ml-3"
-								/>
-								<h1 className="ml-1 mt-1  text-[0.75rem]">
-									VER CONTEÚDO
-								</h1>
-							</ReadButton>
+							<Link
+								href={{
+									pathname: `${currentRoute}/Posts`,
+									query: { slug: afternoonTeacherSlug },
+								}}>
+								<ReadButton className="mt-2">
+									<Icon
+										path={mdiPostOutline}
+										size={1}
+										className="sm:ml-3"
+									/>
+									<h1 className="ml-1 mt-1  text-[0.75rem]">
+										VER CONTEÚDO
+									</h1>
+								</ReadButton>
+							</Link>
 						</TeacherInfoContainer>
 
 						<ImageContainer

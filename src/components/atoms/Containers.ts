@@ -24,6 +24,9 @@ export const PagesContainer = styled.div.attrs(
 	background-image: url(${({ background }) => background});
 	background-repeat: no-repeat;
 	background-size: cover;
+	@media (min-width: 0px) and (max-width: 1023px) {
+		position: relative;
+	}
 `
 export const LoginContainer = styled.div`
 	padding: 0 0 0 8rem;
@@ -121,23 +124,31 @@ export const HeaderTitleContainer = styled.div`
 `
 export const AboutProjectContainer = styled.div`
 	box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.8);
-	width: 50rem;
-	height: 31rem;
+	width: 45rem;
+	height: 36rem;
 	color: #111111;
 	display: flex;
 	border-radius: 1.5rem;
 	border-top-left-radius: 1.2rem;
 	background: #f8f8f8;
-	@media (min-width: 0) and (max-width: 1023px) {
+	@media (max-width: 768px) {
 		flex-direction: column;
 		width: 22rem;
-		height: 33rem;
+		height: auto;
+	}
+
+	@media (min-width: 769px) and (max-width: 1023px) {
+		height: 32rem;
+	}
+
+	@media (max-height: 700px) {
+		height: 31rem;
 	}
 `
 
-export const MusicalizationContainer = styled.div`
+export const AboutClassContainer = styled.div`
 	box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.8);
-	width: 35rem;
+	width: 40rem;
 	height: 18rem;
 	color: #3d3d3d;
 	background: #f8f8f8;
@@ -148,7 +159,12 @@ export const MusicalizationContainer = styled.div`
 
 	@media (min-width: 0) and (max-width: 767px) {
 		width: 22rem;
-		height: 15rem;
+		height: 26.5rem;
+		padding: 2.5rem 1rem;
+	}
+
+	@media (min-width: 768px) and (max-width: 1267px) {
+		height: 18rem;
 	}
 `
 
@@ -202,7 +218,7 @@ export const SheetHolesContainer = styled.div`
 	background: #ff8343;
 	border-top-left-radius: 1.2rem;
 	border-bottom-left-radius: 1.2rem;
-	@media (min-width: 0) and (max-width: 1023px) {
+	@media (min-width: 0) and (max-width: 768px) {
 		flex-direction: row;
 		padding-left: 1rem;
 		border-bottom-left-radius: 0;
@@ -226,6 +242,9 @@ export const TeacherContainer = styled.div`
 	@media (min-width: 0) and (max-width: 767px) {
 		width: 22rem;
 		height: 37rem;
+	}
+	@media (min-width: 768px) and (max-width: 1267px) {
+		width: 40rem;
 	}
 `
 export const MobileContainer = styled.div`
@@ -261,36 +280,22 @@ export const TeachersGrid = styled.div`
 	@media (min-width: 0) and (max-width: 767px) {
 		grid-template-columns: auto;
 		grid-template-rows: repeat(2, 60%);
-		height: 50rem;
+		height: 60rem;
 		margin: 0 auto 10rem auto;
 	}
 
 	@media (min-width: 768px) and (max-width: 1279px) {
 		grid-template-columns: 1fr;
-		grid-template-rows: repeat(2, 50%);
-		height: 50rem;
-		margin: 0 auto 0 auto;
+		grid-template-rows: 40% 60%;
+		height: 52rem;
+		margin: 0 auto;
 	}
 	@media (min-width: 1400px) {
 		height: 40rem;
 	}
 `
-export const RepertoireContainer = styled.div`
-	box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.8);
-	width: 17rem;
-	height: 15rem;
-	color: #3d3d3d;
-	background: #f8f8f8;
-	border-radius: 1.2rem;
-	margin-bottom: 1rem;
-	padding: 1rem 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-`
 
-export const NewspaperContainer = styled.div`
+export const ProjectsContainer = styled.div`
 	width: 100vw;
 	color: #111111;
 	margin-top: 2rem;
@@ -312,6 +317,106 @@ export const NewspaperArticleContainer = styled.div`
 	margin: 2rem 0;
 	@media (max-width: 800px) {
 		grid-template-columns: 100%;
+	}
+`
+
+export const Card = styled.div.attrs(
+	(props: { width: number; height: number }) => props
+)`
+	box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.8);
+	width: ${({ width }) => width}rem;
+	height: ${({ height }) => height}rem;
+	color: #3d3d3d;
+	background: #f8f8f8;
+	border-radius: 1.2rem;
+	margin-bottom: 3rem;
+	padding: 1rem 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	@media (max-width: 800px) {
+		height: 20rem;
+		width: 20rem;
+	}
+`
+
+export const OverflowContainer = styled.div`
+	height: 25rem;
+	width: 28rem;
+	text-align: justify;
+	margin: 1rem 0;
+	overflow-y: auto;
+	overflow-x: auto;
+	text-indent: 2rem;
+	::-webkit-scrollbar {
+		display: none;
+	}
+	@media (max-width: 800px) {
+		width: auto;
+		padding: 0 2rem;
+		height: 15.5rem;
+	}
+`
+
+export const OverflowHomeContainer = styled.div`
+	@media (max-height: 700px) {
+		height: 20rem;
+		width: 40rem;
+		overflow-y: auto;
+		overflow-x: auto;
+		::-webkit-scrollbar {
+			display: none;
+		}
+	}
+
+	@media (max-width: 768px) {
+		height: 20rem;
+		width: auto;
+		overflow-y: auto;
+		overflow-x: auto;
+		::-webkit-scrollbar {
+			display: none;
+		}
+	}
+
+	@media (min-width: 769px) and (max-width: 1023px) {
+		height: 20rem;
+		overflow-y: auto;
+		overflow-x: auto;
+		::-webkit-scrollbar {
+			display: none;
+		}
+	}
+`
+
+export const AllPostsContainer = styled.div`
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-top: 2.5rem;
+`
+
+export const TeacherPostContainer = styled.div`
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+
+	@media (min-width: 0px) and (max-width: 767px) {
+		flex-direction: column;
+	}
+
+	@media (min-width: 768px) and (max-width: 1023px) {
+		flex-direction: column;
+	}
+
+	@media (min-width: 1280px) {
+		margin-top: 1.25rem /* 20px */;
+	}
+
+	@media (max-height: 700px) {
+		margin-top: -1rem;
 	}
 `
 

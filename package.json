@@ -10,7 +10,9 @@
 		"prepare": "husky install",
 		"commit": "cz",
 		"prettier": "npx prettier --write .",
-		"slicemachine": "start-slicemachine"
+		"slicemachine": "start-slicemachine",
+		"logout-prismic": "prismic logout",
+		"login-prismic": "prismic login"
 	},
 	"dependencies": {
 		"@mdi/js": "^7.0.96",
@@ -26,13 +28,15 @@
 		"next": "13.1.6",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"react-spinners": "^0.13.6",
+		"react-elastic-carousel": "^0.11.5",
+		"react-spinners": "^0.13.8",
 		"styled-components": "^5.3.6"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.1.2",
 		"@commitlint/config-conventional": "^17.1.0",
 		"@prismicio/types": "^0.2.7",
+		"@types/brainhubeu__react-carousel": "^2.0.5",
 		"@types/node": "^18.13.0",
 		"@types/react": "^18.0.28",
 		"@typescript-eslint/eslint-plugin": "^5.52.0",

@@ -23,9 +23,8 @@ const Homepage: NextPage = () => {
 			</Head>
 			<Header />
 			<Home />
-			<div className="text-center mb-2 mt-5 h-8">
-				<Footer />
-			</div>
+
+			<Footer />
 		</PagesContainer>
 	)
 }

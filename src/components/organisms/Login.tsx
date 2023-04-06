@@ -137,6 +137,13 @@ const Login = () => {
 					ESCOLA CASSIANO RICARDO
 				</Paragraph>
 			</div>
+
+			<p className="text-[0.5rem] text-[#000] mt-8 sm:text-white">
+				Desenvolvido por Kallif Abrahão
+			</p>
+			<p className="text-[0.6rem] text-[#000] sm:text-white">
+				Contato: kallifabrahao@gmail.com
+			</p>
 		</LoginContainer>
 	)
 }
