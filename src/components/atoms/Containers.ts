@@ -336,7 +336,7 @@ export const Card = styled.div.attrs(
 	justify-content: center;
 	align-items: center;
 	@media (max-width: 800px) {
-		height: 18rem;
+		height: 20rem;
 		width: 20rem;
 	}
 `
