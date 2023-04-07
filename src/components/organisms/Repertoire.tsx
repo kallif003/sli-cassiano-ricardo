@@ -7,25 +7,25 @@ const Repertoire = ({ repertoire }: IRepertoire) => {
 	return (
 		<div className="flex justify-evenly flex-wrap items-center mt-10">
 			{repertoire.map((r) => (
-				<Card key={r.slug} width={20} height={20}>
-					{r.link_type === "Web" ? (
+				<Card key={r?.slug} width={20} height={20}>
+					{r?.link_type === "Web" ? (
 						<iframe
-							src={r.video}
+							src={r?.video}
 							className="rounded-md"
 							title="YouTube video player"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
 					) : (
 						<div className="sm:px-5 px-10 w-[23rem] sm:w-[21rem]">
 							<video controls className="rounded-md">
-								<source src={r.video} type="video/mp4" />
+								<source src={r?.video} type="video/mp4" />
 							</video>
 						</div>
 					)}
 					<Paragraph className="mb-2 mt-5" weight={700}>
-						{r.title.toUpperCase()}
+						{r?.title.toUpperCase()}
 					</Paragraph>
 					<MusicButton>
-						<Link href={r.lyrics} passHref target="_blank">
+						<Link href={r?.lyrics} passHref target="_blank">
 							<H2>Letra</H2>
 						</Link>
 					</MusicButton>

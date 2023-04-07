@@ -9,21 +9,21 @@ const Projects = ({ project }: IProject) => {
 		<ProjectsContainer>
 			{project.map((p) => (
 				<div
-					key={p.slug}
+					key={p?.slug}
 					className="text-justify w-[80%] leading-8 mb-5 ">
 					<H1 className="text-center sm:mt-5">
-						{p.title.toUpperCase()}
+						{p?.title.toUpperCase()}
 					</H1>
 					<Paragraph className="mt-4 indent-8">
-						{p.text.toUpperCase()}
+						{p?.text.toUpperCase()}
 					</Paragraph>
 					<Carousel
 						showArrows={false}
 						className="mt-5 mb-8 sm:h-[12rem] h-[26rem]">
 						<div className="w-[60rem] h-[30rem] sm:h-[10rem] sm:w-[30rem]">
 							<Image
-								src={p.img_one_project}
-								alt={p.alt_one_project}
+								src={p?.img_one_project}
+								alt={p?.alt_one_project}
 								width="1200"
 								height="100"
 								layout="responsive"
@@ -33,8 +33,8 @@ const Projects = ({ project }: IProject) => {
 
 						<div className="w-[60rem] h-[35rem]">
 							<Image
-								src={p.img_two_project}
-								alt={p.alt_two_project}
+								src={p?.img_two_project}
+								alt={p?.alt_two_project}
 								width="1200"
 								height="1200"
 								layout="responsive"
@@ -44,8 +44,8 @@ const Projects = ({ project }: IProject) => {
 
 						<div className="w-[60rem] h-[35rem]">
 							<Image
-								src={p.img_three_project}
-								alt={p.alt_three_project}
+								src={p?.img_three_project}
+								alt={p?.alt_three_project}
 								width="1200"
 								height="1200"
 								layout="responsive"
@@ -55,8 +55,8 @@ const Projects = ({ project }: IProject) => {
 
 						<div className="w-[60rem] h-[35rem]">
 							<Image
-								src={p.img_four_project}
-								alt={p.alt_four_project}
+								src={p?.img_four_project}
+								alt={p?.alt_four_project}
 								width="1200"
 								height="1200"
 								layout="responsive"
