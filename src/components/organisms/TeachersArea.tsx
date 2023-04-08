@@ -132,15 +132,15 @@ const TeachersArea = ({
 				<TeacherContainer>
 					<div className="flex justify-between pl-2 ml-14 sm:ml-0 sm:flex-col sm:items-center">
 						<ImageContainer
-							src={morningTeacher[0].teacherImg}
-							alt={morningTeacher[0].alt}
+							src={morningTeacher[0]?.teacherImg}
+							alt={morningTeacher[0]?.alt}
 							width={1800}
 							height={1800}
 							className="mt-3 bg-[#48D2B0]"
 						/>
 						<TeacherInfoContainer>
 							<h1 className="sm:text-[1rem] font-bold text-[1.2rem]">
-								PROFESSORA {morningTeacher[0].teacherName}
+								PROFESSORA {morningTeacher[0]?.teacherName}
 							</h1>
 							<H2 size={1}>MANHÃ</H2>
 							<Link
@@ -167,7 +167,7 @@ const TeachersArea = ({
 					<div className="flex justify-between pr-2 mr-14 sm:mr-0 sm:flex-col-reverse sm:items-center">
 						<TeacherInfoContainer>
 							<h1 className="sm:text-[1rem] font-bold text-[1.2rem]">
-								PROFESSORA {afternoonTeacher[0].teacherName}
+								PROFESSORA {afternoonTeacher[0]?.teacherName}
 							</h1>
 							<H2 size={1}>TARDE</H2>
 							<Link
@@ -189,8 +189,8 @@ const TeachersArea = ({
 						</TeacherInfoContainer>
 
 						<ImageContainer
-							src={afternoonTeacher[0].teacherImg}
-							alt={afternoonTeacher[0].alt}
+							src={afternoonTeacher[0]?.teacherImg}
+							alt={afternoonTeacher[0]?.alt}
 							width={1800}
 							height={1800}
 							className="mt-3 sm:mb-2 bg-[#9B58B5]"
