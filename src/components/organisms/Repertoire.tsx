@@ -24,11 +24,13 @@ const Repertoire = ({ repertoire }: IRepertoire) => {
 					<Paragraph className="mb-2 mt-5" weight={700}>
 						{r?.title.toUpperCase()}
 					</Paragraph>
-					<MusicButton>
-						<Link href={r?.lyrics} passHref target="_blank">
-							<H2>Letra</H2>
-						</Link>
-					</MusicButton>
+					{r.lyrics != "" && (
+						<MusicButton>
+							<Link href={r?.lyrics} passHref target="_blank">
+								<H2>Letra</H2>
+							</Link>
+						</MusicButton>
+					)}
 				</Card>
 			))}
 		</div>
