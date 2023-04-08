@@ -11,7 +11,7 @@
 
 
 <p align="center">
-Essa aplicação foi desenvolvida para atender a escola Cassiano Ricardo de São José dos Campos, com o intuito de provomer uma melhor e mais acessivel interação dos pais com a escola e as atividades aplicadas.<br>Login para teste <br>Email: usuariadeteste@testando.com <br>Senha:1234567@mudar<br><br>Sinta-se à vontade!
+Desenvolvi essa aplicação para atender a escola Cassiano Ricardo de São José dos Campos, com o intuito de promover uma melhor e mais acessível interação dos pais com a escola e as atividades aplicadas..<br>Login para teste <br>Email: usuariadeteste@testando.com <br>Senha:1234567@mudar<br><br>Sinta-se à vontade!
 </p>
 
 <p align="center">
