@@ -48,22 +48,22 @@ const AllPosts = ({ slug }: ISlug) => {
 				<Link
 					href={{
 						pathname: `/${currentRoute}/Posts/post`,
-						query: { type: p.type, slug: p.slug },
+						query: { type: p?.type, slug: p?.slug },
 					}}
-					key={p.slug}>
-					<Card width={20} height={15}>
+					key={p?.slug}>
+					<Card width={20} height={18}>
 						<div className="w-[18rem] h-[12rem] sm:h-[10rem] sm:w-[16rem]">
 							<Image
-								src={p.img_one_post}
-								alt={p.alt_one_post}
+								src={p?.img_one_post}
+								alt={p?.alt_one_post}
 								width="1200"
 								height="100"
 								layout="responsive"
 								className="rounded-md"
 							/>
 						</div>
-						<h1 className="sm:text-[0.8rem] font-[700]">
-							{p.title.toUpperCase()}
+						<h1 className="sm:text-[0.8rem] font-[700] mt-8">
+							{p?.title.toUpperCase()}
 						</h1>
 					</Card>
 				</Link>

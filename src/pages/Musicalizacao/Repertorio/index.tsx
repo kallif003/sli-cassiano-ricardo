@@ -52,7 +52,7 @@ export async function getStaticProps() {
 		slug: e.uid,
 		title: e.data.titulo,
 		video: e.data.video.url || "",
-		lyrics: e.data.letramusica.url,
+		lyrics: e.data.letramusica.url || "",
 		link_type: e.data.video.link_type,
 	}))
 

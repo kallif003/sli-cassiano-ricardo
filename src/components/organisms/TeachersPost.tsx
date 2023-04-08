@@ -44,13 +44,13 @@ const TeachersPost = ({ type, slug }: IPrismic) => {
 	return (
 		<>
 			{post.map((p) => (
-				<TeacherPostContainer key={p.slug}>
+				<TeacherPostContainer key={p?.slug}>
 					<div className="mt-24">
 						<h1 className="text-[1.8rem] sm:text-[1rem] font-bold text-center">
-							{p.title.toUpperCase()}
+							{p?.title.toUpperCase()}
 						</h1>
 						<OverflowContainer>
-							<Paragraph>{p.text.toUpperCase()}</Paragraph>
+							<Paragraph>{p?.text.toUpperCase()}</Paragraph>
 						</OverflowContainer>
 					</div>
 
@@ -58,8 +58,8 @@ const TeachersPost = ({ type, slug }: IPrismic) => {
 						<Carousel showArrows={false} className="sm:h-[15rem]">
 							<div className="w-[28rem] h-[20rem] sm:h-[14rem] sm:w-[30rem]">
 								<Image
-									src={p.img_one_post}
-									alt={p.alt_one_post}
+									src={p?.img_one_post}
+									alt={p?.alt_one_post}
 									width="1200"
 									height="1000"
 									layout="responsive"
@@ -68,8 +68,8 @@ const TeachersPost = ({ type, slug }: IPrismic) => {
 							</div>
 							<div className="w-[28rem] h-[20rem] sm:h-[10rem] sm:w-[30rem]">
 								<Image
-									src={p.img_two_post as string}
-									alt={p.alt_two_post as string}
+									src={p?.img_two_post as string}
+									alt={p?.alt_two_post as string}
 									width="1200"
 									height="1000"
 									layout="responsive"
@@ -78,8 +78,8 @@ const TeachersPost = ({ type, slug }: IPrismic) => {
 							</div>
 							<div className="w-[28rem] h-[20rem] sm:h-[10rem] sm:w-[30rem]">
 								<Image
-									src={p.img_three_post as string}
-									alt={p.alt_three_post as string}
+									src={p?.img_three_post as string}
+									alt={p?.alt_three_post as string}
 									width="1200"
 									height="1000"
 									layout="responsive"
