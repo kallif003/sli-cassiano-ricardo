@@ -140,7 +140,8 @@ const TeachersArea = ({
 						/>
 						<TeacherInfoContainer>
 							<h1 className="sm:text-[1rem] font-bold text-[1.2rem]">
-								PROFESSORA {morningTeacher[0]?.teacherName}
+								PROFESSORA{" "}
+								{morningTeacher[0]?.teacherName.toUpperCase()}
 							</h1>
 							<H2 size={1}>MANHÃ</H2>
 							<Link
@@ -167,7 +168,8 @@ const TeachersArea = ({
 					<div className="flex justify-between pr-2 mr-14 sm:mr-0 sm:flex-col-reverse sm:items-center">
 						<TeacherInfoContainer>
 							<h1 className="sm:text-[1rem] font-bold text-[1.2rem]">
-								PROFESSORA {afternoonTeacher[0]?.teacherName}
+								PROFESSORA{" "}
+								{afternoonTeacher[0]?.teacherName.toUpperCase()}
 							</h1>
 							<H2 size={1}>TARDE</H2>
 							<Link
