@@ -53,7 +53,7 @@ const Musicalizacao = ({
 
 export default Musicalizacao
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	const client: any = createClient()
 
 	const dataMorningTeacher = await client.getAllByType(

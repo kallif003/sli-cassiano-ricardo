@@ -38,7 +38,7 @@ const Projetos = ({ project }: IProject) => {
 
 export default Projetos
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	const client = createClient()
 
 	const data = await client.getAllByType("projects", {

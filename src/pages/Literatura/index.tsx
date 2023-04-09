@@ -52,7 +52,7 @@ const Literatura = ({
 
 export default Literatura
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	const client = createClient()
 
 	const dataMorningTeacher = await client.getAllByType(
