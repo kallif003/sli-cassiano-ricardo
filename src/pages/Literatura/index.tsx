@@ -1,7 +1,6 @@
 /* eslint-disable new-cap */
-/* eslint-disable camelcase */
 import Head from "next/head"
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import TeachersArea from "../../components/organisms/TeachersArea"
 import useAuth from "../../hooks/useAuth"
 import Header from "../../components/molecules/Header"
@@ -11,59 +10,21 @@ import {
 } from "../../components/atoms"
 import { RoomOf, Route } from "../../utils/enum"
 import { createClient } from "../../../prismicio"
-import { Iteachers } from "@/utils/interfaces"
+import { Teachers } from "@/utils/interfaces"
 import { useRouter } from "next/router"
 import { mdiArrowLeft } from "@mdi/js"
 import Icon from "@mdi/react"
 
-const Literatura = () => {
+const Literatura = ({
+	mormingTeacher,
+	afternoonTeacher,
+}: Teachers) => {
 	const { AuthStateChanged } = useAuth()
+
 	const router = useRouter()
-
-	const [mormingTeacher, setMormingTeacher] = useState<Iteachers[]>(
-		[]
-	)
-
-	const [afternoonTeacher, setAfternoonTeacher] = useState<
-		Iteachers[]
-	>([])
-
-	const getTeachers = async () => {
-		const client: any = createClient()
-
-		const morningTeacher_data = await client.getAllByType(
-			"morning_literature_teacher",
-			{}
-		)
-
-		const afternoonTeacher_data = await client.getAllByType(
-			"afternoon_literature_teacher",
-			{}
-		)
-
-		const mormingTeacherData = morningTeacher_data.map((e: any) => ({
-			slug: e.uid,
-			teacherName: e.data.teacher_name,
-			teacherImg: e.data.teacher_img.url,
-			alt: e.data.teacher_img.alt,
-		}))
-
-		const afternoonTeacherData = afternoonTeacher_data.map(
-			(e: any) => ({
-				slug: e.uid,
-				teacherName: e.data.teacher_name,
-				teacherImg: e.data.teacher_img.url,
-				alt: e.data.teacher_img.alt,
-			})
-		)
-
-		setMormingTeacher(mormingTeacherData)
-		setAfternoonTeacher(afternoonTeacherData)
-	}
 
 	useEffect(() => {
 		AuthStateChanged()
-		getTeachers()
 	}, [AuthStateChanged])
 
 	return (
@@ -92,3 +53,38 @@ const Literatura = () => {
 }
 
 export default Literatura
+
+export async function getStaticProps() {
+	const client = createClient()
+
+	const morningTeacherData = await client.getAllByType(
+		"morning_literature_teacher",
+		{}
+	)
+
+	const afternoonTeacherData = await client.getAllByType(
+		"afternoon_literature_teacher",
+		{}
+	)
+
+	const mormingTeacher = morningTeacherData.map((e: any) => ({
+		slug: e.uid,
+		teacherName: e.data.teacher_name,
+		teacherImg: e.data.teacher_img.url,
+		alt: e.data.teacher_img.alt,
+	}))
+
+	const afternoonTeacher = afternoonTeacherData.map((e: any) => ({
+		slug: e.uid,
+		teacherName: e.data.teacher_name,
+		teacherImg: e.data.teacher_img.url,
+		alt: e.data.teacher_img.alt,
+	}))
+
+	return {
+		props: {
+			mormingTeacher,
+			afternoonTeacher,
+		},
+	}
+}
