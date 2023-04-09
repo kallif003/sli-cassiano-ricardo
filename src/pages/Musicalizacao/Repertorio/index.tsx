@@ -1,24 +1,50 @@
 /* eslint-disable new-cap */
 import Head from "next/head"
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { PagesContainer, FloatingButton } from "@/components/atoms"
 import Header from "@/components/molecules/Header"
 import Repertoire from "@/components/organisms/Repertoire"
 import { createClient } from "../../../../prismicio"
-import { IRepertoire } from "@/utils/interfaces"
+import { IRepertoires } from "@/utils/interfaces"
 import useAuth from "@/hooks/useAuth"
 import { useRouter } from "next/router"
 import { mdiArrowLeft } from "@mdi/js"
 import Icon from "@mdi/react"
 
-const RepertoirePage = ({ repertoire }: IRepertoire) => {
+const RepertoirePage = () => {
+	const [repertoire, setRepertoire] = useState<IRepertoires[]>([])
+
 	const { AuthStateChanged } = useAuth()
 
 	const router = useRouter()
 
+	const getRepertoire = async () => {
+		const client = createClient()
+
+		const data = await client.getAllByType("repertoire", {
+			orderings: [
+				{
+					field: "document.first_publication_date",
+					direction: "desc",
+				},
+			],
+		})
+
+		const repertoire = data.map((e: any) => ({
+			slug: e.uid,
+			title: e.data.titulo,
+			video: e.data.video.url || "",
+			lyrics: e.data.letramusica.url || "",
+			link_type: e.data.video.link_type,
+		}))
+
+		setRepertoire(repertoire)
+	}
+
 	useEffect(() => {
 		AuthStateChanged()
-	}, [AuthStateChanged])
+		getRepertoire()
+	}, [AuthStateChanged, getRepertoire])
 
 	return (
 		<PagesContainer background="/musicalization.png">
@@ -38,27 +64,3 @@ const RepertoirePage = ({ repertoire }: IRepertoire) => {
 }
 
 export default RepertoirePage
-
-export async function getStaticProps() {
-	const client = createClient()
-
-	const data = await client.getAllByType("repertoire", {
-		orderings: [
-			{ field: "document.first_publication_date", direction: "desc" },
-		],
-	})
-
-	const repertoire = data.map((e: any) => ({
-		slug: e.uid,
-		title: e.data.titulo,
-		video: e.data.video.url || "",
-		lyrics: e.data.letramusica.url || "",
-		link_type: e.data.video.link_type,
-	}))
-
-	return {
-		props: {
-			repertoire,
-		},
-	}
-}
