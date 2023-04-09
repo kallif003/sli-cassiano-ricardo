@@ -1,6 +1,7 @@
 /* eslint-disable new-cap */
+/* eslint-disable camelcase */
 import Head from "next/head"
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import TeachersArea from "../../components/organisms/TeachersArea"
 import useAuth from "@/hooks/useAuth"
 import Header from "@/components/molecules/Header"
@@ -10,21 +11,60 @@ import {
 } from "../../components/atoms"
 import { RoomOf, Route } from "@/utils/enum"
 import { createClient } from "../../../prismicio"
-import { Teachers } from "@/utils/interfaces"
+import { Iteachers } from "@/utils/interfaces"
 import { useRouter } from "next/router"
 import { mdiArrowLeft } from "@mdi/js"
 import Icon from "@mdi/react"
 
-const Musicalizacao = ({
-	mormingTeacher,
-	afternoonTeacher,
-}: Teachers) => {
+const Musicalizacao = () => {
 	const { AuthStateChanged } = useAuth()
 	const router = useRouter()
 
+	const [mormingTeacher, setMormingTeacher] = useState<Iteachers[]>(
+		[]
+	)
+
+	const [afternoonTeacher, setAfternoonTeacher] = useState<
+		Iteachers[]
+	>([])
+
+	const getTeachers = async () => {
+		const client: any = createClient()
+
+		const morningTeacher_data = await client.getAllByType(
+			"morning_music_teacher_profile",
+			{}
+		)
+
+		const afternoonTeacher_data = await client.getAllByType(
+			"afternoon_music_teacher_profile",
+			{}
+		)
+
+		const mormingTeacherData = morningTeacher_data.map((e: any) => ({
+			slug: e.uid,
+			teacherName: e.data.teacher_name,
+			teacherImg: e.data.teacher_img.url,
+			alt: e.data.teacher_img.alt,
+		}))
+
+		const afternoonTeacherData = afternoonTeacher_data.map(
+			(e: any) => ({
+				slug: e.uid,
+				teacherName: e.data.teacher_name,
+				teacherImg: e.data.teacher_img.url,
+				alt: e.data.teacher_img.alt,
+			})
+		)
+
+		setMormingTeacher(mormingTeacherData)
+		setAfternoonTeacher(afternoonTeacherData)
+	}
+
 	useEffect(() => {
 		AuthStateChanged()
-	}, [AuthStateChanged])
+		getTeachers()
+	}, [AuthStateChanged, getTeachers])
 
 	return (
 		<PagesContainer background="/musicalization.png">
@@ -52,42 +92,3 @@ const Musicalizacao = ({
 }
 
 export default Musicalizacao
-
-export async function getServerSideProps() {
-	const client: any = createClient()
-
-	const dataMorningTeacher = await client.getAllByType(
-		"morning_music_teacher_profile",
-		{}
-	)
-
-	const dataAfternoonTeacher = await client.getAllByType(
-		"afternoon_music_teacher_profile",
-		{}
-	)
-
-	const mormingTeacher: Teachers[] = dataMorningTeacher.map(
-		(e: any) => ({
-			slug: e.uid,
-			teacherName: e.data.teacher_name,
-			teacherImg: e.data.teacher_img.url,
-			alt: e.data.teacher_img.alt,
-		})
-	)
-
-	const afternoonTeacher: Teachers[] = dataAfternoonTeacher.map(
-		(e: any) => ({
-			slug: e.uid,
-			teacherName: e.data.teacher_name,
-			teacherImg: e.data.teacher_img.url,
-			alt: e.data.teacher_img.alt,
-		})
-	)
-
-	return {
-		props: {
-			mormingTeacher,
-			afternoonTeacher,
-		},
-	}
-}
