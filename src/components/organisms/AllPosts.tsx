@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { Card, AllPostsContainer } from "../atoms"
-import Image from "next/image"
+import { Card, AllPostsContainer, ImageCard } from "../atoms"
 import { ISlug, IPost } from "@/utils/interfaces"
 import Link from "next/link"
 import { useRouter } from "next/router"
@@ -52,19 +51,18 @@ const AllPosts = ({ slug }: ISlug) => {
 					}}
 					key={p?.slug}>
 					<Card width={20} height={15}>
-						<div className="w-[18rem] h-[12rem] sm:h-[10rem] sm:w-[16rem]">
-							<Image
-								src={p?.img_one_post}
-								alt={p?.alt_one_post}
-								width="1200"
-								height="100"
-								layout="responsive"
-								className="rounded-md"
-							/>
+						<ImageCard
+							src={p?.img_one_post}
+							alt={p?.alt_one_post}
+							width={1800}
+							height={1800}
+						/>
+
+						<div className="w-[18rem] h-10 relative flex justify-center items-center">
+							<h1 className="sm:text-[0.8rem] font-[700] overFlow">
+								{p?.title.toUpperCase()}
+							</h1>
 						</div>
-						<h1 className="sm:text-[0.8rem] font-[700]">
-							{p?.title.toUpperCase()}
-						</h1>
 					</Card>
 				</Link>
 			))}

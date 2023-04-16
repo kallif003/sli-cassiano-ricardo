@@ -353,7 +353,7 @@ export const OverflowContainer = styled.div`
 		display: none;
 	}
 	@media (max-width: 800px) {
-		width: auto;
+		width: 100%;
 		padding: 0 2rem;
 		height: 15.5rem;
 	}
@@ -417,6 +417,30 @@ export const TeacherPostContainer = styled.div`
 
 	@media (max-height: 700px) {
 		margin-top: -1rem;
+	}
+`
+
+export const ImageCard = styled(Image)`
+	width: 18rem;
+	height: 10rem;
+	border-radius: 0.8rem;
+	margin-bottom: 1rem;
+`
+export const ImageCaroussel = styled(Image)`
+	width: 28rem;
+	height: 20rem;
+	border-radius: 0.8rem;
+`
+
+export const ImageProject = styled(Image)`
+	width: 100%;
+	height: 35rem;
+	border-radius: 0.8rem;
+	@media (max-width: 768px) {
+		height: 20rem;
+	}
+	@media (min-width: 769px) and (max-width: 1023px) {
+		height: 20rem;
 	}
 `
 

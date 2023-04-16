@@ -20,10 +20,13 @@ const Repertoire = ({ videos }: IVideo) => {
 							</video>
 						</div>
 					)}
-					<div className="flex justify-between items-center w-full px-10 mt-5 flex-col">
-						<h1 className="sm:text-[0.8rem] font-[700]">
-							{v?.title.toUpperCase()}
-						</h1>
+					<div className="flex justify-between items-center w-full px-10 mt-5 flex-col relative">
+						<div className="w-[18rem] flex justify-center items-center h-12">
+							<h1 className="sm:text-[0.8rem] font-[700] overFlow">
+								{v?.title.toUpperCase()}
+							</h1>
+						</div>
+
 						<Paragraph size={0.8} className="text-[#b4b4b4]">
 							{v?.date.split("-").reverse().join("/")}
 						</Paragraph>

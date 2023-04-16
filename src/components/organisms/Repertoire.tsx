@@ -21,9 +21,14 @@ const Repertoire = ({ repertoire }: IRepertoire) => {
 							</video>
 						</div>
 					)}
-					<Paragraph className="mb-2 mt-5" weight={700}>
-						{r?.title.toUpperCase()}
-					</Paragraph>
+					<div className="w-[18rem] flex justify-center items-center h-12 relative">
+						<Paragraph
+							className="mb-2 mt-5 overFlow"
+							weight={700}
+							size={1}>
+							{r?.title.toUpperCase()}
+						</Paragraph>
+					</div>
 					{r.lyrics != "" && (
 						<MusicButton>
 							<Link href={r?.lyrics} passHref target="_blank">

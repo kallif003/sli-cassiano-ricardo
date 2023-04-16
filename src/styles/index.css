@@ -26,12 +26,58 @@ button:active {
 
 @media (max-width: 767px) {
 	.rec-carousel-item {
-		height: 15rem !important;
+		height: 20rem !important;
+	}
+	.overFlow_title {
+		font-size: 0.8rem;
 	}
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 769px) and (max-width: 1023px) {
 	.rec-carousel-item {
-		height: 18rem !important;
+		height: 20rem !important;
 	}
+}
+
+.overFlow {
+	overflow: hidden;
+	-ms-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: 0.1rem;
+}
+
+.overFlow:hover {
+	background: #fff;
+	height: 2rem;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+	border-radius: 0.25rem;
+	z-index: 10;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	color: #000;
+}
+
+.overFlow_title {
+	overflow: hidden;
+	-ms-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: 0.1rem;
+}
+
+.overFlow_title:hover {
+	background: #fff;
+	height: 3rem;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+	border-radius: 0.25rem;
+	z-index: 10;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #000;
 }

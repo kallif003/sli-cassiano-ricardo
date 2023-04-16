@@ -1,8 +1,12 @@
 import React from "react"
-import { ProjectsContainer, H1, Paragraph } from "@/components/atoms"
+import {
+	ProjectsContainer,
+	H1,
+	Paragraph,
+	ImageProject,
+} from "@/components/atoms"
 import { IProject } from "@/utils/interfaces"
 import Carousel from "react-elastic-carousel"
-import Image from "next/image"
 
 const Projects = ({ project }: IProject) => {
 	return (
@@ -11,57 +15,44 @@ const Projects = ({ project }: IProject) => {
 				<div
 					key={p?.slug}
 					className="text-justify w-[80%] leading-8 mb-5 ">
-					<H1 className="text-center sm:mt-5">
-						{p?.title.toUpperCase()}
-					</H1>
+					<div className="xl:w-[68rem] lg:w-[53rem] w-full flex justify-center items-center h-12">
+						<H1 className="text-center sm:mt-5 overFlow_title">
+							{p?.title.toUpperCase()}
+						</H1>
+					</div>
+
 					<Paragraph className="mt-4 indent-8">
 						{p?.text.toUpperCase()}
 					</Paragraph>
-					<Carousel
-						showArrows={false}
-						className="mt-5 mb-8 sm:h-[12rem] h-[26rem]">
-						<div className="w-[40rem] h-[30rem] sm:h-[10rem] sm:w-[30rem]">
-							<Image
-								src={p?.img_one_project}
-								alt={p?.alt_one_project}
-								width="200"
-								height="100"
-								layout="responsive"
-								className="rounded-md"
-							/>
-						</div>
 
-						<div className="w-[40rem] h-[40rem]">
-							<Image
-								src={p?.img_two_project}
-								alt={p?.alt_two_project}
-								width="200"
-								height="0"
-								layout="responsive"
-								className="rounded-md"
-							/>
-						</div>
+					<Carousel showArrows={false} className="mt-5 mb-8 ">
+						<ImageProject
+							src={p?.img_one_project}
+							alt={p?.alt_one_project}
+							width={1800}
+							height={1800}
+						/>
 
-						<div className="w-[40rem] h-[35rem]">
-							<Image
-								src={p?.img_three_project}
-								alt={p?.alt_three_project}
-								width="200"
-								height="200"
-								layout="responsive"
-								className="rounded-md"
-							/>
-						</div>
+						<ImageProject
+							src={p?.img_two_project}
+							alt={p?.alt_two_project}
+							width={1800}
+							height={1800}
+						/>
 
-						<div className="w-[40rem] h-[35rem]">
-							<Image
-								src={p?.img_four_project}
-								alt={p?.alt_four_project}
-								width="200"
-								height="200"
-								layout="responsive"
-							/>
-						</div>
+						<ImageProject
+							src={p?.img_three_project}
+							alt={p?.alt_three_project}
+							width={1800}
+							height={1800}
+						/>
+
+						<ImageProject
+							src={p?.img_four_project}
+							alt={p?.alt_four_project}
+							width={1800}
+							height={1800}
+						/>
 					</Carousel>
 				</div>
 			))}

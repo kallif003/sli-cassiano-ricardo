@@ -25,6 +25,9 @@ import {
 	OverflowHomeContainer,
 	AllPostsContainer,
 	TeacherPostContainer,
+	ImageCard,
+	ImageCaroussel,
+	ImageProject,
 } from "./Containers"
 
 import { Input } from "./Inputs"
@@ -75,4 +78,7 @@ export {
 	OverflowHomeContainer,
 	AllPostsContainer,
 	TeacherPostContainer,
+	ImageCard,
+	ImageCaroussel,
+	ImageProject,
 }

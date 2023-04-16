@@ -4,9 +4,9 @@ import {
 	Paragraph,
 	OverflowContainer,
 	TeacherPostContainer,
+	ImageCaroussel,
 } from "../atoms"
 import { createClient } from "../../../prismicio"
-import Image from "next/image"
 import { IPost } from "@/utils/interfaces"
 
 interface IPrismic {
@@ -39,53 +39,45 @@ const TeachersPost = ({ type, slug }: IPrismic) => {
 
 	useEffect(() => {
 		if (type && slug) getPost()
-	}, [type, slug, getPost])
+	}, [type, slug])
 
 	return (
 		<>
 			{post.map((p) => (
 				<TeacherPostContainer key={p?.slug}>
-					<div className="mt-24">
-						<h1 className="text-[1.8rem] sm:text-[1rem] font-bold text-center">
-							{p?.title.toUpperCase()}
-						</h1>
+					<div className="mt-24 sm:mt-10">
+						<div className="w-[28rem] sm:w-screen flex justify-center items-center h-12 relative">
+							<h1 className="text-[1.8rem] sm:text-[1rem] font-bold overFlow_title">
+								{p?.title.toUpperCase()}
+							</h1>
+						</div>
 						<OverflowContainer>
 							<Paragraph>{p?.text.toUpperCase()}</Paragraph>
 						</OverflowContainer>
 					</div>
 
 					<div className="w-[35rem] md:w-[45rem] sm:w-full mt-32 md:mt-12 mb-8 sm:px-7 sm:mt-5 ">
-						<Carousel showArrows={false} className="sm:h-[15rem]">
-							<div className="w-[28rem] h-[20rem] sm:h-[14rem] sm:w-[30rem]">
-								<Image
-									src={p?.img_one_post}
-									alt={p?.alt_one_post}
-									width="1200"
-									height="1000"
-									layout="responsive"
-									className="rounded-md"
-								/>
-							</div>
-							<div className="w-[28rem] h-[20rem] sm:h-[10rem] sm:w-[30rem]">
-								<Image
-									src={p?.img_two_post as string}
-									alt={p?.alt_two_post as string}
-									width="1200"
-									height="1000"
-									layout="responsive"
-									className="rounded-md"
-								/>
-							</div>
-							<div className="w-[28rem] h-[20rem] sm:h-[10rem] sm:w-[30rem]">
-								<Image
-									src={p?.img_three_post as string}
-									alt={p?.alt_three_post as string}
-									width="1200"
-									height="1000"
-									layout="responsive"
-									className="rounded-md"
-								/>
-							</div>
+						<Carousel showArrows={false}>
+							<ImageCaroussel
+								src={p?.img_one_post}
+								alt={p?.alt_one_post}
+								width={1800}
+								height={1800}
+							/>
+
+							<ImageCaroussel
+								src={p?.img_two_post as string}
+								alt={p?.alt_two_post as string}
+								width={1800}
+								height={1800}
+							/>
+
+							<ImageCaroussel
+								src={p?.img_three_post as string}
+								alt={p?.alt_three_post as string}
+								width={1800}
+								height={1800}
+							/>
 						</Carousel>
 					</div>
 				</TeacherPostContainer>

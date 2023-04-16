@@ -109,7 +109,7 @@ const Home = () => {
 							</button>
 							<button
 								className="text-[#4FB9F3] flex justify-evenly items-center"
-								onClick={() => router.push(Route.MUSICALIZATION)}>
+								onClick={() => router.push(Route.LITERATURE)}>
 								<Icon
 									path={mdiBookOpenPageVariant}
 									size={1}
