@@ -70,7 +70,7 @@ const Repertoire = ({ repertoire }: IRepertoire) => {
 					</Card>
 				))}
 			</div>
-			<div className="fixed xl:top-[46rem] top-[44.5rem] flex justify-center w-full">
+			<div className="fixed top-[46rem] flex justify-center w-full">
 				<div className="sm:w-[20rem]">
 					<ReactPaginate
 						breakLabel="..."
