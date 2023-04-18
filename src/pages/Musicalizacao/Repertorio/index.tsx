@@ -44,7 +44,7 @@ const RepertoirePage = () => {
 	useEffect(() => {
 		AuthStateChanged()
 		getRepertoire()
-	}, [AuthStateChanged, getRepertoire])
+	}, [AuthStateChanged])
 
 	return (
 		<PagesContainer background="/musicalization.png">

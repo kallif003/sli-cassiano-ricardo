@@ -74,7 +74,7 @@ export const FloatingButton = styled.button`
 	background: #ff8343;
 	position: fixed;
 	right: 5rem;
-	top: 45rem;
+	top: 43rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;

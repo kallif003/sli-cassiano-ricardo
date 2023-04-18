@@ -31,6 +31,9 @@ button:active {
 	.overFlow_title {
 		font-size: 0.8rem;
 	}
+	li {
+		margin-left: 0.8rem !important;
+	}
 }
 
 @media (min-width: 769px) and (max-width: 1023px) {
@@ -80,4 +83,29 @@ button:active {
 	justify-content: center;
 	align-items: center;
 	color: #000;
+}
+
+li {
+	margin-left: 2rem;
+	border: 2px solid #ccc;
+	width: 2rem;
+	display: flex;
+	justify-content: center;
+	padding-top: 0.2rem;
+	border-radius: 25rem;
+	color: #fff;
+	background: #b4b4b4;
+}
+
+.next,
+.previous {
+	background: transparent;
+	border: transparent;
+	width: 2rem;
+}
+
+.selected {
+	background: #ff8343;
+	border: transparent;
+	padding-top: 0.3rem;
 }

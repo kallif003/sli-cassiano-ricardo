@@ -5,6 +5,7 @@ const nextConfig = {
 	images: {
 		domains: ["images.prismic.io"],
 		formats: ["image/webp"],
+		unoptimized: true,
 	},
 	compiler: {
 		styledComponents: true,
