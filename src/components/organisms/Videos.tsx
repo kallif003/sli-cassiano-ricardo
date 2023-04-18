@@ -63,8 +63,8 @@ const Repertoire = ({ videos }: IVideo) => {
 					</Card>
 				))}
 			</div>
-			<div className="fixed top-[46rem] flex justify-center w-full">
-				<div className="sm:w-[20rem] flex justify-center ">
+			<div className="h-20 flex justify-center w-full">
+				<div className="sm:w-[20rem] sm:flex items-center justify-center ">
 					<ReactPaginate
 						breakLabel="..."
 						nextLabel={

@@ -33,6 +33,16 @@ button:active {
 	}
 	li {
 		margin-left: 0.8rem !important;
+		background: rgba(151, 152, 153, 0.5) !important;
+	}
+	.selected {
+		background: rgba(255, 131, 67, 0.4) !important;
+	}
+	.previous {
+		background: transparent !important;
+	}
+	.next {
+		background: transparent !important;
 	}
 }
 
