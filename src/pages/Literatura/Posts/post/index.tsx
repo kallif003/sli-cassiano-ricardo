@@ -21,7 +21,7 @@ const Post = () => {
 	}, [AuthStateChanged])
 
 	return (
-		<PagesContainer background="/musicalization.png">
+		<PagesContainer background="/literature.png">
 			<Head>
 				<title>POST</title>
 
