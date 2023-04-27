@@ -134,7 +134,7 @@ const Login = () => {
 					height="80"
 				/>
 				<Paragraph size={0.5} weight={700} className="mt-[-1.6rem]">
-					ESCOLA CASSIANO RICARDO
+					EMEI CASSIANO RICARDO
 				</Paragraph>
 			</div>
 

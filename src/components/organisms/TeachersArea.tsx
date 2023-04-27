@@ -44,7 +44,7 @@ const TeachersArea = ({
 	const aboutTheLiterature: string[] = [
 		"A experiência com a literatura infantil, proposta pelo",
 		"educador, mediador entre textos e as crianças, contribuem",
-		"para o desenvolvimentodo gosto pela leitura, do estímulo",
+		"para o desenvolvimento do gosto pela leitura, do estímulo",
 		"à imaginação e da ampliação do conhecimento de mundo.",
 	]
 

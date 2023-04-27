@@ -47,9 +47,11 @@ const Repertoire = ({ repertoire }: IRepertoire) => {
 								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
 						) : (
 							<div className="sm:px-5 px-10 w-[23rem] sm:w-[21rem]">
-								<video controls className="rounded-md">
-									<source src={r?.video} type="video/mp4" />
-								</video>
+								{r?.video && (
+									<video controls className="rounded-md">
+										<source src={r?.video} type="video/mp4" />
+									</video>
+								)}
 							</div>
 						)}
 						<div className="w-[18rem] flex justify-center items-center h-12 relative">
