@@ -1,3 +1,4 @@
+import { RichTextField } from "@prismicio/types"
 import { ReactNode } from "react"
 
 export interface IConfig {
@@ -89,7 +90,7 @@ export interface ITeachersArea {
 export interface IProjects {
 	slug: string
 	title: string
-	text: string
+	text: RichTextField
 	img_one_project: string
 	alt_one_project: string
 	img_two_project: string

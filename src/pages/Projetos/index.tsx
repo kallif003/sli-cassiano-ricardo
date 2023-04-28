@@ -32,7 +32,7 @@ const Projetos = () => {
 		const project = data.map((e: any) => ({
 			slug: e.uid,
 			title: e.data.title,
-			text: e.data.text[0].text,
+			text: e.data.text,
 			img_one_project: e.data.img_one_project.url,
 			alt_one_project: e.data.img_one_project.alt,
 

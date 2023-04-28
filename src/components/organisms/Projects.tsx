@@ -6,6 +6,7 @@ import {
 	ImageProject,
 } from "@/components/atoms"
 import { IProject } from "@/utils/interfaces"
+import { PrismicRichText } from "@prismicio/react"
 import Carousel from "react-elastic-carousel"
 
 const Projects = ({ project }: IProject) => {
@@ -21,9 +22,16 @@ const Projects = ({ project }: IProject) => {
 						</H1>
 					</div>
 
-					<Paragraph className="mt-4 indent-8">
-						{p?.text.toUpperCase()}
-					</Paragraph>
+					<PrismicRichText
+						field={p.text}
+						components={{
+							paragraph: ({ children }) => (
+								<Paragraph className="mt-4 indent-10">
+									{children}
+								</Paragraph>
+							),
+						}}
+					/>
 
 					<Carousel showArrows={false} className="mt-5 mb-8 ">
 						<ImageProject
